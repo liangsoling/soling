@@ -1,2 +1,2 @@
 # soling
-凌療癒
+凌 Reiki ・ 療癒

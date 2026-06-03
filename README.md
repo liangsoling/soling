@@ -1,2 +1,2 @@
 # soling
-凌Reiki・療癒
+凌Reiki・療癒 

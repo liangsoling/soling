@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>臼井靈氣療癒</title>
+    <title>凌Reiki・療癒 — 臼井聖火靈氣空間</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -13,40 +13,49 @@
                 extend: {
                     colors: {
                         reiki: {
-                            gold: '#C5A028', /* 調深金色，提升可讀性與高貴質感 */
-                            emerald: '#0F514E', /* 增強莫蘭迪綠對比度 */
-                            tealLight: '#F0FDFA',
-                            sage: '#739285',
-                            clay: '#8D6954',
-                            dark: '#1E293B',
-                            darkest: '#0F172A',
-                            glow: '#E0F2FE'
+                            /* 使用指定之溫和慈悲日式抹茶與茶道配色 */
+                            sage: '#E6EDF0',      /* 自然淡綠（背景） */
+                            matcha: '#A3B899',    /* 溫潤抹茶綠（主調、按鈕） */
+                            cream: '#FAF6EE',     /* 溫馨奶油白（卡片） */
+                            oatmeal: '#D9C3B0',   /* 燕麥拿鐵色（裝飾、副色） */
+                            tea: '#3A4238',       /* 深焙茶綠黑（文字） */
+                            darkforest: '#1E231D',/* 深層黑焙茶暗色背景 */
+                            darkcard: '#272E26'   /* 暗色模式抹茶苔綠卡片 */
                         }
                     },
                     fontFamily: {
-                        sans: ['Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', 'system-ui', 'sans-serif'],
+                        /* 換上高對比、極致清晰的無襯線字型 stack，優先確保閱讀舒適度 */
+                        sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', 'sans-serif'],
+                        serif: ['Noto Serif TC', 'Georgia', 'serif'],
                     }
                 }
             }
         }
     </script>
-    <!-- Noto Sans TC Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
-        /* 全域字型與渲染優化 */
+        :root {
+            --color-sage: #E6EDF0;      /* 自然淡綠（背景） */
+            --color-matcha: #A3B899;    /* 溫潤抹茶綠（主調、按鈕） */
+            --color-cream: #FAF6EE;     /* 溫馨奶油白（卡片） */
+            --color-oatmeal: #D9C3B0;   /* 燕麥拿鐵色（裝飾、副色） */
+            --color-tea: #3A4238;       /* 深焙茶綠黑（文字） */
+        }
+
         body {
-            font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
-            background-color: #FAF9F6;
+            font-family: 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+            color: var(--color-tea); /* 提高主文本顏色對比度，徹底保障易讀性 */
+            background-color: var(--color-sage);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             text-rendering: optimizeLegibility;
-        }
-        
-        body * {
-            font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+            background-image: radial-gradient(circle at 10% 20%, rgba(163, 184, 153, 0.15) 0%, rgba(255, 255, 255, 0) 90%);
         }
 
-        /* 3D 卡片翻轉 CSS 配置 (精修高度至縮小緊湊的 h-72 / 288px) */
+        /* 3D 卡片翻轉 CSS 配置 */
         .perspective-1000 {
             perspective: 1000px;
             -webkit-perspective: 1000px;
@@ -73,74 +82,78 @@
             -webkit-transform: rotateY(180deg);
         }
         
+        /* 抹茶有機風格滾動條 */
         .custom-scrollbar::-webkit-scrollbar {
             width: 8px;
             height: 8px;
         }
         .custom-scrollbar::-webkit-scrollbar-track {
-            background: #F1F5F9;
+            background: var(--color-cream);
         }
         .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #CBD5E1;
+            background: var(--color-matcha);
             border-radius: 4px;
-        }
-        
-        /* 隱藏滾動條樣式，保持橫向標籤列的美觀 */
-        .hide-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .hide-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
         }
 
         /* 摺疊面板的核心過渡樣式 */
         .accordion-content {
             transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
+
+        /* 空靈漸變呼吸光暈背景特效 */
+        @keyframes subtleGlow {
+            0%, 100% { opacity: 0.2; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(1.08); }
+        }
+        .aurora-glow {
+            animation: subtleGlow 10s ease-in-out infinite;
+        }
     </style>
 </head>
-<body class="text-slate-900 transition-colors duration-300">
+<body class="transition-colors duration-300">
 
-    <!-- 頂部靜心導覽列 -->
-    <nav class="sticky top-0 z-50 bg-white/95 dark:bg-reiki-darkest/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-all duration-300">
+    <!-- 頂部靜心進度條 -->
+    <div class="fixed top-0 left-0 w-full h-1 bg-reiki-cream z-50">
+        <div id="scroll-progress" class="h-full bg-reiki-matcha transition-all duration-300" style="width: 0%;"></div>
+    </div>
+
+    <!-- 頂部導覽列 -->
+    <nav class="sticky top-0 z-40 bg-reiki-cream/95 dark:bg-reiki-darkest/95 backdrop-blur-md border-b border-reiki-oatmeal/30 dark:border-slate-800 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 
-                <!-- 標題區域：新增點擊事件以平滑滾動回頁面頂部 -->
-                <div onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="flex items-center gap-2 cursor-pointer group" title="回到頂端">
-                    <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-teal-800 via-emerald-700 to-amber-500 flex items-center justify-center text-white shadow-md shadow-emerald-700/20 group-hover:scale-105 transition-transform duration-300">
+                <!-- 標題區域：點擊平滑滾動回頂部 -->
+                <div onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="flex items-center gap-2.5 cursor-pointer group" title="回到頂端">
+                    <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-reiki-tea via-reiki-matcha to-reiki-oatmeal flex items-center justify-center text-white shadow-lg shadow-emerald-500/10 group-hover:scale-105 transition-transform duration-300">
                         <svg class="w-5 h-5 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.286L13 21l-2.286-6.857L5 12l5.714-2.286L13 3z" />
                         </svg>
                     </div>
                     <div>
-                        <span class="font-black text-lg text-emerald-955 dark:text-teal-400 tracking-wider whitespace-nowrap group-hover:text-emerald-700 dark:group-hover:text-teal-300 transition-colors duration-300">凌Reiki・療癒</span>
-                        <span class="hidden sm:inline text-xs font-semibold text-slate-550 dark:text-slate-400 block -mt-1 tracking-tight whitespace-nowrap"></span>
+                        <span class="font-serif font-black text-base tracking-widest text-reiki-tea dark:text-reiki-cream group-hover:text-reiki-matcha transition-colors whitespace-nowrap">凌Reiki・療癒</span>
+                        <span class="hidden sm:inline text-[9px] font-bold text-reiki-matcha block -mt-1 tracking-widest uppercase whitespace-nowrap">Healing Portal</span>
                     </div>
                 </div>
                 
-                <!-- 桌面端多模塊選單：已新增「回首頁」連結 -->
-                <div class="hidden lg:flex items-center space-x-1">
-                    <a href="index.html" class="px-3 py-2 rounded-lg text-sm font-black text-teal-800 dark:text-teal-400 hover:bg-teal-50 dark:hover:bg-slate-800 transition whitespace-nowrap flex items-center gap-1" title="返回主頁面">
+                <!-- 桌面端導航項目 -->
+                <div class="hidden lg:flex items-center space-x-1 font-sans text-xs md:text-sm font-medium tracking-wider">
+                    <a href="index.html" class="px-3 py-2 rounded-lg text-reiki-matcha hover:bg-reiki-matcha/10 transition whitespace-nowrap flex items-center gap-1">
                         <span>🏠</span> 回首頁
                     </a>
-                    <button onclick="scrollToSection('origin')" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 dark:text-slate-300 hover:bg-teal-50 hover:text-teal-900 transition whitespace-nowrap">歷史源流</button>
-                    <button onclick="scrollToSection('about')" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 dark:text-slate-300 hover:bg-teal-50 hover:text-teal-900 transition whitespace-nowrap">關於靈氣</button>
-                    <button onclick="scrollToSection('balance')" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 dark:text-slate-300 hover:bg-teal-50 hover:text-teal-900 transition whitespace-nowrap">身心平衡</button>
-                    <button onclick="scrollToSection('daily')" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 dark:text-slate-300 hover:bg-teal-50 hover:text-teal-900 transition whitespace-nowrap">日常情境</button>
-                    <button onclick="scrollToSection('values')" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 dark:text-slate-300 hover:bg-teal-50 hover:text-teal-900 transition whitespace-nowrap">核心價值</button>
-                    <button onclick="scrollToSection('myth')" class="px-3 py-2 rounded-lg text-sm font-bold text-amber-800 dark:text-amber-400 hover:bg-amber-100/50 transition whitespace-nowrap">🔍 迷思破解</button>
-                    <button onclick="scrollToSection('practice')" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 dark:text-slate-300 hover:bg-teal-50 hover:text-teal-900 transition whitespace-nowrap">生活實踐</button>
+                    <button onclick="scrollToSection('about')" class="px-3 py-2 rounded-lg text-reiki-tea dark:text-slate-350 hover:bg-reiki-matcha/10 hover:text-reiki-matcha transition whitespace-nowrap">關於靈氣</button>
+                    <button onclick="scrollToSection('origin')" class="px-3 py-2 rounded-lg text-reiki-tea dark:text-slate-355 hover:bg-reiki-matcha/10 hover:text-reiki-matcha transition whitespace-nowrap">歷史源流</button>
+                    <button onclick="scrollToSection('values')" class="px-3 py-2 rounded-lg text-reiki-tea dark:text-slate-355 hover:bg-reiki-matcha/10 hover:text-reiki-matcha transition whitespace-nowrap">核心五戒</button>
+                    <button onclick="scrollToSection('daily')" class="px-3 py-2 rounded-lg text-reiki-tea dark:text-slate-355 hover:bg-reiki-matcha/10 hover:text-reiki-matcha transition whitespace-nowrap">日常情境</button>
+                    <button onclick="scrollToSection('myth')" class="px-3 py-2 rounded-lg text-reiki-tea dark:text-amber-450 hover:bg-reiki-cream font-bold transition whitespace-nowrap">🔍 迷思破解</button>
                 </div>
                 
-                <!-- 切換深色模式與每日抽卡 -->
+                <!-- 每日調頻功能按鈕 -->
                 <div class="flex items-center gap-2">
-                    <button id="themeToggleBtn" onclick="toggleTheme()" class="p-2.5 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition" title="切換深/淺色模式">
+                    <button id="themeToggleBtn" onclick="toggleTheme()" class="p-2.5 rounded-lg text-reiki-tea dark:text-slate-300 hover:bg-reiki-matcha/10 transition" title="切換深/淺色模式">
                         <svg id="themeIconSun" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m2.828-9.9a5 5 0 117.072 0l-.548.547M12 7V5a3 3 0 00-3 3v4a3 3 0 006 0V8a3 3 0 00-3-3z"/></svg>
                         <svg id="themeIconMoon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
                     </button>
-                    <button onclick="openMantraWidget()" class="bg-gradient-to-r from-teal-800 to-emerald-700 text-white text-xs px-4 py-2.5 rounded-full font-bold shadow-md hover:opacity-90 transition whitespace-nowrap">
+                    <button onclick="openMantraWidget()" class="bg-reiki-matcha hover:bg-reiki-tea text-white text-xs px-4 py-2.5 rounded-full font-bold shadow-md transition-all duration-300 whitespace-nowrap" title="點擊抽取心靈肯定語">
                         每日調頻
                     </button>
                 </div>
@@ -148,761 +161,575 @@
         </div>
     </nav>
 
-    <!-- 主視覺前導 -->
-    <header class="relative overflow-hidden bg-gradient-to-b from-teal-950 via-teal-900 to-slate-900 text-white py-8 md:py-8">
+    <!-- 主視覺前導區 (抹茶奶油暖色系) -->
+    <header class="relative overflow-hidden bg-gradient-to-b from-reiki-tea via-[#485347] to-reiki-tea text-[#FAF6EE] py-20 px-6 md:px-12 text-center">
+        <!-- 柔和星冕微光 -->
         <div class="absolute inset-0 z-0">
-            <div class="absolute top-1/4 left-1/3 w-96 h-96 rounded-full bg-amber-500/10 pulsing-glow"></div>
-            <div class="absolute bottom-1/3 right-1/4 w-[500px] h-[500px] rounded-full bg-teal-500/15 pulsing-glow" style="animation-delay: -1.5s"></div>
+            <div class="absolute top-1/4 left-1/4 w-80 h-80 rounded-full bg-reiki-matcha/10 aurora-glow"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-reiki-oatmeal/5 aurora-glow" style="animation-delay: -4s"></div>
         </div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold bg-amber-500/15 text-amber-300 border border-amber-500/30 mb-5 tracking-wide">
-                能量重構 ✕ 身心整合
+        <div class="max-w-4xl mx-auto relative z-10">
+            <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold bg-reiki-matcha/20 text-[#FAF6EE] border border-reiki-matcha/30 mb-6 tracking-wide">
+                ICRT 國際靈氣訓練中心學術實證體系
             </span>
-            <h1 class="text-3xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6 leading-tight break-keep">
-                從傳統到臼井聖火靈氣<br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-teal-300 via-amber-200 to-amber-300">
-                    日常生活場景痛點救援全圖譜
+            <h1 class="font-serif text-3xl md:text-5xl lg:text-6xl font-bold tracking-widest mb-6 leading-tight break-keep">
+                漫步靈氣之光：<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-reiki-matcha via-white to-reiki-oatmeal">
+                    溫和慈悲與和諧自我
                 </span>
             </h1>
-            <p class="max-w-4xl mx-auto text-slate-200 text-sm md:text-base lg:text-lg mb-8 leading-relaxed font-normal">
-                本資訊圖表基於國際靈氣訓練中心（ICRT）與權威文獻，徹底去神秘化。為您揭開微觀能量流動，以及初學者最關心的熱門核心大師解答與生活實踐指南。
+            <p class="max-w-2xl mx-auto text-slate-200 text-sm sm:text-base leading-relaxed font-normal mb-10 text-justify sm:text-center">
+                這是一座傾注溫暖能量的心靈花園·我們依循國際靈氣訓練中心(ICRT）正統而嚴謹的科研與靈性教導，帶您溫柔地喚醒內在的生命力，啟動身心靈的自癒旅程。
             </p>
 
             <div class="flex flex-wrap justify-center gap-2 max-w-5xl mx-auto text-xs md:text-sm">
-                <button onclick="scrollToSection('origin')" class="px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white rounded-full font-bold transition whitespace-nowrap">⏳ 歷史源流</button>
-                <button onclick="scrollToSection('about')" class="px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white rounded-full font-bold transition whitespace-nowrap">✨ 關於靈氣</button>
-                <button onclick="scrollToSection('balance')" class="px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white rounded-full font-bold transition whitespace-nowrap">🌌 自我結構</button>
-                <button onclick="scrollToSection('daily')" class="px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white rounded-full font-bold transition whitespace-nowrap">🌸 日常情境</button>
-                <button onclick="scrollToSection('values')" class="px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white rounded-full font-bold transition whitespace-nowrap">💎 五戒價值</button>
-                <button onclick="scrollToSection('myth')" class="px-4 py-2 bg-amber-500/20 hover:bg-amber-500/30 border border-amber-400/40 text-amber-200 rounded-full font-bold transition whitespace-nowrap">🔍 迷思破解 QA</button>
-                <button onclick="scrollToSection('practice')" class="px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white rounded-full font-bold transition whitespace-nowrap">🧘‍♀️ 自療實踐</button>
+                <button onclick="scrollToSection('about')" class="px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/10 text-white rounded-full font-bold transition whitespace-nowrap">✨ 關於靈氣</button>
+                <button onclick="scrollToSection('origin')" class="px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/10 text-white rounded-full font-bold transition whitespace-nowrap">⏳ 歷史源流</button>
+                <button onclick="scrollToSection('values')" class="px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/10 text-white rounded-full font-bold transition whitespace-nowrap">💎 核心五戒</button>
+                <button onclick="scrollToSection('daily')" class="px-4 py-2 bg-white/10 hover:bg-white/20 border border-white/10 text-white rounded-full font-bold transition whitespace-nowrap">🌸 日常情境</button>
+                <button onclick="scrollToSection('myth')" class="px-4 py-2 bg-reiki-matcha/20 hover:bg-reiki-matcha/30 border border-reiki-matcha/40 text-[#FAF6EE] rounded-full font-bold transition whitespace-nowrap">🔍 迷思破解</button>
             </div>
         </div>
     </header>
 
-    <!-- 主區塊 -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-24">
+    <!-- 主要內容區 -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-24">
 
-        <!-- 主題 1：歷史源流 -->
-        <section id="origin" class="bg-white dark:bg-slate-900 rounded-3xl p-6 md:p-12 shadow-xl border border-slate-200 dark:border-slate-800 transition">
-            <div class="flex flex-col md:flex-row md:items-center justify-between mb-10 pb-8 border-b border-slate-200 dark:border-slate-800">
+        <!-- 1. 關於靈氣與自癒功效 -->
+        <section id="about" class="bg-reiki-cream dark:bg-reiki-darkcard rounded-3xl p-6 md:p-12 shadow-md border border-reiki-oatmeal/20 transition scroll-mt-24">
+            <div class="flex flex-col md:flex-row md:items-center justify-between mb-10 pb-8 border-b border-reiki-oatmeal/30">
                 <div class="flex items-center gap-4">
-                    <div class="w-14 h-14 rounded-2xl bg-teal-100 dark:bg-teal-900/40 text-teal-900 dark:text-teal-300 flex items-center justify-center text-2xl font-black flex-shrink-0">1</div>
+                    <div class="w-14 h-14 rounded-2xl bg-reiki-matcha/10 text-reiki-tea dark:text-reiki-cream flex items-center justify-center text-2xl font-black flex-shrink-0">1</div>
                     <div>
-                        <h2 class="text-2xl md:text-3xl lg:text-4xl font-black text-slate-955 dark:text-white break-keep">歷史源流：去神秘化的學術還原</h2>
-                        <p class="text-slate-700 dark:text-slate-300 text-sm md:text-base mt-1.5 font-medium break-keep">大正流派共存 ➔ 臼井甕男高度整合 ➔ 聖火去威權化傳播</p>
+                        <h2 class="font-serif text-2xl md:text-3xl font-bold text-reiki-tea dark:text-white break-keep">關於靈氣與自癒功效</h2>
+                        <p class="text-reiki-matcha text-xs md:text-sm mt-1 uppercase tracking-widest font-bold">Universal Life Force Energy & Holistic Healing Benefits</p>
                     </div>
                 </div>
             </div>
 
-            <!-- 垂直時間軸 -->
-            <div class="relative pl-8 md:pl-16 space-y-12">
-                <div class="absolute left-[14px] md:left-[26px] top-2 bottom-2 w-1 bg-gradient-to-b from-teal-700 via-emerald-500 to-amber-500 rounded-full opacity-60"></div>
+            <!-- 起源說明與醫療免責聲明卡片 (已成功將醫療聲明接續在後並大幅優化排版) -->
+            <div class="bg-reiki-sage/40 dark:from-slate-900 dark:to-slate-950 p-6 md:p-8 rounded-2xl border border-reiki-oatmeal/30 mb-12 flex flex-col md:flex-row gap-6 items-start shadow-sm">
+                <div class="flex items-center justify-center gap-2 bg-gradient-to-tr from-reiki-tea via-reiki-matcha to-reiki-oatmeal text-white w-24 h-24 rounded-2xl shadow-md flex-shrink-0 mt-1">
+                    <div class="text-center">
+                        <span class="font-serif text-2xl font-black block leading-none break-keep">靈氣</span>
+                        <span class="text-[10px] font-mono tracking-widest mt-1.5 uppercase block leading-none break-keep">REIKI</span>
+                    </div>
+                </div>
+                <div class="flex-grow space-y-4">
+                    <p class="text-sm sm:text-base text-reiki-tea dark:text-slate-200 leading-relaxed font-normal text-justify">
+                        靈氣起源於日本<strong>臼井甕男（Mikao Usui）</strong>大師。<strong>「Rei (靈)」</strong>代表宇宙神聖智慧，而<strong>「Ki (氣)」</strong>指代生命之能。在 <strong>國際靈氣訓練中心（ICRT）</strong> 的學術定義中，靈氣指代<strong>「宇宙本源智慧引導的高頻生命能量」</strong>。它不附屬於任何宗教與門派，而是人人都可對接並共振的自然療癒能量，用以溫和地調幅身心，回歸完美和諧。
+                    </p>
+                    <!-- 專業醫療輔助/互補品聲明區塊 -->
+                    <div class="p-4 rounded-xl border border-reiki-matcha/40 bg-white/75 dark:bg-slate-900/50 text-xs sm:text-sm text-reiki-tea dark:text-slate-300 leading-relaxed shadow-inner">
+                        <p class="font-normal text-justify">
+                            <i class="fa-solid fa-circle-info mr-1.5 text-reiki-matcha"></i>
+                            「靈氣是一種舒緩壓力與促進放鬆的技術，用以支持身體的自然療癒能力。靈氣是專業醫療護理的『輔助/互補品 (Complement)』，絕非『替代品 (Replacement)』。靈氣實踐者並非執業醫療保健提供者，我們強烈敦促個案始終尋求適當的心理與生理醫療專業協助。」
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 身心平衡自癒功效 (三欄式抹茶奶油高對比列表卡片) -->
+            <div class="mt-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- 1. 身體層面具體療癒 -->
+                    <div class="bg-white dark:bg-slate-900/60 rounded-3xl p-6 md:p-8 border-2 border-reiki-oatmeal/20 shadow-xs hover:border-reiki-matcha transition-all duration-300">
+                        <div class="w-14 h-14 bg-reiki-sage text-reiki-tea rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-sm">
+                            🌿
+                        </div>
+                        <h3 class="font-serif font-black text-xl text-reiki-tea dark:text-white mb-6 tracking-wide break-keep">身體層面具體療癒</h3>
+                        <ul class="space-y-4 text-sm text-reiki-tea dark:text-slate-250 font-normal">
+                            <li class="flex items-start gap-3">
+                                <span class="text-reiki-matcha font-black text-lg leading-none select-none">✓</span>
+                                <span class="leading-relaxed font-medium">緩解急慢性疼痛<br><span class="text-xs text-reiki-matcha dark:text-slate-400 font-bold">(降神經緊張)</span></span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-reiki-matcha font-black text-lg leading-none select-none">✓</span>
+                                <span class="leading-relaxed font-medium">改善慢性失眠<br><span class="text-xs text-reiki-matcha dark:text-slate-400 font-bold">(引導腦波至α/θ波)</span></span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-reiki-matcha font-black text-lg leading-none select-none">✓</span>
+                                <span class="leading-relaxed font-medium">深度放鬆自主神經系統<br><span class="text-xs text-reiki-matcha dark:text-slate-400 font-bold">(活化副交感)</span></span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-reiki-matcha font-black text-lg leading-none select-none">✓</span>
+                                <span class="leading-relaxed font-medium">增強免疫力與加速術後康復</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 2. 心理情緒深度釋放 -->
+                    <div class="bg-white dark:bg-slate-900/60 rounded-3xl p-6 md:p-8 border-2 border-reiki-oatmeal/20 shadow-xs hover:border-reiki-matcha transition-all duration-300">
+                        <div class="w-14 h-14 bg-reiki-sage text-reiki-tea rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-sm">
+                            💔
+                        </div>
+                        <h3 class="font-serif font-black text-xl text-reiki-tea dark:text-white mb-6 tracking-wide break-keep">心理情緒深度釋放</h3>
+                        <ul class="space-y-4 text-sm text-reiki-tea dark:text-slate-250 font-normal">
+                            <li class="flex items-start gap-3">
+                                <span class="text-reiki-matcha font-black text-lg leading-none select-none">✓</span>
+                                <span class="leading-relaxed font-medium">溫和瓦解焦慮、抑鬱與恐懼</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-reiki-matcha font-black text-lg leading-none select-none">✓</span>
+                                <span class="leading-relaxed font-medium">釋放原生家庭與關係創傷心碎</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-reiki-matcha font-black text-lg leading-none select-none">✓</span>
+                                <span class="leading-relaxed font-medium">淨化大腦限制性信念<br><span class="text-xs text-reiki-matcha dark:text-slate-400 font-bold">(我不夠好)</span></span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-reiki-matcha font-black text-lg leading-none select-none">✓</span>
+                                <span class="leading-relaxed font-medium">釋放負面附著物與療癒宗教創傷</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 3. 靈性成長自我實現 -->
+                    <div class="bg-white dark:bg-slate-900/60 rounded-3xl p-6 md:p-8 border-2 border-reiki-oatmeal/20 shadow-xs hover:border-reiki-matcha transition-all duration-300">
+                        <div class="w-14 h-14 bg-reiki-sage text-reiki-tea rounded-2xl flex items-center justify-center text-3xl mb-6 shadow-sm">
+                            ✨
+                        </div>
+                        <h3 class="font-serif font-black text-xl text-reiki-tea dark:text-white mb-6 tracking-wide break-keep">靈性成長自我實現</h3>
+                        <ul class="space-y-4 text-sm text-reiki-tea dark:text-slate-250 font-normal">
+                            <li class="flex items-start gap-3">
+                                <span class="text-reiki-matcha font-black text-lg leading-none select-none">✓</span>
+                                <span class="leading-relaxed font-medium">重建深度的內在安全感與宇宙連結</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-reiki-matcha font-black text-lg leading-none select-none">✓</span>
+                                <span class="leading-relaxed font-medium">融解文化假我，自然彰顯人生藍圖</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-reiki-matcha font-black text-lg leading-none select-none">✓</span>
+                                <span class="leading-relaxed font-medium">自然實踐臼井五戒，培養無條件慈悲</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-reiki-matcha font-black text-lg leading-none select-none">✓</span>
+                                <span class="leading-relaxed font-medium">擴展意識維度，體驗萬物合一</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. 歷史源流 -->
+        <section id="origin" class="bg-reiki-cream dark:bg-reiki-darkcard rounded-3xl p-6 md:p-12 shadow-md border border-reiki-oatmeal/20 transition scroll-mt-24">
+            <div class="flex flex-col md:flex-row md:items-center justify-between mb-10 pb-8 border-b border-reiki-oatmeal/30">
+                <div class="flex items-center gap-4">
+                    <div class="w-14 h-14 rounded-2xl bg-reiki-matcha/10 text-reiki-tea dark:text-reiki-cream flex items-center justify-center text-2xl font-black flex-shrink-0">2</div>
+                    <div>
+                        <h2 class="font-serif text-2xl md:text-3xl font-bold text-reiki-tea dark:text-white break-keep">歷史源流：去神秘化的學術還原</h2>
+                        <p class="text-reiki-matcha text-xs md:text-sm mt-1 uppercase tracking-widest font-bold">Documented History & Research Reconstruction</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 垂直時間軸 (全站字型優化且文字字字對齊您上傳圖片中的文字) -->
+            <div class="relative pl-8 md:pl-16 space-y-10">
+                <div class="absolute left-[13px] md:left-[25px] top-2 bottom-2 w-0.5 bg-gradient-to-b from-reiki-tea via-reiki-matcha to-reiki-oatmeal rounded-full opacity-40"></div>
                 
                 <!-- 節點 1 -->
                 <div class="relative flex flex-col md:flex-row gap-4 md:gap-8 items-start group">
-                    <div class="absolute left-[-22px] md:left-[-47px] top-2 w-4 h-4 md:w-5 md:h-5 rounded-full bg-teal-700 dark:bg-teal-400 border-4 border-white dark:border-slate-900 shadow-md transition-transform duration-300 group-hover:scale-125 z-10"></div>
-                    <div class="md:w-36 flex-shrink-0">
-                        <span class="inline-block px-4 py-1.5 text-xs md:text-sm font-black text-teal-955 dark:text-teal-100 bg-teal-100 dark:bg-teal-950/80 border border-teal-300 dark:border-teal-900/60 rounded-full shadow-sm tracking-wide whitespace-nowrap">
-                            1914 - 1919
+                    <div class="absolute left-[-21px] md:left-[-45px] top-1 w-4 h-4 rounded-full bg-reiki-tea border-4 border-reiki-cream shadow-sm transition-transform duration-300 group-hover:scale-125 z-10"></div>
+                    <div class="md:w-44 flex-shrink-0">
+                        <span class="inline-block px-3 py-1 text-xs font-bold text-white bg-reiki-matcha rounded-full tracking-wide">
+                            1922
                         </span>
                     </div>
-                    <div class="flex-grow bg-slate-50/80 dark:bg-slate-955/40 border border-slate-200 dark:border-slate-800/80 p-6 rounded-2xl w-full">
-                        <h4 class="font-extrabold text-slate-900 dark:text-white text-base md:text-lg mb-2 flex items-center gap-2">
-                            <span class="text-teal-800 dark:text-teal-400">01.</span> 日本靈氣前身
-                        </h4>
-                        <p class="text-sm md:text-base text-slate-800 dark:text-slate-300 leading-relaxed font-normal">
-                            川上又次出版《靈氣療法》，石貫麗閣等多元流派蓬勃發展，反映大正年間融合宇宙能量與按摩療法的手位風潮。
+                    <div class="flex-grow bg-white dark:bg-slate-900 border border-reiki-oatmeal/30 p-5 rounded-2xl w-full">
+                        <h4 class="font-serif font-black text-reiki-tea dark:text-white text-base mb-2">臼井甕男 (Mikao Usui) 的開悟與誕生</h4>
+                        <p class="text-sm text-reiki-tea dark:text-slate-200 leading-relaxed font-normal text-justify">
+                            在大正時期（1922年），臼井甕男先生於京都鞍馬山進行為期21天的斷食冥想修行。在最後一天，他體驗到強大的宇宙生命能量流經身心，因而開悟並發現了靈氣。隨後他在東京創設「臼井靈氣療法學會」，將這門慈悲的能量技術傳授給大眾。
                         </p>
                     </div>
                 </div>
 
                 <!-- 節點 2 -->
                 <div class="relative flex flex-col md:flex-row gap-4 md:gap-8 items-start group">
-                    <div class="absolute left-[-22px] md:left-[-47px] top-2 w-4 h-4 md:w-5 md:h-5 rounded-full bg-teal-700 dark:bg-teal-400 border-4 border-white dark:border-slate-900 shadow-md transition-transform duration-300 group-hover:scale-125 z-10"></div>
-                    <div class="md:w-36 flex-shrink-0">
-                        <span class="inline-block px-4 py-1.5 text-xs md:text-sm font-black text-teal-955 dark:text-teal-100 bg-teal-100 dark:bg-teal-955/85 border border-teal-300 dark:border-teal-900/60 rounded-full shadow-sm tracking-wide whitespace-nowrap">
-                            1922
+                    <div class="absolute left-[-21px] md:left-[-45px] top-1 w-4 h-4 rounded-full bg-reiki-matcha border-4 border-reiki-cream shadow-sm transition-transform duration-300 group-hover:scale-125 z-10"></div>
+                    <div class="md:w-44 flex-shrink-0">
+                        <span class="inline-block px-3 py-1 text-xs font-bold text-white bg-reiki-matcha rounded-full tracking-wide">
+                            1930 年代
                         </span>
                     </div>
-                    <div class="flex-grow bg-slate-50/80 dark:bg-slate-955 border border-slate-200 dark:border-slate-800/80 p-6 rounded-2xl w-full">
-                        <h4 class="font-extrabold text-slate-900 dark:text-white text-base md:text-lg mb-2 flex items-center gap-2">
-                            <span class="text-teal-800 dark:text-teal-400">02.</span> 臼井甕男創立學會
-                        </h4>
-                        <p class="text-sm md:text-base text-slate-800 dark:text-slate-300 leading-relaxed font-normal">
-                            臼井甕男於鞍馬山靜心覺醒，融合「五戒精神」與高度系統化的符號與手位傳授，創立「臼井靈氣療法學會」。
+                    <div class="flex-grow bg-white dark:bg-slate-900 border border-reiki-oatmeal/30 p-5 rounded-2xl w-full">
+                        <h4 class="font-serif font-black text-reiki-tea dark:text-white text-base mb-2">林忠次郎 (Chujiro Hayashi) 將其結構化</h4>
+                        <p class="text-sm text-reiki-tea dark:text-slate-200 leading-relaxed font-normal text-justify">
+                            作為退役的海軍軍醫，林忠次郎大師將原本偏向精神冥想修行的靈氣與醫學臨床相結合。他將靈氣轉化為更適合現代床位操作的系統，確立了全身手位規範與「靈授」技術，由多位療癒師共同施作，使其更容易被大眾理解與實踐。
                         </p>
                     </div>
                 </div>
 
                 <!-- 節點 3 -->
                 <div class="relative flex flex-col md:flex-row gap-4 md:gap-8 items-start group">
-                    <div class="absolute left-[-22px] md:left-[-47px] top-2 w-4 h-4 md:w-5 md:h-5 rounded-full bg-teal-700 dark:bg-teal-400 border-4 border-white dark:border-slate-900 shadow-md transition-transform duration-300 group-hover:scale-125 z-10"></div>
-                    <div class="md:w-36 flex-shrink-0">
-                        <span class="inline-block px-4 py-1.5 text-xs md:text-sm font-black text-teal-955 dark:text-teal-100 bg-teal-100 dark:bg-slate-950/40 border border-teal-300 dark:border-teal-900/60 rounded-full shadow-sm tracking-wide whitespace-nowrap">
-                            1935 - 1980
+                    <div class="absolute left-[-21px] md:left-[-45px] top-1 w-4 h-4 rounded-full bg-reiki-oatmeal border-4 border-reiki-cream shadow-sm transition-transform duration-300 group-hover:scale-125 z-10"></div>
+                    <div class="md:w-44 flex-shrink-0">
+                        <span class="inline-block px-3 py-1 text-xs font-bold text-white bg-reiki-matcha rounded-full tracking-wide">
+                            二戰前後
                         </span>
                     </div>
-                    <div class="flex-grow bg-slate-50/80 dark:bg-slate-950/40 border border-slate-200 dark:border-slate-800/80 p-6 rounded-2xl w-full">
-                        <h4 class="font-extrabold text-slate-900 dark:text-white text-base md:text-lg mb-2 flex items-center gap-2">
-                            <span class="text-teal-800 dark:text-teal-400">03.</span> 西方本土化傳播
-                        </h4>
-                        <p class="text-sm md:text-base text-slate-800 dark:text-slate-300 leading-relaxed font-normal">
-                            林忠次郎將靈氣帶往夏威夷傳授予高田哈瓦優，其將系統本土化包裝並推廣至全球。
+                    <div class="flex-grow bg-white dark:bg-slate-900 border border-reiki-oatmeal/30 p-5 rounded-2xl w-full">
+                        <h4 class="font-serif font-black text-reiki-tea dark:text-white text-base mb-2">高田哈瓦優 (Hawayo Takata) 與全球化</h4>
+                        <p class="text-sm text-reiki-tea dark:text-slate-200 leading-relaxed font-normal text-justify">
+                            她是將靈氣從日本傳播到夏威夷及西方世界的第一人。在二戰前後的動盪時期，她通過改編歷史故事（使其更容易被西方基督教社會接受）與建立嚴格的收費及師資認證制度，成功在西方社會普及了靈氣，使其成為全球皆知的自療與舒壓體系。
                         </p>
                     </div>
                 </div>
 
                 <!-- 節點 4 -->
                 <div class="relative flex flex-col md:flex-row gap-4 md:gap-8 items-start group">
-                    <div class="absolute left-[-22px] md:left-[-47px] top-2 w-4 h-4 md:w-5 md:h-5 rounded-full bg-amber-500 border-4 border-white dark:border-slate-900 shadow-md transition-transform duration-300 group-hover:scale-125 z-10"></div>
-                    <div class="md:w-36 flex-shrink-0">
-                        <span class="inline-block px-4 py-1.5 text-xs md:text-sm font-black text-amber-955 dark:text-amber-100 bg-amber-100 dark:bg-slate-955 border border-amber-300 dark:border-amber-900/60 rounded-full shadow-sm tracking-wide whitespace-nowrap">
-                            2014 - 至今
+                    <div class="absolute left-[-21px] md:left-[-45px] top-1 w-4 h-4 rounded-full bg-reiki-tea border-4 border-reiki-cream shadow-sm transition-transform duration-300 group-hover:scale-125 z-10"></div>
+                    <div class="md:w-44 flex-shrink-0">
+                        <span class="inline-block px-3 py-1 text-xs font-bold text-white bg-reiki-matcha rounded-full tracking-wide">
+                            1989 - 至今
                         </span>
                     </div>
-                    <div class="flex-grow bg-slate-50/80 dark:bg-slate-955 border border-slate-200 dark:border-slate-800/80 p-6 rounded-2xl w-full">
-                        <h4 class="font-extrabold text-slate-900 dark:text-white text-base md:text-lg mb-2 flex items-center gap-2">
-                            <span class="text-amber-605 dark:text-amber-400">04.</span> 聖火靈氣與世界和平
-                        </h4>
-                        <p class="text-sm md:text-base text-slate-800 dark:text-slate-300 leading-relaxed font-normal">
-                            William Lee Rand 獲得更高維聖火能量，去除複雜的導師吹氣點化，改以直接共鳴的「安放/點燃」引領靈氣跨向無國界線上時代。
+                    <div class="flex-grow bg-white dark:bg-slate-900 border border-reiki-oatmeal/30 p-5 rounded-2xl w-full">
+                        <h4 class="font-serif font-black text-reiki-tea dark:text-white text-base mb-2">William Lee Rand 與 ICRT 的歷史還原</h4>
+                        <p class="text-sm text-reiki-tea dark:text-slate-200 leading-relaxed font-normal text-justify">
+                            國際靈氣訓練中心（ICRT）創辦人威廉·李·蘭德，通過大量的歷史文獻學術考證與實地走訪，還原了去神話化的、真實且客觀的靈氣歷史。他更在2014年引入了純淨高頻、去人為小我干擾的 Holy Fire® 聖火靈氣，推動了靈氣在現代的偉大演化與集體和平調頻。
                         </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 主題 2：關於臼井靈氣與聖火演變 -->
-        <section id="about" class="bg-white dark:bg-slate-900 rounded-3xl p-6 md:p-12 shadow-xl border border-slate-200 dark:border-slate-800 transition">
-            <!-- 模塊標頭 -->
-            <div class="flex flex-col md:flex-row md:items-center justify-between mb-10 pb-8 border-b border-slate-200 dark:border-slate-800">
+        <!-- 3. 核心價值：臼井五戒 -->
+        <section id="values" class="bg-reiki-cream dark:bg-reiki-darkcard rounded-3xl p-6 md:p-12 shadow-md border border-reiki-oatmeal/20 transition scroll-mt-24">
+            <div class="flex flex-col md:flex-row md:items-center justify-between mb-10 pb-8 border-b border-reiki-oatmeal/30">
                 <div class="flex items-center gap-4">
-                    <div class="w-14 h-14 rounded-2xl bg-teal-100 dark:bg-teal-900/40 text-teal-900 dark:text-teal-300 flex items-center justify-center text-2xl font-black flex-shrink-0">2</div>
+                    <div class="w-14 h-14 rounded-2xl bg-reiki-matcha/10 text-reiki-tea dark:text-reiki-cream flex items-center justify-center text-2xl font-black flex-shrink-0">3</div>
                     <div>
-                        <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-slate-955 dark:text-white break-keep">關於臼井靈氣：定義與能量頻率演變</h2>
-                        <p class="text-slate-700 dark:text-slate-300 text-sm md:text-base mt-1.5 font-medium break-keep">深入本質，觀看靈氣從 3D 地球向 5D+ 聖火能量之維度躍遷</p>
+                        <h2 class="font-serif text-2xl md:text-3xl font-bold text-reiki-tea dark:text-white break-keep">核心價值：臼井五戒與內在修行</h2>
+                        <p class="text-reiki-matcha text-xs md:text-sm mt-1 uppercase tracking-widest font-bold">The Precepts & Mental Tuning</p>
                     </div>
                 </div>
             </div>
 
-            <!-- 【關於靈氣起點卡片】 -->
-            <div class="bg-gradient-to-r from-teal-50 to-teal-100/30 dark:from-slate-950 dark:to-slate-900/60 p-6 md:p-8 rounded-2xl border border-teal-200 dark:border-slate-800 mb-10 flex flex-col sm:flex-row gap-6 items-center shadow-sm">
-                <div class="flex items-center justify-center gap-2 bg-gradient-to-tr from-teal-800 to-emerald-700 text-white w-24 h-24 rounded-2xl shadow-md flex-shrink-0">
-                    <div class="text-center">
-                        <span class="text-2xl md:text-3xl font-black block leading-none break-keep">靈氣</span>
-                        <span class="text-[10px] md:text-xs opacity-90 font-mono tracking-widest mt-1.5 uppercase block leading-none break-keep">REIKI</span>
-                    </div>
-                </div>
-                <div class="flex-grow">
-                    <h3 class="text-lg md:text-xl font-black text-slate-955 dark:text-white mb-2 break-keep">什麼是靈氣？</h3>
-                    <p class="text-sm md:text-base text-slate-800 dark:text-slate-300 leading-relaxed font-normal text-justify">
-                        靈氣最早由日本的<strong>臼井甕男（Mikao Usui）</strong>大師於大正年間整合創立，是一種自然、安全且不具侵入性的能量調節技術。在日文中，<strong>「Rei (靈)」</strong>代表宇宙神聖智慧與靈性；<strong>「Ki (氣)」</strong>則指代流經並滋養萬物的生命能量。靈氣即是<strong>「受靈性智慧指引的宇宙生命能量」</strong>。此系統無需特定天賦，任何人皆能藉由共振傳導，調和個體失衡能量，啟動身心深層放鬆與自癒機制。
-                    </p>
-                </div>
-            </div>
-
-            <!-- 頻率演變互動儀 -->
-            <div class="grid lg:grid-cols-12 gap-10">
-                <!-- 左側：頻率控制器與儀表 -->
-                <div class="lg:col-span-5 bg-slate-50 dark:bg-slate-955 p-6 md:p-8 rounded-2xl border border-slate-200 dark:border-slate-800 flex flex-col justify-between shadow-inner">
-                    <div>
-                        <h3 class="font-extrabold text-slate-900 dark:text-white mb-2 text-base tracking-wide break-keep">靈氣頻率演進控制盤</h3>
-                        <p class="text-xs md:text-sm text-slate-700 dark:text-slate-400 mb-8 leading-relaxed">點擊按鈕切換，體驗能量的進化與傳導特質</p>
-                        
-                        <div class="space-y-4">
-                            <button onclick="selectFrequency(1)" id="freqBtn1" class="w-full text-left px-4 md:px-5 py-4 rounded-xl border-2 transition-all flex items-center justify-between bg-teal-800 text-white border-teal-800 shadow-md">
-                                <div class="flex items-center gap-3 min-w-0">
-                                    <span class="text-2xl flex-shrink-0">🌿</span>
-                                    <div class="min-w-0 pr-2">
-                                        <p class="text-xs font-semibold text-teal-100 dark:text-teal-300">第一階段</p>
-                                        <h4 class="font-bold text-sm md:text-base break-keep">傳統臼井靈氣</h4>
-                                    </div>
-                                </div>
-                                <span class="text-[10px] md:text-xs font-mono font-bold bg-white/20 px-2 py-1 rounded flex-shrink-0 whitespace-nowrap">地表療癒</span>
-                            </button>
-
-                            <button onclick="selectFrequency(2)" id="freqBtn2" class="w-full text-left px-4 md:px-5 py-4 rounded-xl border-2 border-slate-300 dark:border-slate-805 hover:border-slate-400 dark:hover:border-slate-707 transition-all flex items-center justify-between text-slate-800 dark:text-slate-200">
-                                <div class="flex items-center gap-3 min-w-0">
-                                    <span class="text-2xl flex-shrink-0">⛰️</span>
-                                    <div class="min-w-0 pr-2">
-                                        <p class="text-xs text-slate-700 dark:text-slate-400">第二階段</p>
-                                        <h4 class="font-bold text-sm md:text-base break-keep">臼井/西藏靈氣</h4>
-                                    </div>
-                                </div>
-                                <span class="text-[10px] md:text-xs font-mono font-bold bg-slate-200/80 dark:bg-slate-800 px-2 py-1 rounded flex-shrink-0 whitespace-nowrap">星光跨越</span>
-                            </button>
-
-                            <button onclick="selectFrequency(3)" id="freqBtn3" class="w-full text-left px-4 md:px-5 py-4 rounded-xl border-2 border-slate-300 dark:border-slate-805 hover:border-slate-400 dark:hover:border-slate-707 transition-all flex items-center justify-between text-slate-800 dark:text-slate-200">
-                                <div class="flex items-center gap-3 min-w-0">
-                                    <span class="text-2xl flex-shrink-0">🔥</span>
-                                    <div class="min-w-0 pr-2">
-                                        <p class="text-xs text-slate-700 dark:text-slate-400">第三階段</p>
-                                        <h4 class="font-bold text-sm md:text-base break-keep">聖火 I & II</h4>
-                                    </div>
-                                </div>
-                                <span class="text-[10px] md:text-xs font-mono font-bold bg-slate-200/80 dark:bg-slate-800 px-2 py-1 rounded flex-shrink-0 whitespace-nowrap">神聖意識</span>
-                            </button>
-
-                            <button onclick="selectFrequency(4)" id="freqBtn4" class="w-full text-left px-4 md:px-5 py-4 rounded-xl border-2 border-slate-300 dark:border-slate-805 hover:border-slate-400 dark:hover:border-slate-707 transition-all flex items-center justify-between text-slate-805 dark:text-slate-202">
-                                <div class="flex items-center gap-3 min-w-0">
-                                    <span class="text-2xl flex-shrink-0">🌍</span>
-                                    <div class="min-w-0 pr-2">
-                                        <p class="text-xs text-slate-700 dark:text-slate-400">第四階段</p>
-                                        <h4 class="font-bold text-sm md:text-base break-keep">世界和平聖火 III</h4>
-                                    </div>
-                                </div>
-                                <span class="text-[10px] md:text-xs font-mono font-bold bg-slate-200/80 dark:bg-slate-800 px-2 py-1 rounded flex-shrink-0 whitespace-nowrap">高頻集體</span>
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- 頻率能量長條顯示 -->
-                    <div class="mt-10 pt-8 border-t border-slate-200 dark:border-slate-800">
-                        <div class="flex justify-between text-xs md:text-sm text-slate-700 dark:text-slate-300 mb-2 font-bold font-sans">
-                            <span>頻率細緻度</span>
-                            <span id="freqPercent" class="font-mono font-black text-teal-800 dark:text-teal-400 text-base whitespace-nowrap">45%</span>
-                        </div>
-                        <div class="w-full h-4 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden shadow-inner">
-                            <div id="freqBar" class="h-full bg-gradient-to-r from-teal-700 via-emerald-500 to-amber-500 transition-all duration-500" style="width: 45%;"></div>
-                        </div>
-                    </div>
+            <!-- 五戒引導卡片 -->
+            <div class="max-w-4xl mx-auto space-y-8">
+                <div class="text-center">
+                    <p class="font-serif text-lg text-reiki-tea dark:text-slate-200 italic mb-1">「招福之秘法，萬病之靈藥」</p>
+                    <p class="text-xs text-reiki-matcha dark:text-slate-400 tracking-widest">晨昏合掌，誠心默念。點擊卡片，查看五戒在現代生活中的心理調頻意涵：</p>
                 </div>
 
-                <!-- 右側：動態詳情面板 (無高度限制) -->
-                <div class="lg:col-span-7 flex flex-col justify-between">
-                    <div id="freqDetailPanel" class="bg-teal-50/40 dark:bg-slate-950/40 p-6 md:p-8 rounded-2xl border border-teal-200 dark:border-slate-800 h-auto transition-all duration-300 shadow-sm">
-                        <div class="flex items-center gap-3 text-teal-955 dark:text-teal-400 font-black text-xl mb-6">
-                            <span id="freqEmoji" class="text-3xl flex-shrink-0">🌿</span>
-                            <h3 id="freqTitle" class="text-base md:text-lg lg:text-xl break-keep">傳統臼井靈氣</h3>
-                        </div>
-                        
-                        <div class="grid grid-cols-2 gap-4 md:gap-6 mb-8">
-                            <div class="p-4 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
-                                <span class="block text-xs md:text-sm font-semibold text-slate-550 dark:text-slate-400 mb-1 break-keep">傳承核心</span>
-                                <span id="freqCore" class="text-sm md:text-base font-extrabold text-slate-955 dark:text-white break-keep">地球生命力</span>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 perspective-1000">
+                    
+                    <!-- 卡片 1 -->
+                    <div class="w-full h-72 cursor-pointer" onclick="flipCard(this)">
+                        <div class="card-inner relative w-full h-full transform-style-3d">
+                            <!-- 正面 -->
+                            <div class="absolute inset-0 bg-gradient-to-br from-reiki-tea via-reiki-matcha to-slate-900 text-[#FAF6EE] rounded-2xl p-5 flex flex-col justify-between backface-hidden shadow-md border border-white/5">
+                                <span class="text-[10px] bg-white/10 self-start px-2.5 py-1 rounded font-mono font-bold text-[#FAF6EE]">01</span>
+                                <div class="text-center my-auto">
+                                    <h3 class="font-serif text-3xl font-bold tracking-widest mb-1 text-white">怒るな</h3>
+                                    <p class="text-xs font-serif text-slate-350">Ikaru na</p>
+                                </div>
+                                <span class="text-xs font-bold text-center border-t border-white/10 pt-3 flex items-center justify-center gap-1 text-[#FAF6EE]">今日不生氣 ➔</span>
                             </div>
-                            <div class="p-4 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
-                                <span class="block text-xs md:text-sm font-semibold text-slate-550 dark:text-slate-400 mb-1 break-keep">傳遞方式</span>
-                                <span id="freqTransmission" class="text-sm md:text-base font-extrabold text-slate-955 dark:text-white break-keep">一對一 實體接觸與口述</span>
-                            </div>
-                        </div>
-
-                        <div class="space-y-6 text-slate-808 dark:text-slate-202 text-sm md:text-base leading-relaxed">
-                            <div>
-                                <h4 class="font-extrabold text-slate-955 dark:text-white text-sm md:text-base uppercase tracking-wider mb-2 break-keep">🌿 能量特質簡述</h4>
-                                <p id="freqDesc" class="font-normal text-slate-805 dark:text-slate-303">這是 1922 年由臼井甕男創立的經典體系。能量主要在肉體、情緒體和低維度乙太體流動，針對身體壓力釋放與身心修復具有無可比擬的溫和基礎效果。</p>
-                            </div>
-                            <div>
-                                <h4 class="font-extrabold text-slate-955 dark:text-white text-sm md:text-base uppercase tracking-wider mb-2 break-keep">⚡️ 核心特質比較</h4>
-                                <ul id="freqPros" class="list-disc list-inside space-y-2 text-sm md:text-base text-slate-880 dark:text-slate-303 leading-relaxed font-normal">
-                                    <li>需要導師使用個人呼吸與手動點化儀式。</li>
-                                    <li>符號包含力量、情緒、遠距等三個基本物理維度。</li>
-                                    <li>能量感受較偏溫熱、厚實、重力感。</li>
-                                </ul>
+                            <!-- 背面 -->
+                            <div class="absolute inset-0 bg-white dark:bg-slate-900 border-2 border-reiki-matcha text-reiki-tea dark:text-slate-200 rounded-2xl p-5 flex flex-col justify-between rotate-y-180 backface-hidden shadow-md">
+                                <h4 class="font-serif font-black text-reiki-tea dark:text-reiki-matcha text-sm border-b border-reiki-oatmeal/20 pb-1.5 break-keep">關係與情緒界線</h4>
+                                <p class="text-[11px] text-reiki-tea dark:text-slate-200 leading-relaxed my-auto font-normal text-justify">
+                                    生氣是主權被小我侵犯時的防禦。不壓抑情緒，而是以聖火照亮憤怒底層被忽視的創傷，轉化為溫和的清明界線。
+                                </p>
+                                <div class="bg-reiki-sage dark:bg-slate-950 text-reiki-tea dark:text-white p-2 text-[10px] font-bold text-center rounded-lg shadow-inner">
+                                    「我選擇溫和、平靜與自我負責」
+                                </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- 卡片 2 -->
+                    <div class="w-full h-72 cursor-pointer" onclick="flipCard(this)">
+                        <div class="card-inner relative w-full h-full transform-style-3d">
+                            <!-- 正面 -->
+                            <div class="absolute inset-0 bg-gradient-to-br from-reiki-tea via-reiki-matcha to-slate-900 text-[#FAF6EE] rounded-2xl p-5 flex flex-col justify-between backface-hidden shadow-md border border-white/5">
+                                <span class="text-[10px] bg-white/10 self-start px-2.5 py-1 rounded font-mono font-bold text-[#FAF6EE]">02</span>
+                                <div class="text-center my-auto">
+                                    <h3 class="font-serif text-3xl font-bold tracking-widest mb-1 text-white">心配すな</h3>
+                                    <p class="text-xs font-serif text-slate-350">Shinpai suna</p>
+                                </div>
+                                <span class="text-xs font-bold text-center border-t border-white/10 pt-3 flex items-center justify-center gap-1 text-[#FAF6EE]">今日不憂慮 ➔</span>
+                            </div>
+                            <!-- 背面 -->
+                            <div class="absolute inset-0 bg-white dark:bg-slate-900 border-2 border-reiki-matcha text-reiki-tea dark:text-slate-200 rounded-2xl p-5 flex flex-col justify-between rotate-y-180 backface-hidden shadow-md">
+                                <h4 class="font-serif font-black text-reiki-tea dark:text-reiki-matcha text-sm border-b border-reiki-oatmeal/20 pb-1.5 break-keep">臣服宇宙的慈悲</h4>
+                                <p class="text-[11px] text-reiki-tea dark:text-slate-200 leading-relaxed my-auto font-normal text-justify">
+                                    憂慮是試圖以大腦小我控制不確定性的幻覺。當下把掌控欲臣服給高維度宇宙生命流，深信每一步都有最好的恩寵指引。
+                                </p>
+                                <div class="bg-reiki-sage dark:bg-slate-950 text-reiki-tea dark:text-white p-2 text-[10px] font-bold text-center rounded-lg shadow-inner">
+                                    "I trust the flow of Universal Love"
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 卡片 3 -->
+                    <div class="w-full h-72 cursor-pointer" onclick="flipCard(this)">
+                        <div class="card-inner relative w-full h-full transform-style-3d">
+                            <!-- 正面 -->
+                            <div class="absolute inset-0 bg-gradient-to-br from-reiki-tea via-reiki-matcha to-slate-900 text-[#FAF6EE] rounded-2xl p-5 flex flex-col justify-between backface-hidden shadow-md border border-white/5">
+                                <span class="text-[10px] bg-white/10 self-start px-2.5 py-1 rounded font-mono font-bold text-[#FAF6EE]">03</span>
+                                <div class="text-center my-auto">
+                                    <h3 class="font-serif text-3xl font-bold tracking-widest mb-1 text-white">感謝して</h3>
+                                    <p class="text-xs font-serif text-slate-300">Kansha shite</p>
+                                </div>
+                                <span class="text-xs font-bold text-center border-t border-white/10 pt-3 flex items-center justify-center gap-1 text-[#FAF6EE]">今日感恩 ➔</span>
+                            </div>
+                            <!-- 背面 -->
+                            <div class="absolute inset-0 bg-white dark:bg-slate-900 border-2 border-reiki-matcha text-reiki-tea dark:text-slate-200 rounded-2xl p-5 flex flex-col justify-between rotate-y-180 backface-hidden shadow-md">
+                                <h4 class="font-serif font-black text-reiki-tea dark:text-reiki-matcha text-sm border-b border-reiki-oatmeal/20 pb-1.5 break-keep">同調富足振動頻率</h4>
+                                <p class="text-[11px] text-reiki-tea dark:text-slate-200 leading-relaxed my-auto font-normal text-justify">
+                                    感恩是跨越物質匱乏感、同調宇宙至高頻率的通關密鑰。當內心對眼前的微小事物升起純粹感恩，生命之流便會成倍擴張。
+                                </p>
+                                <div class="bg-reiki-sage dark:bg-slate-950 text-reiki-tea dark:text-white p-2 text-[10px] font-bold text-center rounded-lg shadow-inner">
+                                    「今日我對萬物生命常懷敬畏與感謝」
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 卡片 4 -->
+                    <div class="w-full h-72 cursor-pointer" onclick="flipCard(this)">
+                        <div class="card-inner relative w-full h-full transform-style-3d">
+                            <!-- 正面 -->
+                            <div class="absolute inset-0 bg-gradient-to-br from-reiki-tea via-reiki-matcha to-slate-900 text-[#FAF6EE] rounded-2xl p-5 flex flex-col justify-between backface-hidden shadow-md border border-white/5">
+                                <span class="text-[10px] bg-white/10 self-start px-2.5 py-1 rounded font-mono font-bold text-[#FAF6EE]">04</span>
+                                <div class="text-center my-auto">
+                                    <h3 class="font-serif text-3xl font-bold tracking-widest mb-1 text-white">業を勵め</h3>
+                                    <p class="text-xs font-serif text-slate-350">Gō wo hagame</p>
+                                </div>
+                                <span class="text-xs font-bold text-center border-t border-white/10 pt-3 flex items-center justify-center gap-1 text-[#FAF6EE]">今日誠實盡責 ➔</span>
+                            </div>
+                            <!-- 背面 -->
+                            <div class="absolute inset-0 bg-white dark:bg-slate-900 border-2 border-reiki-matcha text-reiki-tea dark:text-slate-200 rounded-2xl p-5 flex flex-col justify-between rotate-y-180 backface-hidden shadow-md">
+                                <h4 class="font-serif font-black text-reiki-tea dark:text-reiki-matcha text-sm border-b border-reiki-oatmeal/20 pb-1.5 break-keep">靈魂契約的實踐</h4>
+                                <p class="text-[11px] text-reiki-tea dark:text-slate-200 leading-relaxed my-auto font-normal text-justify">
+                                    在塵世中的修行，不在深山野林，而在每一個當下。老實面對靈魂的成長課題，誠實、溫和地在家庭與職場中實踐真理。
+                                </p>
+                                <div class="bg-reiki-sage dark:bg-slate-950 text-reiki-tea dark:text-white p-2 text-[10px] font-bold text-center rounded-lg shadow-inner">
+                                    「今日我以最真誠的心生活與工作」
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 卡片 5 -->
+                    <div class="w-full h-72 cursor-pointer" onclick="flipCard(this)">
+                        <div class="card-inner relative w-full h-full transform-style-3d">
+                            <!-- 正面 -->
+                            <div class="absolute inset-0 bg-gradient-to-br from-reiki-tea via-reiki-matcha to-slate-900 text-[#FAF6EE] rounded-2xl p-5 flex flex-col justify-between backface-hidden shadow-md border border-white/5">
+                                <span class="text-[10px] bg-white/10 self-start px-2.5 py-1 rounded font-mono font-bold text-[#FAF6EE]">05</span>
+                                <div class="text-center my-auto">
+                                    <h3 class="font-serif text-3xl font-bold tracking-widest mb-1 text-white">人に親切に</h3>
+                                    <p class="text-xs font-serif text-slate-300">Hito ni shinsetsu ni</p>
+                                </div>
+                                <span class="text-xs font-bold text-center border-t border-white/10 pt-3 flex items-center justify-center gap-1 text-[#FAF6EE]">今日親切待人 ➔</span>
+                            </div>
+                            <!-- 背面 -->
+                            <div class="absolute inset-0 bg-white dark:bg-slate-900 border-2 border-reiki-matcha text-reiki-tea dark:text-slate-200 rounded-2xl p-5 flex flex-col justify-between rotate-y-180 backface-hidden shadow-md">
+                                <h4 class="font-serif font-black text-reiki-tea dark:text-reiki-matcha text-sm border-b border-reiki-oatmeal/20 pb-1.5 break-keep">體悟同源與萬物互聯</h4>
+                                <p class="text-[11px] text-reiki-tea dark:text-slate-200 leading-relaxed my-auto font-normal text-justify">
+                                    一切生命在更高次元本是一體。親切對待生命、大自然與他人，實則是在溫柔撫平、擁抱與療癒最真實、高維的自己。
+                                </p>
+                                <div class="bg-reiki-sage dark:bg-slate-950 text-reiki-tea dark:text-white p-2 text-[10px] font-bold text-center rounded-lg shadow-inner">
+                                    "I choose kindness for all beings"
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
 
-        <!-- 主題 3：身心平衡的自我結構學說 (頂部橫向標籤 Tabs 切換 + 下方全寬內容面板，與生活實踐完美同步對位) -->
-        <section id="balance" class="bg-white dark:bg-slate-900 rounded-3xl p-6 md:p-12 shadow-xl border border-slate-200 dark:border-slate-800 transition">
-            <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 pb-6 border-b border-slate-200 dark:border-slate-800">
+        <!-- 4. 日常情境：生活能量調頻 -->
+        <section id="daily" class="bg-reiki-cream dark:bg-reiki-darkcard rounded-3xl p-6 md:p-12 shadow-md border border-reiki-oatmeal/20 transition scroll-mt-24">
+            <div class="flex flex-col md:flex-row md:items-center justify-between mb-10 pb-8 border-b border-reiki-oatmeal/30">
                 <div class="flex items-center gap-4">
-                    <div class="w-14 h-14 rounded-2xl bg-teal-100 dark:bg-teal-900/40 text-teal-900 dark:text-teal-300 flex items-center justify-center text-2xl font-black flex-shrink-0">3</div>
+                    <div class="w-14 h-14 rounded-2xl bg-reiki-matcha/10 text-reiki-tea dark:text-reiki-cream flex items-center justify-center text-2xl font-black flex-shrink-0">4</div>
                     <div>
-                        <h2 class="text-2xl md:text-3xl lg:text-4xl font-black text-slate-955 dark:text-white break-keep">身心平衡：自我結構的三維解析</h2>
-                        <p class="text-slate-700 dark:text-slate-300 text-sm md:text-base mt-1.5 font-medium break-keep">切換上方自我意識核心層級，解析「小我制約」與「本源能量自我」之關係</p>
+                        <h2 class="font-serif text-2xl md:text-3xl font-bold text-reiki-tea dark:text-white break-keep">日常情境：生活能量調頻</h2>
+                        <p class="text-reiki-matcha text-xs md:text-sm mt-1 uppercase tracking-widest font-bold">Daily Life Tuning Scenarios</p>
                     </div>
                 </div>
             </div>
 
-            <!-- 頂部橫向標籤列 -->
-            <div class="flex overflow-x-auto pb-4 mb-8 gap-3 hide-scrollbar sm:flex-wrap sm:justify-center border-b border-slate-100 dark:border-slate-800/60">
-                <button onclick="selectSelfLevel('authentic')" id="selfTab_authentic" class="flex items-center gap-2 px-5 py-3 rounded-full border-2 transition-all font-bold text-sm bg-teal-800 text-white border-teal-855 shadow-md whitespace-nowrap">
-                    <span>☀️</span> 真實自我
-                </button>
-                <button onclick="selectSelfLevel('dormant')" id="selfTab_dormant" class="flex items-center gap-2 px-5 py-3 rounded-full border-2 transition-all font-bold text-sm border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-slate-400 dark:hover:border-slate-700 whitespace-nowrap">
-                    <span>🌱</span> 沉睡自我
-                </button>
-                <button onclick="selectSelfLevel('cultural')" id="selfTab_cultural" class="flex items-center gap-2 px-5 py-3 rounded-full border-2 transition-all font-bold text-sm border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-slate-400 dark:hover:border-slate-700 whitespace-nowrap">
-                    <span>🎭</span> 制約自我
-                </button>
-            </div>
-
-            <!-- 下方全寬自適應細節與視覺對照面板 -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
-                
-                <!-- 左側：多層自我同心圓圖 (精巧緊湊，動態高亮反饋) -->
-                <div class="lg:col-span-4 flex flex-col items-center justify-center bg-slate-50 dark:bg-slate-955 p-6 rounded-2xl border border-slate-150 dark:border-slate-800 shadow-inner">
-                    <div class="relative w-56 h-56 sm:w-64 sm:h-64 flex items-center justify-center">
-                        <!-- 最外層：制約自我環 -->
-                        <div id="ring_cultural" class="absolute w-56 h-56 sm:w-64 sm:h-64 rounded-full border-2 border-dashed transition-all duration-500"></div>
-                        <!-- 中層：沉睡自我環 -->
-                        <div id="ring_dormant" class="absolute w-40 h-40 sm:w-48 sm:h-48 rounded-full border-2 border-dashed transition-all duration-500"></div>
-                        <!-- 內層核心：真實自我環 -->
-                        <div id="ring_authentic" class="absolute w-24 h-24 sm:w-28 sm:h-28 rounded-full border-4 transition-all duration-500 flex items-center justify-center">
-                            <span class="text-3xl animate-spin" style="animation-duration: 15s">☀️</span>
-                        </div>
-                    </div>
-                    <span class="text-xs text-slate-555 dark:text-slate-400 mt-4 tracking-wider text-center font-bold">微觀同心圓意識結構圖</span>
-                </div>
-
-                <!-- 右側：自我結構詳細剖析面板 (全寬無高度壓縮) -->
-                <div class="lg:col-span-8 flex flex-col justify-between">
-                    <div class="bg-slate-50 dark:bg-slate-955 p-6 md:p-8 rounded-2xl border border-slate-200 dark:border-slate-805 shadow-sm h-auto flex flex-col justify-between space-y-6">
-                        <div>
-                            <div class="flex items-center gap-3 mb-4">
-                                <span id="selfBadge" class="text-xs md:text-sm font-bold px-4 py-1.5 rounded-full bg-amber-500 text-white whitespace-nowrap flex-shrink-0">內核心</span>
-                                <h3 id="selfTitle" class="text-lg md:text-xl lg:text-2xl font-black text-slate-955 dark:text-white leading-snug break-keep">真實自我</h3>
-                            </div>
-                            <p id="selfDesc" class="text-slate-808 dark:text-slate-202 text-sm md:text-base leading-relaxed mb-6 font-normal">
-                                這是我們最核心、與宇宙最純淨能量直接連結的部分。這不是創造出來的，而是我們天生就有的平靜、無限的愛與生活智慧。靈氣最主要的目的，就是幫我們撥開外在的重重面具，重新回到這個充滿力量與平靜的核心。
-                            </p>
-                        </div>
-                        
-                        <!-- 心理機制提示 -->
-                        <div class="p-5 bg-teal-50 dark:bg-teal-955/20 rounded-xl border border-teal-200 dark:border-teal-900/30 shadow-inner">
-                            <h4 class="font-extrabold text-sm md:text-base text-teal-955 dark:text-teal-400 mb-2 flex items-center gap-2">
-                                <span>💡</span> 靈氣自我修補作用機制
-                            </h4>
-                            <p id="selfAction" class="text-xs md:text-sm text-slate-705 dark:text-slate-303 leading-relaxed font-normal">
-                                能量會直接注入心靈核心的「真實自我」，讓它像小太陽般強壯並向外照耀，自然而然地溶化並釋放那些外界期待或受創信念所產生的面具與防備。
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- 主題 4：日常情境 ── 生活能量調頻 (白話重構，去除所有英文單字) -->
-        <section id="daily" class="bg-white dark:bg-slate-900 rounded-3xl p-6 md:p-12 shadow-xl border border-slate-200 dark:border-slate-800 transition">
-            <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 pb-6 border-b border-slate-200 dark:border-slate-800">
-                <div class="flex items-center gap-4">
-                    <div class="w-14 h-14 rounded-2xl bg-teal-105 dark:bg-teal-900/40 text-teal-900 dark:text-teal-300 flex items-center justify-center text-2xl font-black flex-shrink-0">🌸</div>
-                    <div>
-                        <h2 class="text-2xl md:text-3xl lg:text-4xl font-black text-slate-955 dark:text-white break-keep">日常情境：生活能量調頻</h2>
-                        <p class="text-slate-700 dark:text-slate-300 text-sm md:text-base mt-1.5 font-medium break-keep">探索微觀生命能量，在日常與工作情境中的高頻轉化指南</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 核心亮點金句宣言 -->
-            <div class="bg-gradient-to-r from-emerald-500/10 via-teal-500/10 to-transparent p-6 md:p-8 rounded-2xl border border-emerald-500/20 mb-10 shadow-sm text-center">
-                <p class="text-lg md:text-xl lg:text-2xl text-slate-900 dark:text-teal-100 font-extrabold leading-relaxed text-justify sm:text-center">
-                    在日常生活中，靈氣非常適合用來 <span class="text-teal-800 dark:text-teal-300 font-black border-b-4 border-teal-500 pb-0.5 mx-1">緩解疲勞</span>、<span class="text-teal-800 dark:text-teal-300 font-black border-b-4 border-teal-500 pb-0.5 mx-1">穩定情緒</span>、<span class="text-teal-800 dark:text-teal-300 font-black border-b-4 border-teal-500 pb-0.5 mx-1">淨化空間</span> 以及 <span class="text-teal-800 dark:text-teal-300 font-black border-b-4 border-teal-500 pb-0.5 mx-1">提升專注力</span>。
-                </p>
-            </div>
-
-            <!-- 4大主要情境卡片並排網格 -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- 1. 緩解疲勞 -->
-                <div class="bg-slate-50 dark:bg-slate-955 p-6 rounded-2xl border border-slate-150 dark:border-slate-800 flex flex-col justify-between hover:shadow-lg transition duration-305">
+                <!-- 情境 1 -->
+                <div class="bg-white dark:bg-slate-900 border border-reiki-oatmeal/20 p-6 rounded-2xl flex flex-col justify-between hover:shadow-lg transition duration-300">
                     <div>
-                        <div class="w-12 h-12 rounded-xl bg-teal-100 dark:bg-teal-900/40 text-teal-955 dark:text-teal-300 flex items-center justify-center text-xl mb-4">💤</div>
-                        <h3 class="text-lg font-black text-slate-955 dark:text-white mb-2 break-keep">放鬆緊繃與充飽電力</h3>
-                        <p class="text-xs md:text-sm text-slate-700 dark:text-slate-400 leading-relaxed font-normal text-justify">
-                            下班回到家，全身像散了架一樣酸痛？可以把雙手輕輕放在肩膀、眼睛或腹部。靈氣就像溫暖的熱敷，幫你排走一整天的疲憊，讓身體像是充飽電一樣重新恢復活力。
+                        <div class="w-12 h-12 rounded-xl bg-reiki-sage text-reiki-tea flex items-center justify-center text-xl mb-4">💤</div>
+                        <h3 class="font-serif text-base font-black text-reiki-tea dark:text-white mb-2 break-keep">緩解身心疲勞</h3>
+                        <p class="text-xs md:text-sm text-reiki-tea dark:text-slate-200 leading-relaxed font-normal text-justify">
+                            下班回到家，全身緊繃酸痛？將雙手輕輕放在肩膀、眼睛或腹部。靈氣就像一道溫和的熱流，幫身體排出白日的疲累，讓肌肉回歸柔軟與鬆弛。
                         </p>
                     </div>
-                    <div class="mt-6 pt-4 border-t border-slate-200/60 text-xs font-bold text-teal-800 dark:text-teal-400 flex items-center gap-1.5">
-                        <span>🌱 讓肉體與疲勞徹底放鬆</span>
+                    <div class="mt-4 pt-4 border-t border-reiki-oatmeal/20 text-[10px] font-bold text-reiki-matcha flex items-center gap-1.5">
+                        <span>🌱 釋放肉體壓力</span>
                     </div>
                 </div>
 
-                <!-- 2. 穩定情緒 -->
-                <div class="bg-slate-50 dark:bg-slate-955 p-6 rounded-2xl border border-slate-150 dark:border-slate-800 flex flex-col justify-between hover:shadow-lg transition duration-305">
+                <!-- 情境 2 -->
+                <div class="bg-white dark:bg-slate-900 border border-reiki-oatmeal/20 p-6 rounded-2xl flex flex-col justify-between hover:shadow-lg transition duration-300">
                     <div>
-                        <div class="w-12 h-12 rounded-xl bg-teal-100 dark:bg-teal-900/40 text-teal-955 dark:text-teal-300 flex items-center justify-center text-xl mb-4">🌊</div>
-                        <h3 class="text-lg font-black text-slate-955 dark:text-white mb-2 break-keep">撫平心煩與焦慮不安</h3>
-                        <p class="text-xs md:text-sm text-slate-700 dark:text-slate-400 leading-relaxed font-normal text-justify">
-                            遇到煩心事、心慌意亂睡不著，或者跟人起爭執時？閉上眼，把手貼在胸口。溫和的能量會慢慢撫平腦袋裡的胡思亂想，讓怦怦跳的心靜下來，找回安穩與平靜。
+                        <div class="w-12 h-12 rounded-xl bg-reiki-sage text-reiki-tea flex items-center justify-center text-xl mb-4">🌊</div>
+                        <h3 class="font-serif text-base font-black text-reiki-tea dark:text-white mb-2 break-keep">撫平焦慮與浮躁</h3>
+                        <p class="text-xs md:text-sm text-reiki-tea dark:text-slate-200 leading-relaxed font-normal text-justify">
+                            遭遇難關、思緒一團糟時，閉上眼，雙手合掌或貼在胸口。能量將在幾分鐘內引導自主神經系統平緩，降低緊繃心跳，帶回清明與平靜。
                         </p>
                     </div>
-                    <div class="mt-6 pt-4 border-t border-slate-200/60 text-xs font-bold text-teal-800 dark:text-teal-400 flex items-center gap-1.5">
-                        <span>🧘‍♀️ 平息混亂思緒，找回內在平靜</span>
+                    <div class="mt-4 pt-4 border-t border-reiki-oatmeal/20 text-[10px] font-bold text-reiki-matcha flex items-center gap-1.5">
+                        <span>🧘‍♀️ 平息過度活躍的思緒</span>
                     </div>
                 </div>
 
-                <!-- 3. 淨化空間 -->
-                <div class="bg-slate-50 dark:bg-slate-955 p-6 rounded-2xl border border-slate-150 dark:border-slate-800 flex flex-col justify-between hover:shadow-lg transition duration-305">
+                <!-- 情境 3 -->
+                <div class="bg-white dark:bg-slate-900 border border-reiki-oatmeal/20 p-6 rounded-2xl flex flex-col justify-between hover:shadow-lg transition duration-300">
                     <div>
-                        <div class="w-12 h-12 rounded-xl bg-teal-100 dark:bg-teal-900/40 text-teal-955 dark:text-teal-300 flex items-center justify-center text-xl mb-4">🏡</div>
-                        <h3 class="text-lg font-black text-slate-955 dark:text-white mb-2 break-keep">清掃環境與房間磁場</h3>
-                        <p class="text-xs md:text-sm text-slate-700 dark:text-slate-400 leading-relaxed font-normal text-justify">
-                            去過人多擁擠的地方覺得頭昏腦脹？或者剛搬新家、吵完架覺得家裡氣氛很悶？用手傳遞靈氣，就像用隱形的大掃把，幫房間清掃沉悶氣場，讓家裡變得清爽又溫馨。
+                        <div class="w-12 h-12 rounded-xl bg-reiki-sage text-reiki-tea flex items-center justify-center text-xl mb-4">🏡</div>
+                        <h3 class="font-serif text-base font-black text-reiki-tea dark:text-white mb-2 break-keep">環境空間磁場清掃</h3>
+                        <p class="text-xs md:text-sm text-reiki-tea dark:text-slate-200 leading-relaxed font-normal text-justify">
+                            從醫院或人多擁擠的場所回家後，大腦感覺沉重？可在屋角繪製聖火大師符號，將宇宙淨化之光擴散開來，營造舒適乾淨的安睡空間。
                         </p>
                     </div>
-                    <div class="mt-6 pt-4 border-t border-slate-200/60 text-xs font-bold text-teal-800 dark:text-teal-400 flex items-center gap-1.5">
-                        <span>✨ 排除沉悶雜訊，營造溫馨空間</span>
+                    <div class="mt-4 pt-4 border-t border-reiki-oatmeal/20 text-[10px] font-bold text-reiki-matcha flex items-center gap-1.5">
+                        <span>✨ 淨化乙太殘留雜訊</span>
                     </div>
                 </div>
 
-                <!-- 4. 提升專注力 -->
-                <div class="bg-slate-50 dark:bg-slate-955 p-6 rounded-2xl border border-slate-150 dark:border-slate-800 flex flex-col justify-between hover:shadow-lg transition duration-305">
+                <!-- 情境 4 -->
+                <div class="bg-white dark:bg-slate-900 border border-reiki-oatmeal/20 p-6 rounded-2xl flex flex-col justify-between hover:shadow-lg transition duration-300">
                     <div>
-                        <div class="w-12 h-12 rounded-xl bg-teal-100 dark:bg-teal-900/40 text-teal-955 dark:text-teal-300 flex items-center justify-center text-xl mb-4">🎯</div>
-                        <h3 class="text-lg font-black text-slate-955 dark:text-white mb-2 break-keep">整理思緒與專心工作</h3>
-                        <p class="text-xs md:text-sm text-slate-700 dark:text-slate-400 leading-relaxed font-normal text-justify">
-                            工作或讀書時腦袋一團亂，怎麼也靜不下心？把手輕輕放在額頭上。靈氣能幫你關掉大腦的背景雜音，整理混亂的思緒，讓你迅速進入專注狀態，做事更有效率。
+                        <div class="w-12 h-12 rounded-xl bg-reiki-sage text-reiki-tea flex items-center justify-center text-xl mb-4">🕊️</div>
+                        <h3 class="font-serif text-base font-black text-reiki-tea dark:text-white mb-2 break-keep">遠距祝福與世界和平</h3>
+                        <p class="text-xs md:text-sm text-reiki-tea dark:text-slate-200 leading-relaxed font-normal text-justify">
+                            睡前配合水晶網，藉由遠距意念將溫暖、慈悲的靈氣能量格投射給需要關懷的遠方親友、寵物，或面臨災亂、衝突挑戰的世界角落。
                         </p>
                     </div>
-                    <div class="mt-6 pt-4 border-t border-slate-200/60 text-xs font-bold text-teal-800 dark:text-teal-400 flex items-center gap-1.5">
-                        <span>🔥 專注雜念，重現清晰專注</span>
+                    <div class="mt-4 pt-4 border-t border-reiki-oatmeal/20 text-[10px] font-bold text-reiki-matcha flex items-center gap-1.5">
+                        <span>🌍 與世界和平網印記對齊</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 主題 5：核心價值 靈氣五戒 -->
-        <section id="values" class="bg-white dark:bg-slate-900 rounded-3xl p-6 md:p-12 shadow-xl border border-slate-200 dark:border-slate-800 transition">
-            <div class="flex flex-col md:flex-row md:items-center justify-between mb-10 pb-8 border-b border-slate-200 dark:border-slate-800">
+        <!-- 5. 迷思破解 (全新替換為您所指定的 3 個 Q&A 文字) -->
+        <section id="myth" class="bg-reiki-cream dark:bg-reiki-darkcard rounded-3xl p-6 md:p-12 shadow-md border border-reiki-oatmeal/20 transition scroll-mt-24">
+            <div class="flex flex-col md:flex-row md:items-center justify-between mb-10 pb-8 border-b border-reiki-oatmeal/30">
                 <div class="flex items-center gap-4">
-                    <div class="w-14 h-14 rounded-2xl bg-teal-100 dark:bg-teal-900/40 text-teal-800 dark:text-teal-300 flex items-center justify-center text-2xl font-black flex-shrink-0">4</div>
+                    <div class="w-14 h-14 rounded-2xl bg-reiki-matcha/10 text-reiki-tea dark:text-reiki-cream flex items-center justify-center text-2xl font-black flex-shrink-0">🔍</div>
                     <div>
-                        <h2 class="text-3xl md:text-4xl font-black text-slate-955 dark:text-white break-keep">核心價值：臼井五戒與去中心化</h2>
-                        <p class="text-slate-700 dark:text-slate-300 text-base mt-1.5 font-medium break-keep">點擊下方五戒卡片以翻轉，解讀古典五戒的「現代日常意識調頻」</p>
+                        <h2 class="font-serif text-2xl md:text-3xl font-bold text-reiki-tea dark:text-white break-keep">迷思破解：大師指路與常見疑惑</h2>
+                        <p class="text-reiki-matcha text-xs md:text-sm mt-1 uppercase tracking-widest font-bold">Myths Demystified & Clarity Guide</p>
                     </div>
                 </div>
             </div>
 
-            <!-- 五戒卡片網格 (高度設為 h-72 / 288px) -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 perspective-1000 mb-12">
-                
-                <!-- 卡片 1 -->
-                <div class="w-full h-72 cursor-pointer" onclick="flipCard(this)">
-                    <div class="card-inner relative w-full h-full transform-style-3d">
-                        <!-- 正面 -->
-                        <div class="absolute inset-0 bg-gradient-to-br from-emerald-900 via-teal-800 to-cyan-850 text-white rounded-2xl p-5 flex flex-col justify-between backface-hidden shadow-lg border border-teal-600/30">
-                            <span class="text-[10px] md:text-xs bg-white/10 self-start px-2.5 py-1 rounded font-mono font-bold whitespace-nowrap text-amber-300">今日だけは 01</span>
-                            <div class="text-center my-auto">
-                                <h3 class="text-3xl font-black tracking-widest mb-1 text-white">怒るな</h3>
-                                <p class="text-xs md:text-sm font-semibold text-teal-200">Ikaru na</p>
-                            </div>
-                            <span class="text-xs md:text-sm font-bold text-white text-center border-t border-white/10 pt-3 flex items-center justify-center gap-1 whitespace-nowrap">今日不生氣 ➔</span>
-                        </div>
-                        <!-- 背面 -->
-                        <div class="absolute inset-0 bg-white dark:bg-slate-950 border-2 border-teal-800 text-slate-800 dark:text-slate-200 rounded-2xl p-5 flex flex-col justify-between rotate-y-180 backface-hidden shadow-lg">
-                            <h4 class="font-black text-teal-955 dark:text-teal-300 text-sm md:text-base border-b border-slate-150 pb-2 break-keep">心理學調頻</h4>
-                            <p class="text-[11px] md:text-xs text-slate-700 dark:text-slate-300 leading-relaxed my-auto font-normal">
-                                生氣是主權被侵犯時的防衛反應。今日將「憤怒」轉化為對內在創傷邊界的洞察。
-                            </p>
-                            <div class="bg-teal-50 dark:bg-teal-900/30 text-teal-955 dark:text-teal-100 p-2.5 text-[11px] md:text-xs font-bold text-center rounded-lg leading-normal w-full break-words whitespace-normal mt-auto shadow-inner">
-                                「今日我平靜、溫和並保有力量」
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 卡片 2 -->
-                <div class="w-full h-72 cursor-pointer" onclick="flipCard(this)">
-                    <div class="card-inner relative w-full h-full transform-style-3d">
-                        <!-- 正面 -->
-                        <div class="absolute inset-0 bg-gradient-to-br from-emerald-900 via-teal-800 to-cyan-850 text-white rounded-2xl p-5 flex flex-col justify-between backface-hidden shadow-lg border border-teal-600/30">
-                            <span class="text-[10px] md:text-xs bg-white/10 self-start px-2.5 py-1 rounded font-mono font-bold whitespace-nowrap text-amber-300">今日だけは 02</span>
-                            <div class="text-center my-auto">
-                                <h3 class="text-3xl font-black tracking-widest mb-1 text-white">心配すな</h3>
-                                <p class="text-xs md:text-sm font-semibold text-teal-200">Shinpai suna</p>
-                            </div>
-                            <span class="text-xs md:text-sm font-bold text-white text-center border-t border-white/10 pt-3 flex items-center justify-center gap-1 whitespace-nowrap">今日不憂慮 ➔</span>
-                        </div>
-                        <!-- 背面 -->
-                        <div class="absolute inset-0 bg-white dark:bg-slate-950 border-2 border-teal-800 text-slate-800 dark:text-slate-200 rounded-2xl p-5 flex flex-col justify-between rotate-y-180 backface-hidden shadow-lg">
-                            <h4 class="font-black text-teal-955 dark:text-teal-300 text-sm md:text-base border-b border-slate-150 pb-2 break-keep">心理學調頻</h4>
-                            <p class="text-[11px] md:text-xs text-slate-700 dark:text-slate-300 leading-relaxed my-auto font-normal">
-                                憂慮是試圖控制未來的幻象。今日將掌控欲交託給更高次元，相信宇宙的慈悲安排。
-                            </p>
-                            <div class="bg-teal-50 dark:bg-teal-900/30 text-teal-955 dark:text-teal-100 p-2.5 text-[11px] md:text-xs font-bold text-center rounded-lg leading-normal w-full break-words whitespace-normal mt-auto shadow-inner">
-                                「今日我活在當下，信任生命河流」
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 卡片 3 -->
-                <div class="w-full h-72 cursor-pointer" onclick="flipCard(this)">
-                    <div class="card-inner relative w-full h-full transform-style-3d">
-                        <!-- 正面 -->
-                        <div class="absolute inset-0 bg-gradient-to-br from-emerald-900 via-teal-800 to-cyan-850 text-white rounded-2xl p-5 flex flex-col justify-between backface-hidden shadow-lg border border-teal-600/30">
-                            <span class="text-[10px] md:text-xs bg-white/10 self-start px-2.5 py-1 rounded font-mono font-bold whitespace-nowrap text-amber-300">今日だけは 03</span>
-                            <div class="text-center my-auto">
-                                <h3 class="text-3xl font-black tracking-widest mb-1 text-white">感謝して</h3>
-                                <p class="text-xs md:text-sm font-semibold text-teal-200">Kansha shite</p>
-                            </div>
-                            <span class="text-xs md:text-sm font-bold text-white text-center border-t border-white/10 pt-3 flex items-center justify-center gap-1 whitespace-nowrap">今日常懷感謝 ➔</span>
-                        </div>
-                        <!-- 背面 -->
-                        <div class="absolute inset-0 bg-white dark:bg-slate-950 border-2 border-teal-800 text-slate-800 dark:text-slate-200 rounded-2xl p-5 flex flex-col justify-between rotate-y-180 backface-hidden shadow-lg">
-                            <h4 class="font-black text-teal-955 dark:text-teal-300 text-sm md:text-base border-b border-slate-150 pb-2 break-keep">心理學調頻</h4>
-                            <p class="text-[11px] md:text-xs text-slate-700 dark:text-slate-303 leading-relaxed my-auto font-normal">
-                                感謝是一扇將匱乏轉換為豐盛的隱形大門。藉由數算微小祝福，與宇宙最高震動合流。
-                            </p>
-                            <div class="bg-teal-50 dark:bg-teal-900/30 text-teal-955 dark:text-teal-100 p-2.5 text-[11px] md:text-xs font-bold text-center rounded-lg leading-normal w-full break-words whitespace-normal mt-auto shadow-inner">
-                                「我感謝我所擁有的一切與奇蹟」
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 卡片 4 -->
-                <div class="w-full h-72 cursor-pointer" onclick="flipCard(this)">
-                    <div class="card-inner relative w-full h-full transform-style-3d">
-                        <!-- 正面 -->
-                        <div class="absolute inset-0 bg-gradient-to-br from-emerald-900 via-teal-800 to-cyan-850 text-white rounded-2xl p-5 flex flex-col justify-between backface-hidden shadow-lg border border-teal-600/30">
-                            <span class="text-[10px] md:text-xs bg-white/10 self-start px-2.5 py-1 rounded font-mono font-bold whitespace-nowrap text-amber-300">今日だけは 04</span>
-                            <div class="text-center my-auto">
-                                <h3 class="text-3xl font-black tracking-widest mb-1 text-white">業を勵め</h3>
-                                <p class="text-xs md:text-sm font-semibold text-teal-200">Gō wo hagame</p>
-                            </div>
-                            <span class="text-xs md:text-sm font-bold text-white text-center border-t border-white/10 pt-3 flex items-center justify-center gap-1 whitespace-nowrap">今日誠實盡責 ➔</span>
-                        </div>
-                        <!-- 背面 -->
-                        <div class="absolute inset-0 bg-white dark:bg-slate-950 border-2 border-teal-800 text-slate-805 dark:text-slate-202 rounded-2xl p-5 flex flex-col justify-between rotate-y-180 backface-hidden shadow-lg">
-                            <h4 class="font-black text-teal-955 dark:text-teal-305 text-sm md:text-base border-b border-slate-150 pb-2 break-keep">心理學調頻</h4>
-                            <p class="text-[11px] md:text-xs text-slate-705 dark:text-slate-303 leading-relaxed my-auto font-normal">
-                                面對靈性生命藍圖，不隨波逐流，在當下專注、認真地落實日常功課與靈魂服務。
-                            </p>
-                            <div class="bg-teal-50 dark:bg-teal-900/30 text-teal-955 dark:text-teal-100 p-2.5 text-[11px] md:text-xs font-bold text-center rounded-lg leading-normal w-full break-words whitespace-normal mt-auto shadow-inner">
-                                「今日我真誠負責地生活與修行」
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 卡片 5 -->
-                <div class="w-full h-72 cursor-pointer" onclick="flipCard(this)">
-                    <div class="card-inner relative w-full h-full transform-style-3d">
-                        <!-- 正面 -->
-                        <div class="absolute inset-0 bg-gradient-to-br from-emerald-900 via-teal-800 to-cyan-850 text-white rounded-2xl p-5 flex flex-col justify-between backface-hidden shadow-lg border border-teal-600/30">
-                            <span class="text-[10px] md:text-xs bg-white/10 self-start px-2.5 py-1 rounded font-mono font-bold whitespace-nowrap text-amber-300">今日だけは 05</span>
-                            <div class="text-center my-auto">
-                                <h3 class="text-3xl font-black tracking-widest mb-1 text-white">人に親切に</h3>
-                                <p class="text-xs md:text-sm font-semibold text-teal-200">Hito ni shinsetsu ni</p>
-                            </div>
-                            <span class="text-xs md:text-sm font-bold text-white text-center border-t border-white/10 pt-3 flex items-center justify-center gap-1 whitespace-nowrap">今日待人親切 ➔</span>
-                        </div>
-                        <!-- 背面 -->
-                        <div class="absolute inset-0 bg-white dark:bg-slate-950 border-2 border-teal-800 text-slate-805 dark:text-slate-202 rounded-2xl p-5 flex flex-col justify-between rotate-y-180 backface-hidden shadow-lg">
-                            <h4 class="font-black text-teal-955 dark:text-teal-300 text-sm md:text-base border-b border-slate-150 pb-2 break-keep">心理學調頻</h4>
-                            <p class="text-[11px] md:text-xs text-slate-700 dark:text-slate-300 leading-relaxed my-auto font-normal">
-                                萬物合一、同源而生。親切對待生命與他人，即是在擁抱與療癒最真實、高頻的自己。
-                            </p>
-                            <div class="bg-teal-50 dark:bg-teal-900/30 text-teal-955 dark:text-teal-100 p-2.5 text-[11px] md:text-xs font-bold text-center rounded-lg leading-normal w-full break-words whitespace-normal mt-auto shadow-inner">
-                                「我對萬物生命報以無條件的慈悲」
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- 主題 5：迷思破解 -->
-        <section id="myth" class="bg-white dark:bg-slate-900 rounded-3xl p-6 md:p-12 shadow-xl border border-slate-200 dark:border-slate-800 transition">
-            <div class="flex flex-col md:flex-row md:items-center justify-between mb-10 pb-8 border-b border-slate-200 dark:border-slate-800">
-                <div class="flex items-center gap-4">
-                    <div class="w-14 h-14 rounded-2xl bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-400 flex items-center justify-center text-2xl font-black flex-shrink-0">🔍</div>
-                    <div>
-                        <h2 class="text-2xl md:text-3xl lg:text-4xl font-black text-slate-955 dark:text-white break-keep">迷思破解：大師引路與學員常見疑惑</h2>
-                        <p class="text-slate-700 dark:text-slate-300 text-sm md:text-base mt-1.5 font-medium break-keep">點擊問題以展開專業分析，破除常見偏見、建立正知正見</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- FAQ 元件 -->
+            <!-- FAQ 手風琴面板 (文字易讀性與對比度深度優化) -->
             <div class="max-w-4xl mx-auto space-y-4">
                 
                 <!-- Q1 -->
-                <div class="border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden bg-slate-50/60 dark:bg-slate-955/30">
-                    <button onclick="toggleAccordion('myth1')" class="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-slate-100/50 dark:hover:bg-slate-955/60 transition duration-300 focus:outline-none">
+                <div class="border border-reiki-oatmeal/30 rounded-2xl overflow-hidden bg-white dark:bg-slate-900/50">
+                    <button onclick="toggleAccordion('myth1')" class="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-reiki-sage/40 transition duration-300 focus:outline-none">
                         <div class="flex items-center gap-3">
-                            <span class="w-2.5 h-2.5 rounded-full bg-teal-600 dark:bg-teal-400 flex-shrink-0"></span>
-                            <span class="font-extrabold text-sm md:text-base lg:text-lg text-slate-955 dark:text-slate-100 leading-relaxed">Q1. 靈氣是一種宗教或迷信嗎？跟信仰會有衝突嗎？</span>
+                            <span class="w-2 h-2 rounded-full bg-reiki-matcha flex-shrink-0"></span>
+                            <span class="font-serif font-black text-sm md:text-base text-reiki-tea dark:text-slate-100 leading-relaxed text-left">Q1. 靈氣是某種宗教嗎？需要皈依或特定信仰嗎？</span>
                         </div>
-                        <span id="myth1-icon" class="text-slate-500 font-bold transform transition-transform duration-300 text-sm flex-shrink-0">▼</span>
+                        <span id="myth1-icon" class="text-reiki-matcha transform transition-transform duration-300 text-sm">▼</span>
                     </button>
-                    <div id="myth1" class="accordion-content bg-white dark:bg-slate-900/80" style="max-height: 0px; overflow: hidden;">
-                        <div class="p-6 text-sm md:text-base text-slate-805 dark:text-slate-303 leading-relaxed border-t border-slate-200 dark:border-slate-800 font-normal">
-                            **完全不衝突。** 靈氣本質上是宇宙間本有的微細生命電磁能。它不涉及神格化崇拜，也沒有教條與戒律。世界各地的基督教徒、佛教徒、無神論者皆能無礙修習。國際靈氣訓練中心（ICRT）指出，靈氣旨在幫助我們回歸「內在的真實自我」，是一種超越宗教藩籬的身心整合工具，如同打坐、瑜珈 or 正念一樣，安全且不具侵入性。
+                    <div id="myth1" class="accordion-content bg-white dark:bg-slate-900" style="max-height: 0px; overflow: hidden;">
+                        <div class="p-6 text-xs md:text-sm text-reiki-tea dark:text-slate-200 leading-relaxed border-t border-reiki-oatmeal/20 font-normal text-justify">
+                            <strong class="text-reiki-matcha dark:text-purple-300 block mb-2 font-bold text-sm">ICRT的觀點：</strong>
+                            絕非宗教。臼井靈氣（Reiki）沒有教條、沒有崇拜的對象，也不需要改變個人宗教立場。世界各地的修習者包括佛教徒、基督徒、天主教徒、道教徒甚至無神論者。靈氣只是一種宇宙精細能量的使用技術，與科學物理中的共振更為相似。
                         </div>
                     </div>
                 </div>
 
                 <!-- Q2 -->
-                <div class="border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden bg-slate-50/60 dark:bg-slate-955/30">
-                    <button onclick="toggleAccordion('myth2')" class="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-slate-100/50 dark:hover:bg-slate-955/60 transition duration-305 focus:outline-none">
+                <div class="border border-reiki-oatmeal/30 rounded-2xl overflow-hidden bg-white dark:bg-slate-900/50">
+                    <button onclick="toggleAccordion('myth2')" class="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-reiki-sage/40 transition duration-300 focus:outline-none">
                         <div class="flex items-center gap-3">
-                            <span class="w-2.5 h-2.5 rounded-full bg-teal-600 dark:bg-teal-400 flex-shrink-0"></span>
-                            <span class="font-extrabold text-sm md:text-base lg:text-lg text-slate-955 dark:text-slate-100 leading-relaxed">Q2. 我沒有敏感體質、也沒有所謂的「修行天賦」，也學得會嗎？</span>
+                            <span class="w-2 h-2 rounded-full bg-reiki-matcha flex-shrink-0"></span>
+                            <span class="font-serif font-black text-sm md:text-base text-reiki-tea dark:text-slate-100 leading-relaxed text-left">Q2. 傳遞靈氣會不會把負能量「過」給別人或吸入負能量？</span>
                         </div>
-                        <span id="myth2-icon" class="text-slate-505 font-bold transform transition-transform duration-300 text-sm flex-shrink-0">▼</span>
+                        <span id="myth2-icon" class="text-reiki-matcha transform transition-transform duration-300 text-sm">▼</span>
                     </button>
-                    <div id="myth2" class="accordion-content bg-white dark:bg-slate-900/80" style="max-height: 0px; overflow: hidden;">
-                        <div class="p-6 text-sm md:text-base text-slate-800 dark:text-slate-300 leading-relaxed border-t border-slate-200 dark:border-slate-800 font-normal">
-                            **每個人都絕對學得會。** 宇宙生命能量是所有生命體活著的基本要素，並非特定超能力者者的專利。在傳統系統中需要由導師「手動點化」開啟脈輪通道；而在先進的「聖火靈氣」中，則是通過「安放」與「點燃」將你的意識直接與高維度本源諧振。不論你當下是否能敏感地感受到「手心熱、發麻」，能量流動依然會百分之百在電生理層面發生，且終身受用。
+                    <div id="myth2" class="accordion-content bg-white dark:bg-slate-900" style="max-height: 0px; overflow: hidden;">
+                        <div class="p-6 text-xs md:text-sm text-reiki-tea dark:text-slate-200 leading-relaxed border-t border-reiki-oatmeal/20 font-normal text-justify">
+                            <strong class="text-reiki-matcha dark:text-purple-300 block mb-2 font-bold text-sm">ICRT的觀點：</strong>
+                            靈氣管道是單向的。施作者不是使用自己的生物能量（Qi)，而是作為宇宙無私生命力能量（Reiki）的「管道」。當能量流經施作者、流向接受者時，會率先滋潤施作者本身，並自動淨化排濁。只要維持無私的超然動機，就不會互相干擾或遭受負面能量依附。
                         </div>
                     </div>
                 </div>
 
                 <!-- Q3 -->
-                <div class="border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden bg-slate-50/60 dark:bg-slate-955/30">
-                    <button onclick="toggleAccordion('myth3')" class="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-slate-100/50 dark:hover:bg-slate-955/60 transition duration-305 focus:outline-none">
+                <div class="border border-reiki-oatmeal/30 rounded-2xl overflow-hidden bg-white dark:bg-slate-900/50">
+                    <button onclick="toggleAccordion('myth3')" class="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-reiki-sage/40 transition duration-300 focus:outline-none">
                         <div class="flex items-center gap-3">
-                            <span class="w-2.5 h-2.5 rounded-full bg-teal-600 dark:bg-teal-400 flex-shrink-0"></span>
-                            <span class="font-extrabold text-sm md:text-base lg:text-lg text-slate-955 dark:text-slate-100 leading-relaxed">Q3. 靈氣既然有神奇療癒效果，可以完全取代現代醫院和手術嗎？</span>
+                            <span class="w-2 h-2 rounded-full bg-reiki-matcha flex-shrink-0"></span>
+                            <span class="font-serif font-black text-sm md:text-base text-reiki-tea dark:text-slate-100 leading-relaxed text-left">Q3. 是否必須要天生有敏感體質或天賦才能學得會？</span>
                         </div>
-                        <span id="myth3-icon" class="text-slate-505 font-bold transform transition-transform duration-300 text-sm flex-shrink-0">▼</span>
+                        <span id="myth3-icon" class="text-reiki-matcha transform transition-transform duration-300 text-sm">▼</span>
                     </button>
-                    <div id="myth3" class="accordion-content bg-white dark:bg-slate-900/80" style="max-height: 0px; overflow: hidden;">
-                        <div class="p-6 text-sm md:text-base text-slate-805 dark:text-slate-303 leading-relaxed border-t border-slate-200 dark:border-slate-800 font-normal">
-                            **不能，靈氣是「整合性輔助療法」，而非醫學替代品。** 真正的靈氣導師絕不會建議學員停止就醫 or 停藥。靈氣的作用是從微觀磁場、自主神經系統（放鬆、降壓、提升放鬆反應）進行根本性的調頻，協助身體回到「最適合自癒與修復的環境」。它與主流西方醫學相輔相成，而非對立。在許多先進醫學中心，靈氣主要扮演舒緩、減痛與加速術後復原的輔助要角。
+                    <div id="myth3" class="accordion-content bg-white dark:bg-slate-900" style="max-height: 0px; overflow: hidden;">
+                        <div class="p-6 text-xs md:text-sm text-reiki-tea dark:text-slate-200 leading-relaxed border-t border-reiki-oatmeal/20 font-normal text-justify">
+                            <strong class="text-reiki-matcha dark:text-purple-300 block mb-2 font-bold text-sm">ICRT的觀點：</strong>
+                            所有人都是天生的靈氣大師。靈氣不需要特殊的通靈天資或常年苦修，它是藉由有經驗的導師通過「點化/安置（Placement/Ignition）」程序，溫柔地疏通與重啟我們本就具有的精細管道。不論體感敏銳度如何，只要放置雙手，靈氣便會自動運作。
                         </div>
                     </div>
                 </div>
 
-                <!-- Q4 -->
-                <div class="border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden bg-slate-50/60 dark:bg-slate-955/30">
-                    <button onclick="toggleAccordion('myth4')" class="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-slate-100/50 dark:hover:bg-slate-955/60 transition duration-305 focus:outline-none">
-                        <div class="flex items-center gap-3">
-                            <span class="w-2.5 h-2.5 rounded-full bg-teal-600 dark:bg-teal-400 flex-shrink-0"></span>
-                            <span class="font-extrabold text-sm md:text-base lg:text-lg text-slate-955 dark:text-slate-100 leading-relaxed">Q4. 線上遠距傳授與「聖火點燃」真的跟實體一樣有效嗎？</span>
-                        </div>
-                        <span id="myth4-icon" class="text-slate-505 font-bold transform transition-transform duration-300 text-sm flex-shrink-0">▼</span>
-                    </button>
-                    <div id="myth4" class="accordion-content bg-white dark:bg-slate-900/80" style="max-height: 0px; overflow: hidden;">
-                        <div class="p-6 text-sm md:text-base text-slate-800 dark:text-slate-303 leading-relaxed border-t border-slate-200 dark:border-slate-800 font-normal">
-                            **是的，效果與力量完全一致，甚至在能量純度上更勝一籌。** 量子物理中的「非定域性」與諧振現象提供了遠距傳遞的科學思考背景。更重要的是，聖火靈氣突破了傳統將導師作為「中繼站、能量染污點」的技術。在線上課中，導師引領一段靜心後退出，高頻聖火意識直接在學員的腦部與氣場中顯現點燃，完全消除了物理距離阻隔與導師小我的負面氣場干擾，這也是 ICRT 十多年來臨床與學術實證的重大進展。
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- 主題 6：生活實踐 ── 日常常見困頓與痛點救援指南 -->
-        <section id="practice" class="bg-white dark:bg-slate-900 rounded-3xl p-6 md:p-12 shadow-xl border border-slate-200 dark:border-slate-800 transition">
-            <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 pb-6 border-b border-slate-200 dark:border-slate-800">
-                <div class="flex items-center gap-4">
-                    <div class="w-14 h-14 rounded-2xl bg-teal-100 dark:bg-teal-900/40 text-teal-800 dark:text-teal-300 flex items-center justify-center text-2xl font-black flex-shrink-0">5</div>
-                    <div>
-                        <h2 class="text-2xl md:text-3xl lg:text-4xl font-black text-slate-955 dark:text-white break-keep">生活實踐：日常場景能量救援指南</h2>
-                        <p class="text-slate-700 dark:text-slate-300 text-sm md:text-base mt-1.5 font-medium break-keep">切換上方日常生活常見場景困境，觀測靈氣如何協助並修復其能量機制</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 頂部全寬橫向標籤列 -->
-            <div class="flex overflow-x-auto pb-4 mb-8 gap-3 hide-scrollbar sm:flex-wrap sm:justify-center border-b border-slate-100 dark:border-slate-800/60">
-                <button onclick="selectScenario('workplace')" id="sc_workplace" class="flex items-center gap-2 px-5 py-3 rounded-full border-2 transition-all font-bold text-sm bg-teal-800 text-white border-teal-855 shadow-md whitespace-nowrap">
-                    <span>💼</span> 上班壓力與大腦打結
-                </button>
-                <button onclick="selectScenario('sleep')" id="sc_sleep" class="flex items-center gap-2 px-5 py-3 rounded-full border-2 transition-all font-bold text-sm border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-slate-400 dark:hover:border-slate-700 whitespace-nowrap">
-                    <span>🌙</span> 晚上失眠與胡思亂想
-                </button>
-                <button onclick="selectScenario('cleansing')" id="sc_cleansing" class="flex items-center gap-2 px-5 py-3 rounded-full border-2 transition-all font-bold text-sm border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-slate-400 dark:hover:border-slate-700 whitespace-nowrap">
-                    <span>🏡</span> 身體磁場與環境淨化
-                </button>
-                <button onclick="selectScenario('animals')" id="sc_animals" class="flex items-center gap-2 px-5 py-3 rounded-full border-2 transition-all font-bold text-sm border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-slate-400 dark:hover:border-slate-700 whitespace-nowrap">
-                    <span>🐾</span> 毛孩受驚嚇與生病陪伴
-                </button>
-                <button onclick="selectScenario('relationships')" id="sc_relationships" class="flex items-center gap-2 px-5 py-3 rounded-full border-2 transition-all font-bold text-sm border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-slate-400 dark:hover:border-slate-700 whitespace-nowrap">
-                    <span>🤝</span> 感情爭吵與心結難解
-                </button>
-            </div>
-
-            <!-- 下方全寬細節面板 (獲得 100% 橫向空間) -->
-            <div id="scenarioDetailPanel" class="bg-teal-50/40 dark:bg-slate-955/40 p-6 md:p-8 rounded-3xl border border-teal-200 dark:border-slate-800/80 h-auto transition-all shadow-sm space-y-6">
-                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-teal-100 dark:border-slate-800/60 pb-4">
-                    <div class="flex flex-wrap items-center gap-3">
-                        <span id="scBadge" class="text-xs font-bold px-4 py-1.5 rounded-full bg-teal-900 text-white uppercase tracking-wider whitespace-nowrap">乾浴與合掌法</span>
-                        <h3 id="scTitle" class="text-lg md:text-xl lg:text-2xl font-black text-slate-955 dark:text-white break-keep">上班壓力與大腦打結</h3>
-                    </div>
-                </div>
-
-                <!-- 應用技術來源說明 -->
-                <div class="p-4 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-805 text-sm shadow-sm">
-                    <span class="block text-slate-505 dark:text-slate-400 font-extrabold mb-1 break-keep">🧬 文獻來源技術</span>
-                    <p id="scTech" class="font-extrabold text-slate-900 dark:text-slate-202 leading-relaxed text-sm md:text-base">
-                        乾浴法 + 合掌靜心 ── 傳統日式能量調和法。
-                    </p>
-                </div>
-
-                <!-- 痛點與解決機制 雙排對照 (12欄全寬) -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-                    <!-- 痛點區 -->
-                    <div class="bg-red-50/50 dark:bg-red-955/10 border border-red-200 dark:border-red-900/40 p-6 rounded-2xl shadow-sm h-auto">
-                        <h4 class="font-black text-red-955 dark:text-red-400 text-sm md:text-base uppercase tracking-wider mb-4 flex items-center gap-1.5 break-keep">
-                            <span>⚠️</span> 日常生活困頓與痛點
-                        </h4>
-                        <ul id="scPainPoints" class="space-y-3 text-sm md:text-base text-slate-800 dark:text-slate-200 leading-relaxed list-disc list-inside font-normal text-justify">
-                            <!-- 動態生成 -->
-                        </ul>
-                    </div>
-                    <!-- 緩解與機制 -->
-                    <div class="bg-teal-50/50 dark:bg-teal-955/10 border border-teal-200 dark:border-teal-900/40 p-6 rounded-2xl shadow-sm h-auto">
-                        <h4 class="font-black text-teal-955 dark:text-teal-400 text-sm md:text-base uppercase tracking-wider mb-4 flex items-center gap-1.5 break-keep">
-                            <span>✨</span> 靈氣如何緩解與協助
-                        </h4>
-                        <ul id="scResolutions" class="space-y-3 text-sm md:text-base text-slate-805 dark:text-slate-202 leading-relaxed list-disc list-inside font-normal text-justify">
-                            <!-- 動態生成 -->
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- 調頻宣告 -->
-                <div class="bg-white/90 dark:bg-slate-900/80 p-5 rounded-xl border border-slate-200 dark:border-slate-800 mt-6 shadow-sm">
-                    <h4 class="font-black text-xs md:text-sm text-teal-900 dark:text-teal-400 mb-2 tracking-wide whitespace-nowrap">🕊️ 調頻實踐肯定語</h4>
-                    <p id="scAffirmation" class="text-sm md:text-base font-bold italic text-slate-955 dark:text-white leading-relaxed">
-                        「在喧囂中，我回歸真實自我的中心，任何不屬於我的情緒雜訊，皆已溫和消融。」
-                    </p>
-                </div>
             </div>
         </section>
 
     </main>
 
-    <!-- 每日調頻宣告視窗 -->
-    <div id="mantraModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-sm px-4">
-        <div class="bg-white dark:bg-slate-900 max-w-md w-full rounded-3xl p-8 shadow-2xl border border-slate-200 dark:border-slate-800 relative">
-            <button onclick="closeMantraWidget()" class="absolute top-4 right-4 text-slate-505 hover:text-slate-805 transition">
+    <!-- 每日調頻卡片彈出視窗 -->
+    <div id="mantraM" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-xs px-4">
+        <div class="bg-reiki-cream dark:bg-slate-900 max-w-md w-full rounded-3xl p-8 shadow-2xl border border-reiki-oatmeal relative">
+            <button onclick="closeMantraWidget()" class="absolute top-4 right-4 text-reiki-matcha hover:text-reiki-tea transition">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
             </button>
             <div class="text-center">
-                <div class="w-16 h-16 rounded-2xl bg-amber-100 dark:bg-amber-955/40 text-amber-500 mx-auto flex items-center justify-center text-3xl mb-4">✨</div>
-                <h3 class="text-xl md:text-2xl font-black text-slate-955 mb-2 whitespace-nowrap">當日聖火靈性調頻</h3>
-                <p class="text-xs md:text-sm text-slate-600 dark:text-slate-400 mb-6">點擊下方按鈕抽取卡片，取得您今天的調頻指引</p>
-                <div class="bg-slate-50 dark:bg-slate-955 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 mb-6">
-                    <p id="mantraText" class="text-base md:text-lg text-slate-900 dark:text-slate-202 font-bold italic leading-relaxed">「今日，我選擇放下對未知事物的焦慮。我知道宇宙的生命洪流正在溫和、慈悲地支持著我。」</p>
-                    <span id="mantraSource" class="block text-xs text-teal-800 dark:text-teal-400 font-mono mt-4 uppercase tracking-wider font-bold whitespace-nowrap">── 靈氣自療宣告 🌿</span>
+                <div class="w-14 h-14 rounded-2xl bg-reiki-matcha/10 text-reiki-matcha mx-auto flex items-center justify-center text-2xl mb-4">✨</div>
+                <h3 class="font-serif text-lg md:text-xl font-bold text-reiki-tea dark:text-white mb-2 whitespace-nowrap">今日聖火調頻指引</h3>
+                <p class="text-xs text-reiki-tea/70 mb-6 font-medium">點擊下方按鈕，隨機抽選今日靈氣肯定語指引：</p>
+                <div class="bg-white dark:bg-slate-950 p-5 rounded-2xl border border-reiki-oatmeal/30 mb-6">
+                    <p id="mantraT" class="text-xs md:text-sm text-reiki-tea dark:text-slate-200 font-bold italic leading-relaxed">「今日，我選擇放下對未知事物的焦慮。我知道宇宙的生命洪流正在溫和、慈悲地支持著我。」</p>
+                    <span id="mantraS" class="block text-[10px] text-reiki-matcha font-mono mt-3 uppercase tracking-wider font-bold whitespace-nowrap">── 靈氣自療宣告 🌿</span>
                 </div>
                 <div class="flex gap-2">
-                    <button onclick="rollNewMantra()" class="w-full bg-gradient-to-r from-teal-800 to-emerald-700 text-white font-extrabold text-sm py-3.5 rounded-xl transition shadow-lg whitespace-nowrap">
+                    <button onclick="rollNewMantra()" class="flex-1 bg-reiki-matcha hover:bg-reiki-tea text-white font-bold text-xs py-3 rounded-xl transition shadow-md whitespace-nowrap">
                         抽取下一張調頻卡
+                    </button>
+                    <button onclick="closeMantraWidget()" class="px-4 bg-reiki-oatmeal/30 hover:bg-reiki-oatmeal/50 text-reiki-tea font-bold text-xs py-3 rounded-xl transition whitespace-nowrap">
+                        關閉
                     </button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 底部版權 -->
-    <footer class="bg-slate-950 text-white py-12 mt-24 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-            <div class="flex items-center justify-center gap-3">
-                <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-teal-700 to-amber-500 flex items-center justify-center text-white">☯️</div>
-                <span class="font-bold text-lg text-slate-200 tracking-wider">REIKI PORTAL</span>
+    <!-- 頁尾 -->
+    <footer class="bg-reiki-tea text-[#FAF6F0] py-12 text-center relative overflow-hidden border-t border-reiki-matcha/20">
+        <div class="max-w-4xl mx-auto px-4 space-y-4">
+            <div class="flex items-center justify-center gap-2">
+                <div class="w-8 h-8 rounded-full bg-reiki-matcha flex items-center justify-center text-white">🍵</div>
+                <span class="font-serif font-bold text-base text-[#FAF6EE] tracking-wider">REIKI PORTAL</span>
             </div>
-            <p class="text-slate-400 text-xs md:text-sm max-w-6xl mx-auto leading-relaxed font-normal">
+            <p class="text-xs text-reiki-oatmeal max-w-xl mx-auto leading-relaxed font-normal text-justify sm:text-center">
                 本架構報告與資訊圖表，基於傳統日式臼井靈氣、ICRT 聖火III與世界和平靈氣文獻整理彙編。點化安放引導為自療指引，無法替代專業醫療。
             </p>
-            <p class="text-xs text-slate-550">&copy; 2026 凌Reiki・療癒 保留所有權利。</p>
+            <div class="h-px bg-reiki-oatmeal/35 w-24 mx-auto my-4"></div>
+            <p class="text-[10px] text-reiki-oatmeal/70">&copy; 2026 凌Reiki・療癒 保留所有權利。和諧常在。</p>
         </div>
     </footer>
 
-    <!-- JavaScript 交互邏輯 -->
+    <!-- JavaScript 邏輯 -->
     <script>
         // 平滑滾動
         function scrollToSection(id) {
@@ -927,171 +754,23 @@
                 html.classList.remove('dark');
                 sun.classList.add('hidden');
                 moon.classList.remove('hidden');
-                document.body.style.backgroundColor = '#FAF9F6';
+                document.body.style.backgroundColor = '#E6EDF0';
             } else {
                 html.classList.add('dark');
                 sun.classList.remove('hidden');
                 moon.classList.add('hidden');
-                document.body.style.backgroundColor = '#0F172A';
+                document.body.style.backgroundColor = '#1E231D';
             }
         }
 
-        // 頻率資料
-        const frequencyData = {
-            1: {
-                title: "傳統臼井靈氣",
-                emoji: "🌿",
-                core: "地球生命力",
-                transmission: "一對一 實體接觸點化",
-                percent: "45%",
-                width: "45%",
-                desc: "這是 1922 年由臼井甕男創立的經典體系。能量主要在肉體、情緒體 and 低維度乙太體流動，針對身體壓力釋放與身心修復具有無可比擬的溫和基礎效果。",
-                pros: [
-                    "需要導師使用個人呼吸與手動點化儀式。",
-                    "符號包含力量、情緒、遠距等三個基本物理維度。",
-                    "能量感受較偏溫熱、厚實、重力感。"
-                ]
-            },
-            2: {
-                title: "臼井/西藏靈氣",
-                emoji: "⛰️",
-                core: "星光與精神連接",
-                transmission: "加入西藏大師符號之點化",
-                percent: "65%",
-                width: "65%",
-                desc: "在20世紀末被引入西方後，系統融合了西藏符號與脈輪理論。能量開始向更高星光體拓展，主要修復遺傳印記、深層心智創傷。",
-                pros: [
-                    "引入西藏符號，極大增強了遠距與空間療癒的威力。",
-                    "需要導師進行多套複雜的呼吸與手勢儀式。",
-                    "能量感受更為高頻、呈現快速震動的慢熱感。"
-                ]
-            },
-            3: {
-                title: "聖火靈氣 I & II",
-                emoji: "🔥",
-                core: "神聖純淨意志",
-                transmission: "安放與點燃",
-                percent: "85%",
-                width: "85%",
-                desc: "2014 年 William Lee Rand 接收的高維能量體系。全面去成了繁瑣的西藏大師符號、紫光呼吸和導師個人介入。聖火是一種充滿愛、智慧和無條件恩寵的精細高頻頻率。",
-                pros: [
-                    "去威權化：導師無需干涉能量管道，能量高度純淨且不受導師污染。",
-                    "療癒直接穿透至『真實自我』，融解文化制約帶來的宗教、社會創傷。",
-                    "能量特質極致溫和、純粹，帶有強烈的光芒與擴展感。"
-                ]
-            },
-            4: {
-                title: "世界和平聖火 III",
-                emoji: "🌍",
-                core: "集體合一與地球和平意識",
-                transmission: "跨時空線上點燃",
-                percent: "100%",
-                width: "100%",
-                desc: "2022 年因應疫情與地緣衝突等集體危機而誕生的最新聖火能階。該能量致力於在自療的同時，將和平波頻投射至集體意識，化解由全球危機帶來的慢性焦慮 and 集體創傷。",
-                pros: [
-                    "強力融解焦慮與恐慌。",
-                    "突破實體限制：在全球範圍內，通過網際網路進行遠距點燃，其效果與實體授課一致。",
-                    "能將集體療癒意向放大至整個地球氣場，消弭集體創傷。"
-                ]
-            }
-        };
-
-        function selectFrequency(id) {
-            for (let i = 1; i <= 4; i++) {
-                const btn = document.getElementById(`freqBtn${i}`);
-                if (i === id) {
-                    btn.className = "w-full text-left px-5 py-4 rounded-xl border-2 transition-all flex items-center justify-between bg-teal-800 text-white border-teal-800 shadow-md";
-                } else {
-                    btn.className = "w-full text-left px-5 py-4 rounded-xl border-2 border-slate-300 dark:border-slate-805 hover:border-slate-400 dark:hover:border-slate-707 transition-all flex items-center justify-between text-slate-855 dark:text-slate-202";
-                }
-            }
-
-            const data = frequencyData[id];
-            document.getElementById('freqTitle').innerText = data.title;
-            document.getElementById('freqEmoji').innerText = data.emoji;
-            document.getElementById('freqCore').innerText = data.core;
-            document.getElementById('freqTransmission').innerText = data.transmission;
-            document.getElementById('freqPercent').innerText = data.percent;
-            document.getElementById('freqBar').style.width = data.width;
-            document.getElementById('freqDesc').innerText = data.desc;
-
-            const prosContainer = document.getElementById('freqPros');
-            prosContainer.innerHTML = '';
-            data.pros.forEach(pro => {
-                const li = document.createElement('li');
-                li.innerText = pro;
-                prosContainer.appendChild(li);
-            });
-        }
-
-        // 自我結構資料庫
-        const selfData = {
-            authentic: {
-                title: "真實自我",
-                badge: "核心神聖火花",
-                badgeColor: "bg-amber-500",
-                desc: "這是我們最核心、與宇宙最純淨能量直接連結的部分。這不是創造出來的，而是我們天生就有的平靜、無限的愛與生活智慧。靈氣最主要的目的，就是幫我們撥開外在的重重面具，重新回到這個充滿力量與平靜的核心。",
-                action: "能量會直接注入心靈核心的「真實自我」，讓它像小太陽般強壯並向外照耀，自然而然地溶化並釋放那些外界期待或受創信念所產生的面具與防備。"
-            },
-            dormant: {
-                title: "沉睡自我",
-                badge: "潛伏靈性天賦",
-                badgeColor: "bg-teal-500",
-                desc: "包含了我們那些尚未覺醒、被長期壓抑的優秀天賦與特質（例如：與生俱來的慈悲心與超凡創造力）。當我們過度被外在生活的面具與焦慮遮蔽時，這些高階素質就會陷入沉睡。",
-                action: "隨著聖火高頻能量的充盈，沉睡自我的保護殼會被融化，你會發現自己重獲深層直覺、自發的喜悅與以前從未展現過的療癒創造力。"
-            },
-            cultural: {
-                title: "制約自我",
-                badge: "外部保護面具",
-                badgeColor: "bg-red-500",
-                desc: "由外界環境、期待、社會規則以及教條所塑造出的面具。它充滿了焦慮、控制欲和對匱乏的恐懼，不斷尋求外界的認同，這也是我們身心疲勞與能量阻塞的主因。",
-                action: "靈氣療癒並非改造它，而是用溫柔的能量照亮它。當真實自我的光芒看穿這些外在制約時，恐懼與武裝就會像冰雪般自然融化，與生活達成和諧。"
-            }
-        };
-
-        function selectSelfLevel(level) {
-            // 1. 更新頂部橫向標籤樣式
-            const levels = ['authentic', 'dormant', 'cultural'];
-            levels.forEach(lvl => {
-                const tab = document.getElementById(`selfTab_${lvl}`);
-                if (tab) {
-                    if (lvl === level) {
-                        tab.className = "flex items-center gap-2 px-5 py-3 rounded-full border-2 transition-all font-bold text-sm bg-teal-800 text-white border-teal-855 shadow-md whitespace-nowrap";
-                    } else {
-                        tab.className = "flex items-center gap-2 px-5 py-3 rounded-full border-2 transition-all font-bold text-sm border-slate-200 dark:border-slate-805 text-slate-700 dark:text-slate-300 hover:border-slate-400 dark:hover:border-slate-707 whitespace-nowrap";
-                    }
-                }
-            });
-
-            // 2. 更新同心圓視覺的高亮狀態反饋
-            const ringCultural = document.getElementById('ring_cultural');
-            const ringDormant = document.getElementById('ring_dormant');
-            const ringAuthentic = document.getElementById('ring_authentic');
-
-            if (level === 'cultural') {
-                ringCultural.className = "absolute w-56 h-56 sm:w-64 sm:h-64 rounded-full border-4 border-solid border-red-500 bg-red-500/15 scale-105 transition-all duration-550 z-10 shadow-lg shadow-red-500/20";
-                ringDormant.className = "absolute w-40 h-40 sm:w-48 sm:h-48 rounded-full border-2 border-dashed border-teal-400/30 bg-teal-400/5 transition-all duration-500";
-                ringAuthentic.className = "absolute w-24 h-24 sm:w-28 sm:h-28 rounded-full border-4 border-amber-400/40 bg-gradient-to-tr from-amber-500 to-yellow-300 flex items-center justify-center shadow-lg shadow-amber-400/20 transition-all duration-500";
-            } else if (level === 'dormant') {
-                ringCultural.className = "absolute w-56 h-56 sm:w-64 sm:h-64 rounded-full border-2 border-dashed border-red-400/30 bg-red-400/5 transition-all duration-500";
-                ringDormant.className = "absolute w-40 h-40 sm:w-48 sm:h-48 rounded-full border-4 border-solid border-teal-500 bg-teal-500/20 scale-105 transition-all duration-550 z-10 shadow-lg shadow-teal-500/20";
-                ringAuthentic.className = "absolute w-24 h-24 sm:w-28 sm:h-28 rounded-full border-4 border-amber-400/40 bg-gradient-to-tr from-amber-500 to-yellow-300 flex items-center justify-center shadow-lg shadow-amber-400/20 transition-all duration-500";
-            } else { // authentic
-                ringCultural.className = "absolute w-56 h-56 sm:w-64 sm:h-64 rounded-full border-2 border-dashed border-red-400/30 bg-red-400/5 transition-all duration-500";
-                ringDormant.className = "absolute w-40 h-40 sm:w-48 sm:h-48 rounded-full border-2 border-dashed border-teal-400/30 bg-teal-400/5 transition-all duration-500";
-                ringAuthentic.className = "absolute w-24 h-24 sm:w-28 sm:h-28 rounded-full border-4 border-amber-400 scale-110 bg-gradient-to-tr from-amber-500 to-yellow-300 flex items-center justify-center shadow-2xl shadow-amber-400/40 ring-8 ring-amber-400/45 transition-all duration-550 z-10";
-            }
-
-            // 3. 更新右側細節文字內容
-            const data = selfData[level];
-            const badge = document.getElementById('selfBadge');
-            badge.innerText = data.badge;
-            badge.className = `text-xs md:text-sm font-bold px-4 py-1.5 rounded-full text-white ${data.badgeColor} whitespace-nowrap flex-shrink-0`;
-            
-            document.getElementById('selfTitle').innerText = data.title;
-            document.getElementById('selfDesc').innerText = data.desc;
-            document.getElementById('selfAction').innerText = data.action;
-        }
+        // 滾動進度條
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            const progress = document.getElementById('scroll-progress');
+            if (progress) progress.style.width = scrolled + '%';
+        });
 
         // 3D 翻轉卡片
         function flipCard(container) {
@@ -1101,137 +780,7 @@
             }
         }
 
-        // 日常生活場景高頻實踐資料庫
-        const scenarioData = {
-            workplace: {
-                title: "上班壓力與大腦打結",
-                badge: "💼 工作與日常壓力",
-                badgeColor: "bg-teal-800",
-                tech: "傳統乾浴法與合掌靜心 ── 平息大腦過度焦慮的身體重整法",
-                painPoints: [
-                    "**一整天不停動腦、停不下來**：工作堆積如山、開會開不停，腦袋高速運轉，下班後太陽穴依然發脹緊繃。",
-                    "**腦袋乾枯、想不出好點子**：被業績和要求逼得太緊，思緒打結。遇到難題只想逃避，失去直覺與大局觀。",
-                    "**開完會覺得整個人被吸乾**：體質敏感的人，在辦公室很容易吸收到身旁同事的焦慮、抱怨與負面沉重氣場。"
-                ],
-                resolutions: [
-                    "**平息發熱的大腦思緒**：靈氣能快速幫混亂的心靜下來，引導發脹的前額葉大腦深度休息，找回清晰的判斷力。",
-                    "**快速拍乾淨外來的干擾**：透過簡單的乾浴手勢，刷理身體周圍，切斷他人的抱怨與工作環境中殘留的負面電磁場影響。",
-                    "**重新喚醒心靈的好靈感**：放下緊繃的防衛面具，重新回到真實自我的中心，好直覺和好點子就會自發地浮現。"
-                ],
-                affirmation: "「在喧囂中，我平靜地退回智慧中心。我釋放所有不屬於我的期待，以澄澈與豐盛之眼指引前路。」"
-            },
-            sleep: {
-                title: "晚上失眠與躺著胡思亂想",
-                badge: "🌙 身體緊繃與失眠障礙",
-                badgeColor: "bg-indigo-600",
-                tech: "自我放鬆手位與腦部慢波舒緩技術 ── 重建身體自然休息頻率",
-                painPoints: [
-                    "**躺在床上腦袋放電影**：明明很累卻睡不著，思緒拼命運作，一邊後悔白天沒做好的事，一邊擔心未來的麻煩。",
-                    "**身體硬邦邦、不自覺在防備**：全身肌肉慢性緊繃，連睡覺時牙關都緊咬著，醒來像沒睡一樣，全身酸痛。",
-                    "**多夢易醒、睡得不安穩**：心裡有事放不下，半夜心跳突然加快驚醒，或者整晚做些亂七八糟、動盪不安的夢。"
-                ],
-                resolutions: [
-                    "**牽著大腦進入沉靜深眠**：將雙手輕放頭部與心口，引導過度興奮的神經慢下來，順暢進入深層熟睡期。",
-                    "**像泡溫泉一樣鬆開肌肉**：靈氣傳導能溫熱僵硬的手腳與腹部，降低壓力荷爾蒙，讓血管放鬆，全身像棉花般鬆軟。",
-                    "**擦乾淨潛意識中的不安**：在睡眠中以暖流包覆並撫平潛在的焦慮，把夜晚的安全感找回來，安穩放鬆到天亮。"
-                ],
-                affirmation: "「我的身心全然安住在當下的寧靜。我是安全的，我被宇宙的愛守護著，放鬆地沉入夢鄉。」"
-            },
-            cleansing: {
-                title: "身體磁場與環境淨化",
-                badge: "🏡 空間器物與敏感體質清掃",
-                badgeColor: "bg-amber-600",
-                tech: "負能量拍除與空間氣場重組技術 ── 清理停滯磁場的日常方法",
-                painPoints: [
-                    "**逛完街或去完醫院累到虛脫**：高敏感族群去完擁擠商場、捷運或醫院後，常感到頭重腳輕、疲累，甚至頭痛發悶。",
-                    "**房間或辦公室感覺悶悶的**：環境裡剛有人吵完架、辦公室氣壓很低，或者搬進新住處時感到角落陰暗、不舒服。",
-                    "**隨身物品殘留雜亂感受**：每天配戴的水晶、項鍊，或者外面買回來的二手器物，容易殘留先前繁雜的信息磁場。"
-                ],
-                resolutions: [
-                    "**切除外來的沉重黏著感**：利用簡單的能量拍除手勢，像築起無形防護罩一樣，快速阻斷並清乾淨殘留在身上的干擾。",
-                    "**為房間進行無形大掃除**：把暖和的靈氣傳送到房間四個角落，就像在屋內點亮一盞大明燈，將暗沉與沉悶氣氛逆轉。",
-                    "**幫生活小物清洗消磁**：用溫熱的手氣包裹水晶、隨身配飾，把靈氣注入其中，幫它們重新對齊最乾淨純粹的振動頻率。"
-                ],
-                affirmation: "「我釋放身上與空間中所有的滯留雜訊。我所處的環境明亮、通透，只有愛與和諧能留在這裡。」"
-            },
-            animals: {
-                title: "毛孩受驚嚇與生病陪伴",
-                badge: "🐾 自然生命與毛孩關懷",
-                badgeColor: "bg-emerald-600",
-                tech: "隔空雙手傳送法 ── 尊重自由意志的溫柔療癒技術",
-                painPoints: [
-                    "**受過傷或被遺棄的創傷陰影**：流浪過、被虐待或生病的貓狗對人類防備極深，一有動靜就躲起來，甚至緊張到發抖或咬人。",
-                    "**打雷、放鞭炮或看醫生暴走**：遇到巨響、坐車出門或走進動物醫院時，寵物心跳狂飆、極度喘氣，驚恐到完全不受控制。",
-                    "**病重不舒服與臨終恐慌**：老病寵物身體難受，又看著主人為牠傷心痛哭，毛孩也會吸收主人的悲傷而感到無助和慌張。"
-                ],
-                resolutions: [
-                    "**無壓力的溫柔隔空陪伴**：不用勉強去抱住牠，把雙手放在牠看得見的距離，隔空傳送溫柔能量，讓牠自己放鬆意願吸納。",
-                    "**平息寵物受驚嚇的心跳**：平穩牠敏感的微弱氣場，引導呼吸慢慢平緩下來，不再對外界的巨響感到劇烈恐慌。",
-                    "**給牠尊嚴、祥和的臨終溫暖**：用溫暖的能量暖和並安撫牠衰弱不適的部位，化解煎熬，讓牠在平靜與主人的愛中感到無懼。"
-                ],
-                affirmation: "「我尊重你自由的靈魂。在我的能量包覆中，你是絕對安全的，你可以安心放鬆、感受這股溫暖。」"
-            },
-            relationships: {
-                title: "感情爭吵與心結難解",
-                badge: "🤝 關係張力與心結修復",
-                badgeColor: "bg-rose-600",
-                tech: "遠距意念傳導與時空調和術 ── 突破身體阻礙的意識和解法",
-                painPoints: [
-                    "**關係關係緊繃、相處感覺窒息**：與伴侶、家庭成員或同事之間卡在控制、指責或冷戰中，氣氛降到冰點，溝通只是互相傷害。",
-                    "**孕期緊張與胎動不安**：懷孕媽媽擔心寶寶發育不健全、害怕生產劇痛，這些心慌與焦慮會全盤傳遞給肚子裡的胎兒。",
-                    "**童年受的傷一再重演**：過去被背叛的陰影、童年的挫折，在日常生活中一再被類似的人踩中痛點，重複痛苦心態。"
-                ],
-                resolutions: [
-                    "**繞過嘴硬和爭吵，直接和解**：透過意念將靈氣傳送過去，繞過當下的防衛心，直接在彼此最柔軟、平靜的心靈深處傳遞和諧。",
-                    "**給寶寶一個寧靜溫馨的防護罩**：把暖洋洋的靈氣送入腹中，建立一個安全平穩的環境，消融懷孕時的焦慮，安撫胎動。",
-                    "**回到過去，擁抱受傷的自己**：將能量傳送回記憶中受創的那個時刻，重寫當時的受傷心情，中斷一再重複的痛苦模式。"
-                ],
-                affirmation: "「我放下對他人與命運的掌控。我將所有的不安、糾纏與過去交託給宇宙，重獲自由與愛的能力。」"
-            }
-        };
-
-        function selectScenario(id) {
-            const ids = ['workplace', 'sleep', 'cleansing', 'animals', 'relationships'];
-            ids.forEach(scId => {
-                const el = document.getElementById(`sc_${scId}`);
-                if (scId === id) {
-                    el.className = "flex items-center gap-2 px-5 py-3 rounded-full border-2 transition-all font-bold text-sm bg-teal-800 text-white border-teal-855 shadow-md whitespace-nowrap";
-                } else {
-                    el.className = "flex items-center gap-2 px-5 py-3 rounded-full border-2 transition-all font-bold text-sm border-slate-200 dark:border-slate-805 text-slate-700 dark:text-slate-300 hover:border-slate-400 dark:hover:border-slate-707 whitespace-nowrap";
-                }
-            });
-
-            const data = scenarioData[id];
-            const badge = document.getElementById('scBadge');
-            badge.innerText = data.badge;
-            badge.className = `text-xs font-bold px-4 py-1.5 rounded-full text-white uppercase tracking-wider ${data.badgeColor} whitespace-nowrap flex-shrink-0`;
-            
-            document.getElementById('scTitle').innerText = data.title;
-            document.getElementById('scTech').innerText = data.tech;
-            document.getElementById('scAffirmation').innerText = data.affirmation;
-
-            // 填充痛點
-            const painContainer = document.getElementById('scPainPoints');
-            painContainer.innerHTML = '';
-            data.painPoints.forEach(pt => {
-                const li = document.createElement('li');
-                li.className = "hover:text-red-955 dark:text-red-200 transition duration-150 py-1.5 text-sm md:text-base text-slate-800 dark:text-slate-202 leading-relaxed font-normal text-justify";
-                li.innerHTML = pt;
-                painContainer.appendChild(li);
-            });
-
-            // 填充機制
-            const resContainer = document.getElementById('scResolutions');
-            resContainer.innerHTML = '';
-            data.resolutions.forEach(res => {
-                const li = document.createElement('li');
-                li.className = "hover:text-teal-955 dark:text-teal-202 transition duration-150 py-1.5 text-sm md:text-base text-slate-800 dark:text-slate-202 leading-relaxed font-normal";
-                li.innerHTML = res;
-                resContainer.appendChild(li);
-            });
-        }
-
-        // 互動式手風琴摺疊 JavaScript
+        // 手風琴摺疊功能
         function toggleAccordion(id) {
             const content = document.getElementById(id);
             const icon = document.getElementById(`${id}-icon`);
@@ -1256,7 +805,7 @@
             }
         }
 
-        // 每日宣告抽卡
+        // 每日宣告抽卡數據
         const mantras = [
             { text: "「今日，我選擇放下對未知事物的焦慮。我知道宇宙的生命洪流正在溫和、慈悲地支持著我。」", source: "── 靈氣自療宣告 🌿" },
             { text: "「今日我常懷感謝，我的感官對周圍所有的恩賜保持敏銳。我的心因感恩而充滿富足感。」", source: "── 臼井五戒調頻 💎" },
@@ -1265,22 +814,22 @@
             { text: "「今日不生氣。憤怒只是受傷小我的求救信號，我以宇宙無條件的愛融解我的憤怒，回歸慈悲。」", source: "── 臼井五戒調頻 🌿" }
         ];
 
-        // 每日宣告 Widget 控制器
         function openMantraWidget() {
-            document.getElementById('mantraModal').classList.remove('hidden');
+            document.getElementById('mantraM').classList.remove('hidden');
             rollNewMantra();
         }
 
+        // 點擊關閉視窗
         function closeMantraWidget() {
-            document.getElementById('mantraModal').classList.add('hidden');
+            document.getElementById('mantraM').classList.add('hidden');
         }
 
         function rollNewMantra() {
             const randomIndex = Math.floor(Math.random() * mantras.length);
             const mantra = mantras[randomIndex];
             
-            const textEl = document.getElementById('mantraText');
-            const srcEl = document.getElementById('mantraSource');
+            const textEl = document.getElementById('mantraT');
+            const srcEl = document.getElementById('mantraS');
             
             textEl.style.opacity = 0;
             srcEl.style.opacity = 0;
@@ -1295,12 +844,8 @@
 
         // 初始化
         window.onload = function() {
-            selectFrequency(1);
-            selectScenario('workplace'); 
-            selectSelfLevel('authentic'); // 預設高亮真實自我層
-            
-            document.getElementById('mantraText').style.transition = 'opacity 0.2s';
-            document.getElementById('mantraSource').style.transition = 'opacity 0.2s';
+            document.getElementById('mantraT').style.transition = 'opacity 0.2s';
+            document.getElementById('mantraS').style.transition = 'opacity 0.2s';
         };
     </script>
 </body>

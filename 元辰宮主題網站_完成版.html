@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>開運元辰宮</title>
+  <title>凌Reiki・元辰宮</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Google Fonts: Noto Sans TC -->
@@ -82,7 +82,7 @@
     <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
       <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); event.preventDefault();" class="flex items-center space-x-2">
         <span class="text-2xl font-bold tracking-wider text-[#3A4238] flex items-center gap-1">
-          <span class="text-[#A3B899] text-3xl">🌿</span> 凌療癒的開始-元辰心靈居所
+          <span class="text-[#A3B899] text-3xl">🌿</span> 凌Reiki・元辰宮
         </span>
       </a>
       
@@ -104,7 +104,7 @@
       </button>
     </div>
 
-    <!-- 行動端下拉選單 (點擊「首頁」將平滑滾動回頂部，不加載/跳轉 index.html 連結) -->
+    <!-- 行動端下拉選單 (點擊「首頁」將平滑滾動回頂部，並自動隱藏下拉選單，不跳轉連結) -->
     <div id="mobile-menu" class="hidden md:hidden bg-[#FAF6EE] border-b border-[#D9C3B0]/30 transition-all duration-300">
       <div class="px-6 py-4 flex flex-col space-y-4 font-medium">
         <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); document.getElementById('mobile-menu').classList.add('hidden'); event.preventDefault();" class="text-[#3A4238] hover:text-[#A3B899] transition-colors py-1">首頁</a>
@@ -117,8 +117,8 @@
     </div>
   </nav>
 
-  <!-- 主視覺區 Hero Section (大氣置中標題，並將第一張圖的高度精準調整為400px) -->
-  <header class="relative overflow-hidden py-16 lg:py-24 flex flex-col items-center justify-center">
+  <!-- 主視覺區 Hero Section -->
+  <header class="relative overflow-hidden py-10 lg:py-16 flex flex-col items-center justify-center">
     <!-- 置中寬幅標題區 -->
     <div class="max-w-7xl mx-auto px-6 relative z-10 w-full text-center mb-12">
       <span class="inline-block bg-[#FAF6EE] text-[#A3B899] border border-[#D9C3B0] px-5 py-1.5 rounded-full text-sm font-medium tracking-widest uppercase mb-4 soft-shadow">
@@ -129,10 +129,10 @@
       </h1>
     </div>
 
-    <!-- 下方內容雙欄區 (文案 5 : 寬圖 7) -->
+    <!-- 下方內容雙欄區 -->
     <div class="max-w-7xl mx-auto px-6 relative z-10 w-full">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-        <!-- 左欄：主視覺文案與 CTA (col-span-5) -->
+        <!-- 左欄：主視覺文案與 CTA -->
         <div class="lg:col-span-5 text-center lg:text-left space-y-6">
           <p class="text-base sm:text-lg text-[#3A4238] leading-relaxed font-medium">
             元辰宮是您當下心靈與能量狀態的真實投影。透過溫和無負擔的科學催眠引導，我們陪伴您走入潛意識深處，親自打掃內在空間、調頻生命磁場，在內心深處為幸福與成功預留豐盛的席位。
@@ -147,7 +147,7 @@
           </div>
         </div>
 
-        <!-- 右欄：首圖大圓角大圖容器（高度已調整為400px） -->
+        <!-- 右欄：首圖大圓角大圖容器（高度固定 400px） -->
         <div class="lg:col-span-7 relative w-full">
           <div class="absolute inset-0 bg-[#A3B899]/10 rounded-[32px] transform translate-x-3 translate-y-3 -z-10"></div>
           <div class="round-large overflow-hidden soft-shadow bg-[#FAF6EE] border border-[#D9C3B0]/30 rounded-[32px]">
@@ -175,7 +175,7 @@
         <div class="lg:col-span-5 relative">
           <div class="absolute inset-0 bg-[#A3B899]/10 rounded-[24px] transform translate-x-3 translate-y-3 -z-10"></div>
           <div class="round-large overflow-hidden soft-shadow bg-[#E6EDF0]">
-            <!-- 第二張圖：不加載本地元辰宮的圖，直接顯示符合意境的和煦陽光法式暖色調室內空間示意圖 -->
+            <!-- 第二張圖：直接顯示符合意境的室內空間示意圖 -->
             <img 
               id="main-about-img" 
               src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=800" 
@@ -217,7 +217,7 @@
     </div>
   </section>
 
-  <!-- 潛意識格局 Explorer Section (文字深度優化，全面提升顏色對比度與易讀性，並已刪除指定的小叮嚀文字) -->
+  <!-- 潛意識格局 Explorer Section -->
   <section id="explorer" class="py-20 bg-[#E6EDF0] transition-all duration-300">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center max-w-2xl mx-auto mb-16">
@@ -262,7 +262,7 @@
           </button>
         </div>
 
-        <!-- 右側動態展示內容卡片 (文字顏色完全優化) -->
+        <!-- 右側動態展示內容卡片 -->
         <div class="lg:col-span-8 bg-[#FAF6EE] p-8 round-large soft-shadow border border-[#D9C3B0]/30 min-h-[420px] flex flex-col justify-between">
           <div id="explore-content" class="space-y-6">
             <!-- 內容由 JS 動態替換 -->
@@ -281,9 +281,9 @@
         <p class="text-[#3A4238]/70 mt-2 text-sm sm:text-base font-semibold">整理心靈居所不只是一次簡單的清掃，更是向潛意識深處發出積極轉變的生命磁場宣告。</p>
       </div>
 
-      <!-- 5 格 Grid 佈局 (縮小卡片邊隙 gap-8 為 gap-6，更加緊實精巧) -->
+      <!-- 5 格 Grid 佈局 -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- 卡片 1 (內邊距 p-8 調整為 p-6，內部間距 space-y-6 調整為 space-y-4) -->
+        <!-- 卡片 1 -->
         <div class="card bg-[#FAF6EE] p-6 round-large soft-shadow-hover border border-[#D9C3B0]/30 flex flex-col justify-between space-y-4">
           <div class="space-y-3">
             <div class="flex items-center justify-between">
@@ -323,7 +323,7 @@
         <div class="card bg-[#FAF6EE] p-6 round-large soft-shadow-hover border border-[#D9C3B0]/30 flex flex-col justify-between space-y-4">
           <div class="space-y-3">
             <div class="flex items-center justify-between">
-              <span class="text-4xl">🧱</span>
+              <span class="text-3xl">🧱</span>
               <span class="text-xs font-bold px-3 py-1 bg-[#E6EDF0] text-[#A3B899] rounded-full">信念爆破</span>
             </div>
             <h3 class="text-lg font-bold text-[#3A4238]">3. 打破限制性信念</h3>
@@ -363,7 +363,7 @@
               <span class="text-xs font-bold px-3 py-1 bg-[#E6EDF0] text-[#A3B899] rounded-full">與神同行</span>
             </div>
             <h3 class="text-lg font-bold text-[#3A4238]">5. 對齊高我，活出天命</h3>
-            <p class="text-xs sm:text-sm text-[#3A4238]/85 leading-relaxed">
+            <p class="text-xs sm:text-sm text-[#3A4238]/85 leading-relaxed font-semibold">
               調整的終極目的是協助個案與最真實的靈魂頻率精準對齊。放大直覺與靈感，找回生命主軸與方向，活出屬於自己的天命藍圖。
             </p>
           </div>
@@ -444,7 +444,7 @@
           </div>
         </div>
 
-        <!-- 右側：注意事項 FAQ (Accordion) -->
+        <!-- FAQ Accordion -->
         <div class="lg:col-span-6 space-y-4">
           <div class="flex items-center space-x-2 mb-2">
             <span class="text-2xl">📋</span>
@@ -527,10 +527,10 @@
     <div class="max-w-7xl mx-auto px-6 text-center space-y-6">
       <div class="flex justify-center items-center space-x-2">
         <span class="text-3xl">🌿</span>
-        <span class="text-xl font-bold tracking-wider">元辰心靈探險居所</span>
+        <span class="text-xl font-bold tracking-wider">心靈的生命風水與靈魂花園</span>
       </div>
       <p class="text-xs text-[#FAF6EE]/60 mx-auto leading-relaxed">
-        © 2026 凌療癒的開始-元辰心靈居所.
+        © 2026 凌Reiki・元辰宮.
 		<br>堅持以最科學、溫馨、純粹的心理放鬆引導，陪伴每位個案走向光明的生命旅程。</br>
       </p>
     </div>
@@ -538,7 +538,21 @@
 
   <!-- 所有互動式 JavaScript 邏輯 -->
   <script>
-    // 1. 主視覺區與核心理念 - 多重智慧備用機制（onerror 防重複循環）
+    // 1. 手機端選單控制
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      if (mobileMenu.classList.contains('hidden')) {
+        menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+      } else {
+        menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+      }
+    });
+
+    // 2. 主視覺區與核心理念 - 多重智慧備用機制（onerror 防重複循環）
     function handleHeroImgError(img) {
       img.onerror = function() {
         img.onerror = null; 
@@ -547,7 +561,7 @@
       img.src = "image_4154b3.jpg"; 
     }
 
-    // 2. 潛意識格局動態切換數據 (全面調深對比度，並已精準拿掉客廳與臥室、廚房之冗餘解析文字，同時優化文字生動度)
+    // 3. 潛意識格局動態切換數據 (全面調深對比度，並已精準拿掉客廳與臥室、廚房之冗餘解析文字，同時優化文字生動度)
     const exploreData = {
       living: {
         title: "客廳與神明廳 ‧ 運勢與守護神照見",
@@ -594,7 +608,7 @@
           </p>
           <div class='grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4'>
             <div class='bg-[#E6EDF0]/80 p-4 rounded-[16px] border border-[#D9C3B0] text-sm text-[#3A4238] font-semibold'>
-              🛌 <strong>枕頭、棉被與床位：</strong>枕頭的數量與擺放形式能看出感情狀態（例如單身、成雙成對或互相排斥）；被褥的整齊度反映感情的和諧程度與溝通品質。
+              🛌 <strong>枕頭、棉被與床位：</strong>枕頭的數量與擺放形式能看出感情狀態（role 如單身、成雙成對或互相排斥）；被褥的整齊度反映感情的和諧程度與溝通品質。
             </div>
             <div class='bg-[#E6EDF0]/80 p-4 rounded-[16px] border border-[#D9C3B0] text-sm text-[#3A4238] font-semibold'>
               🪟 <strong>窗戶外緣與鞋子方向：</strong>臥室窗戶的開合狀態折射出您對外在感情關係是敞開還是設防封禦；鞋尖朝內或朝外，投射出您內在情感的歸屬焦點。
@@ -664,7 +678,7 @@
 
     switchExploreTab('living');
 
-    // 3. 潛意識感知檢測 (視覺型 vs 感覺型)
+    // 4. 潛意識感知檢測 (視覺型 vs 感覺型)
     let visualPoints = 0;
     let sensoryPoints = 0;
     let currentQuestion = 1;
@@ -714,7 +728,7 @@
       document.getElementById('q3-block').classList.add('hidden');
     }
 
-    // 4. 注意事項手風琴 Toggle
+    // 5. 注意事項手風琴 Toggle
     function toggleFAQ(index) {
       const content = document.getElementById(`faq-content-${index}`);
       const icon = document.getElementById(`faq-icon-${index}`);

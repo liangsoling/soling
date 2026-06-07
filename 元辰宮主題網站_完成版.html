@@ -80,20 +80,19 @@
   <!-- 導覽列 -->
   <nav class="sticky top-0 z-50 bg-[#E6EDF0]/90 backdrop-blur-md border-b border-[#D9C3B0]/30 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="#" class="flex items-center space-x-2">
+      <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); event.preventDefault();" class="flex items-center space-x-2">
         <span class="text-2xl font-bold tracking-wider text-[#3A4238] flex items-center gap-1">
-          <span class="text-[#A3B899] text-3xl">🌿</span> 凌Reiki・療癒
+          <span class="text-[#A3B899] text-3xl">🌿</span> 凌療癒的開始-元辰心靈居所
         </span>
       </a>
       
-      <!-- 桌面端導覽連結 (已在最前端加入「首頁」連結) -->
+      <!-- 桌面端導覽連結 -->
       <div class="hidden md:flex items-center space-x-8 font-medium">
         <a href="index.html" class="text-[#3A4238] hover:text-[#A3B899] transition-colors">首頁</a>		
         <a href="#about" class="text-[#3A4238] hover:text-[#A3B899] transition-colors">核心理念</a>
         <a href="#explorer" class="text-[#3A4238] hover:text-[#A3B899] transition-colors">格局探索</a>
         <a href="#benefits" class="text-[#3A4238] hover:text-[#A3B899] transition-colors">調整好處</a>
         <a href="#precautions" class="text-[#3A4238] hover:text-[#A3B899] transition-colors">自測與須知</a>
-        <a href="#cases" class="text-[#3A4238] hover:text-[#A3B899] transition-colors">真實個案</a>
         <a href="#precautions" class="btn-matcha px-5 py-2.5 round-btn text-sm font-semibold">自我檢測</a>
       </div>
 
@@ -105,36 +104,35 @@
       </button>
     </div>
 
-    <!-- 行動端下拉選單 (已在最前端加入「首頁」連結) -->
+    <!-- 行動端下拉選單 (點擊「首頁」將平滑滾動回頂部，不加載/跳轉 index.html 連結) -->
     <div id="mobile-menu" class="hidden md:hidden bg-[#FAF6EE] border-b border-[#D9C3B0]/30 transition-all duration-300">
       <div class="px-6 py-4 flex flex-col space-y-4 font-medium">
-        <a href="#" class="text-[#3A4238] hover:text-[#A3B899] transition-colors py-1">首頁</a>
-        <a href="#about" class="text-[#3A4238] hover:text-[#A3B899] transition-colors py-1">核心理念</a>
-        <a href="#explorer" class="text-[#3A4238] hover:text-[#A3B899] transition-colors py-1">格局探索</a>
-        <a href="#benefits" class="text-[#3A4238] hover:text-[#A3B899] transition-colors py-1">調整好處</a>
-        <a href="#precautions" class="text-[#3A4238] hover:text-[#A3B899] transition-colors py-1">自測與須知</a>
-        <a href="#cases" class="text-[#3A4238] hover:text-[#A3B899] transition-colors py-1">真實個案</a>
-        <a href="#precautions" class="btn-matcha text-center py-2.5 round-btn text-sm font-semibold">自我檢測</a>
+        <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); document.getElementById('mobile-menu').classList.add('hidden'); event.preventDefault();" class="text-[#3A4238] hover:text-[#A3B899] transition-colors py-1">首頁</a>
+        <a href="#about" onclick="document.getElementById('mobile-menu').classList.add('hidden');" class="text-[#3A4238] hover:text-[#A3B899] transition-colors py-1">核心理念</a>
+        <a href="#explorer" onclick="document.getElementById('mobile-menu').classList.add('hidden');" class="text-[#3A4238] hover:text-[#A3B899] transition-colors py-1">格局探索</a>
+        <a href="#benefits" onclick="document.getElementById('mobile-menu').classList.add('hidden');" class="text-[#3A4238] hover:text-[#A3B899] transition-colors py-1">調整好處</a>
+        <a href="#precautions" onclick="document.getElementById('mobile-menu').classList.add('hidden');" class="text-[#3A4238] hover:text-[#A3B899] transition-colors py-1">自測與須知</a>
+        <a href="#precautions" onclick="document.getElementById('mobile-menu').classList.add('hidden');" class="btn-matcha text-center py-2.5 round-btn text-sm font-semibold">自我檢測</a>
       </div>
     </div>
   </nav>
 
-  <!-- 主視覺區 Hero Section -->
-  <header class="relative overflow-hidden py-10 lg:py-16 flex flex-col items-center justify-center">
+  <!-- 主視覺區 Hero Section (大氣置中標題，並將第一張圖的高度精準調整為400px) -->
+  <header class="relative overflow-hidden py-16 lg:py-24 flex flex-col items-center justify-center">
     <!-- 置中寬幅標題區 -->
     <div class="max-w-7xl mx-auto px-6 relative z-10 w-full text-center mb-12">
       <span class="inline-block bg-[#FAF6EE] text-[#A3B899] border border-[#D9C3B0] px-5 py-1.5 rounded-full text-sm font-medium tracking-widest uppercase mb-4 soft-shadow">
         ✨ 科學催眠導引 ‧ 靈魂花園修繕
       </span>
-      <h1 style="text-wrap: pretty;" class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-bold tracking-tight text-[#3A4238] leading-tight max-w-7xl mx-auto break-words">
+      <h1 style="text-wrap: balance;" class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#3A4238] leading-tight max-w-5xl mx-auto break-words">
         探訪潛意識的溫馨居所 ‧ 重建屬於你的「<span class="text-[#A3B899] relative">元辰宮<span class="absolute bottom-1 left-0 w-full h-2 bg-[#D9C3B0]/40 -z-10 rounded-full"></span></span>」
       </h1>
     </div>
 
-    <!-- 下方內容雙欄區 -->
+    <!-- 下方內容雙欄區 (文案 5 : 寬圖 7) -->
     <div class="max-w-7xl mx-auto px-6 relative z-10 w-full">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-        <!-- 左欄：主視覺文案與 CTA -->
+        <!-- 左欄：主視覺文案與 CTA (col-span-5) -->
         <div class="lg:col-span-5 text-center lg:text-left space-y-6">
           <p class="text-base sm:text-lg text-[#3A4238] leading-relaxed font-medium">
             元辰宮是您當下心靈與能量狀態的真實投影。透過溫和無負擔的科學催眠引導，我們陪伴您走入潛意識深處，親自打掃內在空間、調頻生命磁場，在內心深處為幸福與成功預留豐盛的席位。
@@ -149,7 +147,7 @@
           </div>
         </div>
 
-        <!-- 右欄：首圖大圓角大圖容器 -->
+        <!-- 右欄：首圖大圓角大圖容器（高度已調整為400px） -->
         <div class="lg:col-span-7 relative w-full">
           <div class="absolute inset-0 bg-[#A3B899]/10 rounded-[32px] transform translate-x-3 translate-y-3 -z-10"></div>
           <div class="round-large overflow-hidden soft-shadow bg-[#FAF6EE] border border-[#D9C3B0]/30 rounded-[32px]">
@@ -177,6 +175,7 @@
         <div class="lg:col-span-5 relative">
           <div class="absolute inset-0 bg-[#A3B899]/10 rounded-[24px] transform translate-x-3 translate-y-3 -z-10"></div>
           <div class="round-large overflow-hidden soft-shadow bg-[#E6EDF0]">
+            <!-- 第二張圖：不加載本地元辰宮的圖，直接顯示符合意境的和煦陽光法式暖色調室內空間示意圖 -->
             <img 
               id="main-about-img" 
               src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=800" 
@@ -218,7 +217,7 @@
     </div>
   </section>
 
-  <!-- 潛意識格局 Explorer Section -->
+  <!-- 潛意識格局 Explorer Section (文字深度優化，全面提升顏色對比度與易讀性，並已刪除指定的小叮嚀文字) -->
   <section id="explorer" class="py-20 bg-[#E6EDF0] transition-all duration-300">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center max-w-2xl mx-auto mb-16">
@@ -228,13 +227,13 @@
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        <!-- 左側格局切換標籤 -->
+        <!-- 左側格局切換標籤 (調深未選中標籤的文字對比) -->
         <div class="lg:col-span-4 flex flex-col space-y-3">
           <button onclick="switchExploreTab('living')" id="tab-living" class="explore-tab active flex items-center p-4 bg-[#FAF6EE] text-[#3A4238] border-l-4 border-[#A3B899] rounded-r-[20px] text-left transition-all duration-300 soft-shadow font-semibold">
             <span class="text-2xl mr-3">🛋️</span>
             <div>
               <p class="text-base text-[#3A4238] font-bold">客廳與神明廳</p>
-              <p class="text-xs text-[#3A4238] font-semibold mt-0.5">查看近期整體運勢、事業與守護能量</p>
+              <p class="text-xs text-[#3A4238]/90 font-medium mt-0.5">查看近期整體運勢與事業</p>
             </div>
           </button>
           
@@ -242,7 +241,7 @@
             <span class="text-2xl mr-3">🍳</span>
             <div>
               <p class="text-base text-[#3A4238] font-bold">廚房財庫配置</p>
-              <p class="text-xs text-[#3A4238] font-semibold mt-0.5">象徵財富儲備、投資能力與生活熱情</p>
+              <p class="text-xs text-[#3A4238]/80 font-normal mt-0.5">象徵財富流動與生活熱情</p>
             </div>
           </button>
 
@@ -250,7 +249,7 @@
             <span class="text-2xl mr-3">🛏️</span>
             <div>
               <p class="text-base text-[#3A4238] font-bold">臥室感情世界</p>
-              <p class="text-xs text-[#3A4238] font-semibold mt-0.5">反映兩性情感、親密關係與安全邊界</p>
+              <p class="text-xs text-[#3A4238]/80 font-normal mt-0.5">反映婚姻感情與內心邊界</p>
             </div>
           </button>
 
@@ -258,12 +257,12 @@
             <span class="text-2xl mr-3">🌳</span>
             <div>
               <p class="text-base text-[#3A4238] font-bold">生命花園與本命樹</p>
-              <p class="text-xs text-[#3A4238] font-semibold mt-0.5">顯化生理健康、情緒雜音與生命韌性</p>
+              <p class="text-xs text-[#3A4238]/80 font-normal mt-0.5">象徵身體健康、內在雜語</p>
             </div>
           </button>
         </div>
 
-        <!-- 右側動態展示內容卡片 -->
+        <!-- 右側動態展示內容卡片 (文字顏色完全優化) -->
         <div class="lg:col-span-8 bg-[#FAF6EE] p-8 round-large soft-shadow border border-[#D9C3B0]/30 min-h-[420px] flex flex-col justify-between">
           <div id="explore-content" class="space-y-6">
             <!-- 內容由 JS 動態替換 -->
@@ -273,18 +272,18 @@
     </div>
   </section>
 
-  <!-- 五大好處 Section -->
+  <!-- 五大好處 Section (版面微調：縮小區塊邊距，降低空白，提升精緻感) -->
   <section id="benefits" class="py-12 bg-[#FAF6EE] transition-all duration-300">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center max-w-2xl mx-auto mb-10">
         <span class="text-[#A3B899] font-bold text-sm tracking-widest uppercase block mb-2">TRANSFORMATION BENEFITS</span>
         <h2 class="text-3xl font-bold text-[#3A4238]">調整元辰宮的五大生命重塑好處</h2>
-        <p class="text-[#3A4238] mt-2 text-sm sm:text-base font-semibold">整理心靈居所不只是一次簡單的清掃，更是向潛意識深處發出積極轉變的生命磁場宣告。</p>
+        <p class="text-[#3A4238]/70 mt-2 text-sm sm:text-base font-semibold">整理心靈居所不只是一次簡單的清掃，更是向潛意識深處發出積極轉變的生命磁場宣告。</p>
       </div>
 
-      <!-- 5 格 Grid 佈局 -->
+      <!-- 5 格 Grid 佈局 (縮小卡片邊隙 gap-8 為 gap-6，更加緊實精巧) -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- 卡片 1 -->
+        <!-- 卡片 1 (內邊距 p-8 調整為 p-6，內部間距 space-y-6 調整為 space-y-4) -->
         <div class="card bg-[#FAF6EE] p-6 round-large soft-shadow-hover border border-[#D9C3B0]/30 flex flex-col justify-between space-y-4">
           <div class="space-y-3">
             <div class="flex items-center justify-between">
@@ -292,7 +291,7 @@
               <span class="text-xs font-bold px-3 py-1 bg-[#E6EDF0] text-[#A3B899] rounded-full">重塑空間</span>
             </div>
             <h3 class="text-lg font-bold text-[#3A4238]">1. 深度淨化心靈磁場</h3>
-            <p class="text-xs sm:text-sm text-[#3A4238] leading-relaxed font-semibold">
+            <p class="text-xs sm:text-sm text-[#3A4238]/85 leading-relaxed">
               當內在環境堆積了負面能量的灰塵或雜物，現實生活中的思緒、情緒與行動便容易陷入卡頓。透過元辰宮的整理與調頻，能引導釋放滯留能量，重建輕盈。
             </p>
           </div>
@@ -310,7 +309,7 @@
               <span class="text-xs font-bold px-3 py-1 bg-[#E6EDF0] text-[#A3B899] rounded-full">對照之鏡</span>
             </div>
             <h3 class="text-lg font-bold text-[#3A4238]">2. 解讀並洞察生命課題</h3>
-            <p class="text-xs sm:text-sm text-[#3A4238] leading-relaxed font-semibold">
+            <p class="text-xs sm:text-sm text-[#3A4238]/85 leading-relaxed">
               元辰宮是一面誠實反映內心的鏡子。透過屋內的格局、氛圍與象徵物品，清晰照見你平時不易察覺的內在實相，從根本探索調整契機。
             </p>
           </div>
@@ -324,11 +323,11 @@
         <div class="card bg-[#FAF6EE] p-6 round-large soft-shadow-hover border border-[#D9C3B0]/30 flex flex-col justify-between space-y-4">
           <div class="space-y-3">
             <div class="flex items-center justify-between">
-              <span class="text-3xl">🧱</span>
+              <span class="text-4xl">🧱</span>
               <span class="text-xs font-bold px-3 py-1 bg-[#E6EDF0] text-[#A3B899] rounded-full">信念爆破</span>
             </div>
             <h3 class="text-lg font-bold text-[#3A4238]">3. 打破限制性信念</h3>
-            <p class="text-xs sm:text-sm text-[#3A4238] leading-relaxed font-semibold">
+            <p class="text-xs sm:text-sm text-[#3A4238]/85 leading-relaxed">
               重塑顯化格局意味著你願意做出改變！釋放過去沉重的舊有約定與限制，重新找回生命的主控權，更有底氣做出符合靈魂渴望的決定。
             </p>
           </div>
@@ -346,7 +345,7 @@
               <span class="text-xs font-bold px-3 py-1 bg-[#E6EDF0] text-[#A3B899] rounded-full">高頻生活</span>
             </div>
             <h3 class="text-lg font-bold text-[#3A4238]">4. 提升能量顯化和諧</h3>
-            <p class="text-xs sm:text-sm text-[#3A4238] leading-relaxed font-semibold">
+            <p class="text-xs sm:text-sm text-[#3A4238]/85 leading-relaxed">
               乾淨元辰宮能產生深刻的現實漣漪。使大腦思緒清晰敏銳，心情平穩，活出不盲從的「人間清醒」狀態，並吸引到正向的人際互動。
             </p>
           </div>
@@ -364,7 +363,7 @@
               <span class="text-xs font-bold px-3 py-1 bg-[#E6EDF0] text-[#A3B899] rounded-full">與神同行</span>
             </div>
             <h3 class="text-lg font-bold text-[#3A4238]">5. 對齊高我，活出天命</h3>
-            <p class="text-xs sm:text-sm text-[#3A4238] leading-relaxed font-semibold">
+            <p class="text-xs sm:text-sm text-[#3A4238]/85 leading-relaxed">
               調整的終極目的是協助個案與最真實的靈魂頻率精準對齊。放大直覺與靈感，找回生命主軸與方向，活出屬於自己的天命藍圖。
             </p>
           </div>
@@ -411,7 +410,7 @@
             </div>
 
             <div id="q2-block" class="space-y-3 hidden">
-              <p class="text-sm font-semibold text-[#3A4238]">Q2. heard「海浪拍打沙灘」的聲音時，您的直覺聯想是？</p>
+              <p class="text-sm font-semibold text-[#3A4238]">Q2. 聽到「海浪拍打沙灘」的聲音時，您的直覺聯想是？</p>
               <div class="grid grid-cols-1 gap-2.5">
                 <button onclick="answerQuestion(2, 'visual')" class="q-btn w-full text-left p-3.5 rounded-[16px] border border-[#D9C3B0]/50 text-sm hover:bg-[#E6EDF0] hover:border-[#A3B899] transition-all duration-200 text-[#3A4238] font-medium">
                   A. 腦中瞬間描繪出湛藍無比的海、翻捲的白色浪花與綿延的金黃沙灘。
@@ -445,7 +444,7 @@
           </div>
         </div>
 
-        <!-- FAQ Accordion -->
+        <!-- 右側：注意事項 FAQ (Accordion) -->
         <div class="lg:col-span-6 space-y-4">
           <div class="flex items-center space-x-2 mb-2">
             <span class="text-2xl">📋</span>
@@ -492,259 +491,17 @@
               <span id="faq-icon-4" class="text-[#A3B899] text-xl transition-transform duration-300">＋</span>
             </button>
             <div id="faq-content-4" class="hidden px-5 pb-5 text-sm sm:text-base text-[#3A4238] border-t border-[#D9C3B0]/20 pt-4 leading-relaxed font-medium">
-              幕後，我們所有的服務與調整過程<strong>絕無任何隱藏性額外收費</strong>。網頁內所提供的帶領方式，均建立在自由意志與個案的自我觀照之上，絕不強推產品、不藉口改運而恐嚇收費。請個案安心前來，共同攜手踏上健康的內在尋根之旅。
+              我們所有的服務與調整過程<strong>絕無任何隱藏性額外收費</strong>。網頁內所提供的帶領方式，均建立在自由意志與個案的自我觀照之上，絕不強推產品、不藉口改運而恐嚇收費。請個案安心前來，共同攜手踏上健康的內在尋根之旅。
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- 真實個案 Case Study Section (優化四大真實案例) -->
-  <section id="cases" class="py-20 bg-[#FAF6EE] transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-[#A3B899] font-bold text-sm tracking-widest uppercase block mb-3">TRUE STORIES</span>
-        <h2 class="text-3xl sm:text-4xl font-bold text-[#3A4238]">真實個案心靈探險之旅</h2>
-        <p class="text-[#3A4238] font-semibold text-base sm:text-lg mt-4 max-w-2xl mx-auto">透過「起、承、轉、合」深度心理重塑，親眼見證心靈風水優化後的生命奇蹟蛻變。</p>
-      </div>
-
-      <!-- 4 大個案切換主按鈕 -->
-      <div class="flex justify-center mb-12">
-        <div class="bg-[#E6EDF0] p-2 rounded-full flex flex-wrap gap-2 justify-center soft-shadow border border-[#D9C3B0]/30 max-w-5xl">
-          <button id="case-btn-mina" onclick="switchCase('mina')" class="px-6 py-3 rounded-full text-sm sm:text-base font-bold transition-all duration-300 bg-[#FAF6EE] text-[#3A4238] shadow-sm">
-            🌾 Mina 的心靈探險
-          </button>
-          <button id="case-btn-jason" onclick="switchCase('jason')" class="px-6 py-3 rounded-full text-sm sm:text-base font-bold transition-all duration-300 text-[#3A4238] hover:text-[#A3B899]">
-            🌻 Jason 的心靈探險
-          </button>
-          <button id="case-btn-yun" onclick="switchCase('yun')" class="px-6 py-3 rounded-full text-sm sm:text-base font-bold transition-all duration-300 text-[#3A4238] hover:text-[#A3B899]">
-            🔮 云 的心靈探險
-          </button>
-          <button id="case-btn-ice" onclick="switchCase('ice')" class="px-6 py-3 rounded-full text-sm sm:text-base font-bold transition-all duration-300 text-[#3A4238] hover:text-[#A3B899]">
-            ⚡ Ice 的心靈探險
-          </button>
-        </div>
-      </div>
-
-      <!-- ================= MINA 的個案面板 ================= -->
-      <div id="case-mina-panel" class="space-y-8">
-        <div class="bg-[#FAF6EE] p-6 sm:p-10 round-large soft-shadow border border-[#D9C3B0]/30">
-          
-          <div class="flex flex-wrap gap-3 justify-center mb-10 border-b border-[#D9C3B0]/20 pb-6">
-            <button onclick="switchMinaStep('起')" id="m-step-起" class="step-btn-m active px-6 py-3 rounded-full text-sm sm:text-base font-bold tracking-wider bg-[#A3B899] text-white transition-all">
-              起 ‧ 金色起點
-            </button>
-            <button onclick="switchMinaStep('承')" id="m-step-承" class="step-btn-m px-6 py-3 rounded-full text-sm sm:text-base font-bold tracking-wider bg-[#FAF6EE]/80 text-[#3A4238] border border-[#D9C3B0] hover:bg-[#A3B899]/10 transition-all">
-              承 ‧ 探索防禦
-            </button>
-            <button onclick="switchMinaStep('轉')" id="m-step-轉" class="step-btn-m px-6 py-3 rounded-full text-sm sm:text-base font-bold tracking-wider bg-[#FAF6EE]/80 text-[#3A4238] border border-[#D9C3B0] hover:bg-[#A3B899]/10 transition-all">
-              轉 ‧ 空間重塑
-            </button>
-            <button onclick="switchMinaStep('合')" id="m-step-合" class="step-btn-m px-6 py-3 rounded-full text-sm sm:text-base font-bold tracking-wider bg-[#FAF6EE]/80 text-[#3A4238] border border-[#D9C3B0] hover:bg-[#A3B899]/10 transition-all">
-              合 ‧ 天使祝福
-            </button>
-          </div>
-
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
-            <!-- 左面板：心靈意象解碼 -->
-            <div class="lg:col-span-4 bg-[#E6EDF0] p-6 sm:p-8 rounded-[24px] border border-[#D9C3B0]/50 flex flex-col justify-between shadow-xs">
-              <div class="space-y-6">
-                <div class="flex items-center justify-between">
-                  <span class="text-xs sm:text-sm font-bold px-3 py-1 bg-[#FAF6EE] text-[#A3B899] rounded-full border border-[#D9C3B0]/30 shadow-sm">心靈意象解碼</span>
-                  <span id="mina-step-num" class="text-sm font-bold text-[#3A4238] tracking-widest">CHAPTER 01</span>
-                </div>
-                <div class="flex items-center space-x-4 py-2 border-b border-[#D9C3B0]/30">
-                  <div id="mina-icon-box" class="w-16 h-16 bg-[#FAF6EE] rounded-[20px] flex items-center justify-center text-4xl shadow-sm border border-[#D9C3B0]/30 shrink-0">🌾</div>
-                  <div>
-                    <p class="text-xs sm:text-sm text-[#3A4238] font-bold tracking-wider">潛意識核心象徵</p>
-                    <h4 id="mina-symbol-title" class="text-base sm:text-lg font-bold text-[#3A4238] mt-1">金色起點</h4>
-                  </div>
-                </div>
-                <div class="space-y-2">
-                  <p class="text-xs sm:text-sm text-[#3A4238] font-bold tracking-wider">意象心靈標籤</p>
-                  <div id="mina-pills" class="flex flex-wrap gap-2 pt-1"></div>
-                </div>
-              </div>
-
-              <div class="mt-8 pt-6 border-t border-[#D9C3B0]/40">
-                <h5 class="text-sm font-bold text-[#3A4238] mb-4 flex items-center gap-2">
-                  <span class="text-[#A3B899] text-lg">🌿</span> <span>核心覺察與轉化指標</span>
-                </h5>
-                <ul id="mina-insights-list" class="space-y-3 text-sm sm:text-base text-[#3A4238] leading-relaxed list-none pl-0"></ul>
-              </div>
-            </div>
-
-            <!-- 右面板：動態故事 -->
-            <div id="mina-right-panel" class="lg:col-span-8 flex flex-col justify-between space-y-6 bg-[#FAF6EE] p-6 sm:p-8 rounded-[24px]"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ================= JASON 的個案面板 ================= -->
-      <div id="case-jason-panel" class="space-y-8 hidden">
-        <div class="bg-[#FAF6EE] p-6 sm:p-10 round-large soft-shadow border border-[#D9C3B0]/30">
-          
-          <div class="flex flex-wrap gap-3 justify-center mb-10 border-b border-[#D9C3B0]/20 pb-6">
-            <button onclick="switchJasonStep('起')" id="j-step-起" class="step-btn-j active px-6 py-3 rounded-full text-sm sm:text-base font-bold tracking-wider bg-[#A3B899] text-white transition-all">
-              起 ‧ 塵封之門
-            </button>
-            <button onclick="switchJasonStep('承')" id="j-step-承" class="step-btn-j px-6 py-3 rounded-full text-sm sm:text-base font-bold tracking-wider bg-[#FAF6EE]/80 text-[#3A4238] border border-[#D9C3B0] hover:bg-[#A3B899]/10 transition-all">
-              承 ‧ 陰影沈澱
-            </button>
-            <button onclick="switchJasonStep('轉')" id="j-step-轉" class="step-btn-j px-6 py-3 rounded-full text-sm sm:text-base font-bold tracking-wider bg-[#FAF6EE]/80 text-[#3A4238] border border-[#D9C3B0] hover:bg-[#A3B899]/10 transition-all">
-              轉 ‧ 能量調頻
-            </button>
-            <button onclick="switchJasonStep('合')" id="j-step-合" class="step-btn-j px-6 py-3 rounded-full text-sm sm:text-base font-bold tracking-wider bg-[#FAF6EE]/80 text-[#3A4238] border border-[#D9C3B0] hover:bg-[#A3B899]/10 transition-all">
-              合 ‧ 幸福顯化
-            </button>
-          </div>
-
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-            <div class="lg:col-span-4 bg-[#E6EDF0] p-6 sm:p-8 rounded-[24px] border border-[#D9C3B0]/50 flex flex-col justify-between shadow-xs">
-              <div class="space-y-6">
-                <div class="flex items-center justify-between">
-                  <span class="text-xs sm:text-sm font-bold px-3 py-1 bg-[#FAF6EE] text-[#A3B899] rounded-full border border-[#D9C3B0]/30 shadow-sm">心靈意象解碼</span>
-                  <span id="jason-step-num" class="text-sm font-bold text-[#3A4238] tracking-widest">CHAPTER 01</span>
-                </div>
-                <div class="flex items-center space-x-4 py-2 border-b border-[#D9C3B0]/30">
-                  <div id="jason-icon-box" class="w-14 h-14 bg-[#FAF6EE] rounded-[18px] flex items-center justify-center text-3xl shadow-sm border border-[#D9C3B0]/20 shrink-0">⚖️</div>
-                  <div>
-                    <p class="text-xs sm:text-sm text-[#3A4238] font-bold tracking-wider">潛意識核心象徵</p>
-                    <h4 id="jason-symbol-title" class="text-base sm:text-lg font-bold text-[#3A4238] mt-1">劇烈拉扯</h4>
-                  </div>
-                </div>
-                <div class="space-y-2">
-                  <p class="text-xs sm:text-sm text-[#3A4238] font-bold tracking-wider">意象心靈標籤</p>
-                  <div id="jason-pills" class="flex flex-wrap gap-2 pt-1"></div>
-                </div>
-              </div>
-
-              <div class="mt-8 pt-6 border-t border-[#D9C3B0]/40">
-                <h5 class="text-sm font-bold text-[#3A4238] mb-4 flex items-center gap-2">
-                  <span class="text-[#A3B899] text-lg">🌿</span> <span>核心覺察與轉化指標</span>
-                </h5>
-                <ul id="jason-insights-list" class="space-y-3 text-sm sm:text-base text-[#3A4238] leading-relaxed list-none pl-0"></ul>
-              </div>
-            </div>
-
-            <div id="jason-right-panel" class="lg:col-span-8 flex flex-col justify-between space-y-6 bg-[#FAF6EE] p-4 sm:p-6 rounded-[24px]"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ================= YUN (云) 的個案面板 ================= -->
-      <div id="case-yun-panel" class="space-y-8 hidden">
-        <div class="bg-[#FAF6EE] p-6 sm:p-10 round-large soft-shadow border border-[#D9C3B0]/30">
-          
-          <div class="flex flex-wrap gap-3 justify-center mb-10 border-b border-[#D9C3B0]/20 pb-6">
-            <button onclick="switchYunStep('起')" id="y-step-起" class="step-btn-y active px-6 py-3 rounded-full text-sm sm:text-base font-bold tracking-wider bg-[#A3B899] text-white transition-all">
-              起 ‧ 穿透迷霧
-            </button>
-            <button onclick="switchYunStep('承')" id="y-step-承" class="step-btn-y px-6 py-3 rounded-full text-sm sm:text-base font-bold tracking-wider bg-[#FAF6EE]/80 text-[#3A4238] border border-[#D9C3B0] hover:bg-[#A3B899]/10 transition-all">
-              承 ‧ 舊時光卡點
-            </button>
-            <button onclick="switchYunStep('轉')" id="y-step-轉" class="step-btn-y px-6 py-3 rounded-full text-sm sm:text-base font-bold tracking-wider bg-[#FAF6EE]/80 text-[#3A4238] border border-[#D9C3B0] hover:bg-[#A3B899]/10 transition-all">
-              轉 ‧ 空間重整
-            </button>
-            <button onclick="switchYunStep('合')" id="y-step-合" class="step-btn-y px-6 py-3 rounded-full text-sm sm:text-base font-bold tracking-wider bg-[#FAF6EE]/80 text-[#3A4238] border border-[#D9C3B0] hover:bg-[#A3B899]/10 transition-all">
-              合 ‧ 陽光重塑
-            </button>
-          </div>
-
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-            <div class="lg:col-span-4 bg-[#E6EDF0] p-6 sm:p-8 rounded-[24px] border border-[#D9C3B0]/50 flex flex-col justify-between shadow-xs">
-              <div class="space-y-6">
-                <div class="flex items-center justify-between">
-                  <span class="text-xs sm:text-sm font-bold px-3 py-1 bg-[#FAF6EE] text-[#A3B899] rounded-full border border-[#D9C3B0]/30 shadow-sm">心靈意象解碼</span>
-                  <span id="yun-step-num" class="text-sm font-bold text-[#3A4238] tracking-widest">CHAPTER 01</span>
-                </div>
-                <div class="flex items-center space-x-4 py-2 border-b border-[#D9C3B0]/30">
-                  <div id="yun-icon-box" class="w-16 h-16 bg-[#FAF6EE] rounded-[18px] flex items-center justify-center text-3xl shadow-sm border border-[#D9C3B0]/20 shrink-0">🌀</div>
-                  <div>
-                    <p class="text-xs sm:text-sm text-[#3A4238] font-bold tracking-wider">潛意識核心象徵</p>
-                    <h4 id="yun-symbol-title" class="text-base sm:text-lg font-bold text-[#3A4238] mt-1">黑色旋轉漩渦</h4>
-                  </div>
-                </div>
-                <div class="space-y-2">
-                  <p class="text-xs sm:text-sm text-[#3A4238] font-bold tracking-wider">意象心靈標籤</p>
-                  <div id="yun-pills" class="flex flex-wrap gap-2 pt-1"></div>
-                </div>
-              </div>
-
-              <div class="mt-8 pt-6 border-t border-[#D9C3B0]/40">
-                <h5 class="text-sm font-bold text-[#3A4238] mb-4 flex items-center gap-2">
-                  <span class="text-[#A3B899] text-lg">🌿</span> <span>核心覺察與轉化指標</span>
-                </h5>
-                <ul id="yun-insights-list" class="space-y-3 text-sm sm:text-base text-[#3A4238] leading-relaxed list-none pl-0"></ul>
-              </div>
-            </div>
-
-            <div id="yun-right-panel" class="lg:col-span-8 flex flex-col justify-between space-y-6 bg-[#FAF6EE] p-4 sm:p-6 rounded-[24px]"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ================= ICE 的個案面板 ================= -->
-      <div id="case-ice-panel" class="space-y-8 hidden">
-        <div class="bg-[#FAF6EE] p-6 sm:p-10 round-large soft-shadow border border-[#D9C3B0]/30">
-          
-          <div class="flex flex-wrap gap-3 justify-center mb-10 border-b border-[#D9C3B0]/20 pb-6">
-            <button onclick="switchIceStep('起')" id="i-step-起" class="step-btn-i active px-6 py-3 rounded-full text-sm sm:text-base font-bold tracking-wider bg-[#A3B899] text-white transition-all">
-              起 ‧ 迷霧乾涸小徑
-            </button>
-            <button onclick="switchIceStep('承')" id="i-step-承" class="step-btn-i px-6 py-3 rounded-full text-sm sm:text-base font-bold tracking-wider bg-[#FAF6EE]/80 text-[#3A4238] border border-[#D9C3B0] hover:bg-[#A3B899]/10 transition-all">
-              承 ‧ 幽暗長廊與禁錮
-            </button>
-            <button onclick="switchIceStep('轉')" id="i-step-轉" class="step-btn-i px-6 py-3 rounded-full text-sm sm:text-base font-bold tracking-wider bg-[#FAF6EE]/80 text-[#3A4238] border border-[#D9C3B0] hover:bg-[#A3B899]/10 transition-all">
-              轉 ‧ 斬斷枷鎖重燃
-            </button>
-            <button onclick="switchIceStep('合')" id="i-step-合" class="step-btn-i px-6 py-3 rounded-full text-sm sm:text-base font-bold tracking-wider bg-[#FAF6EE]/80 text-[#3A4238] border border-[#D9C3B0] hover:bg-[#A3B899]/10 transition-all">
-              合 ‧ 鏡中願景
-            </button>
-          </div>
-
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-            <!-- 左面板：心靈意象解碼 -->
-            <div class="lg:col-span-4 bg-[#E6EDF0] p-6 sm:p-8 rounded-[24px] border border-[#D9C3B0]/50 flex flex-col justify-between shadow-xs">
-              <div class="space-y-6">
-                <div class="flex items-center justify-between">
-                  <span class="text-xs sm:text-sm font-bold px-3 py-1 bg-[#FAF6EE] text-[#A3B899] rounded-full border border-[#D9C3B0]/30 shadow-sm">心靈意象解碼</span>
-                  <span id="ice-step-num" class="text-sm font-bold text-[#3A4238] tracking-widest">CHAPTER 01</span>
-                </div>
-                <div class="flex items-center space-x-4 py-2 border-b border-[#D9C3B0]/30">
-                  <div id="ice-icon-box" class="w-14 h-14 bg-[#FAF6EE] rounded-[18px] flex items-center justify-center text-3xl shadow-sm border border-[#D9C3B0]/20 shrink-0">⚡</div>
-                  <div>
-                    <p class="text-xs sm:text-sm text-[#3A4238] font-bold tracking-wider">潛意識核心象徵</p>
-                    <h4 id="ice-symbol-title" class="text-base sm:text-lg font-bold text-[#3A4238] mt-1">迷霧乾涸小徑</h4>
-                  </div>
-                </div>
-                <div class="space-y-2">
-                  <p class="text-xs sm:text-sm text-[#3A4238] font-bold tracking-wider">意象心靈標籤</p>
-                  <div id="ice-pills" class="flex flex-wrap gap-2 pt-1"></div>
-                </div>
-              </div>
-
-              <div class="mt-8 pt-6 border-t border-[#D9C3B0]/40">
-                <h5 class="text-sm font-bold text-[#3A4238] mb-4 flex items-center gap-2">
-                  <span class="text-[#A3B899] text-lg">🌿</span> <span>核心覺察與轉化指標</span>
-                </h5>
-                <ul id="ice-insights-list" class="space-y-3 text-sm sm:text-base text-[#3A4238] leading-relaxed list-none pl-0"></ul>
-              </div>
-            </div>
-
-            <!-- 右面板：動態故事 -->
-            <div id="ice-right-panel" class="lg:col-span-8 flex flex-col justify-between space-y-6 bg-[#FAF6EE] p-4 sm:p-6 rounded-[24px]"></div>
-          </div>
-        </div>
-      </div>
-
     </div>
   </section>
 
   <!-- 專業免責聲明 Disclaimer Section -->
   <section class="py-6 bg-[#E6EDF0] border-t border-[#D9C3B0]/30 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-4xl mx-auto px-6">
       <div class="bg-[#FAF6EE]/80 p-8 round-large soft-shadow border border-[#D9C3B0]/40">
         <div class="flex items-center space-x-2.5 mb-4 text-[#A3B899]">
           <span class="text-xl">⚠️</span>
@@ -772,8 +529,8 @@
         <span class="text-3xl">🌿</span>
         <span class="text-xl font-bold tracking-wider">元辰心靈探險居所</span>
       </div>
-      <p class="text-xs text-[#FAF6EE]/60  mx-auto leading-relaxed">
-        © 2026 凌Reiki・療癒-元辰心靈居所.
+      <p class="text-xs text-[#FAF6EE]/60 mx-auto leading-relaxed">
+        © 2026 凌療癒的開始-元辰心靈居所.
 		<br>堅持以最科學、溫馨、純粹的心理放鬆引導，陪伴每位個案走向光明的生命旅程。</br>
       </p>
     </div>
@@ -781,21 +538,7 @@
 
   <!-- 所有互動式 JavaScript 邏輯 -->
   <script>
-    // 1. 手機端選單控制
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const menuIcon = document.getElementById('menu-icon');
-
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      if (mobileMenu.classList.contains('hidden')) {
-        menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
-      } else {
-        menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
-      }
-    });
-
-    // 2. 主視覺區與核心理念 - 多重智慧備用機制（onerror 防重複循環）
+    // 1. 主視覺區與核心理念 - 多重智慧備用機制（onerror 防重複循環）
     function handleHeroImgError(img) {
       img.onerror = function() {
         img.onerror = null; 
@@ -804,15 +547,7 @@
       img.src = "image_4154b3.jpg"; 
     }
 
-    function handleAboutImgError(img) {
-      img.onerror = function() {
-        img.onerror = null; 
-        img.src = "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=1200";
-      };
-      img.src = "image_4154b3.jpg";
-    }
-
-    // 3. 潛意識格局動態切換數據 (全面調深對比度，並已精準拿掉客廳與臥室、廚房之冗餘解析文字，同時優化文字生動度)
+    // 2. 潛意識格局動態切換數據 (全面調深對比度，並已精準拿掉客廳與臥室、廚房之冗餘解析文字，同時優化文字生動度)
     const exploreData = {
       living: {
         title: "客廳與神明廳 ‧ 運勢與守護神照見",
@@ -844,7 +579,7 @@
               🔥 <strong>爐火與柴火：</strong>「柴」與「財」諧音。爐火興旺代表您對事業與目標充滿鬥志；柴木充沛則意味著您在現實生活中擁有堅實的資源與支持系統。
             </div>
             <div class='bg-[#E6EDF0]/80 p-4 rounded-[16px] border border-[#D9C3B0] text-sm text-[#3A4238] font-semibold'>
-              🍚 <strong>米缸與水缸：</strong>米缸代表積蓄與生活富足度，米的儲量越滿，越具備安全感；水代表流動的資金，水缸的盈缺象徵您現實中的現金流轉與投資能力。
+              🍚 <strong>米缸與水缸：</strong>米缸內的米代表財儲（新鮮度極其關鍵）；水缸的水代表活財（投資與現金流）。
             </div>
           </div>
         `,
@@ -878,7 +613,7 @@
           <div class='grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4'>
             <div class='bg-[#E6EDF0]/80 p-3 rounded-[16px] border border-[#D9C3B0] text-xs text-[#3A4238] font-bold text-center'>
               🌱 <strong>土壤厚度與乾溼度：</strong>
-              <p class='mt-1 font-semibold text-[#3A4238]'>太硬或積水過重的土壤，在現實中通常對應個案代謝不良、身體沉重易倦的生理狀態。</p>
+              <p class='mt-1 font-semibold text-[#3A4238]'>太硬或積水過重的土壤，在現實中通常對應個案代謝不良、身體沈重易倦的生理狀態。</p>
             </div>
             <div class='bg-[#E6EDF0]/80 p-3 rounded-[16px] border border-[#D9C3B0] text-xs text-[#3A4238] font-bold text-center'>
               🍂 <strong>枝葉枯萎與蟲害：</strong>
@@ -929,7 +664,7 @@
 
     switchExploreTab('living');
 
-    // 4. 潛意識感知檢測 (視覺型 vs 感覺型)
+    // 3. 潛意識感知檢測 (視覺型 vs 感覺型)
     let visualPoints = 0;
     let sensoryPoints = 0;
     let currentQuestion = 1;
@@ -948,7 +683,6 @@
       }
     }
 
-    // 顯示感知自測結論 (大氣細緻語彙優化)
     function showQuizResult() {
       document.getElementById('quiz-result').classList.remove('hidden');
       const typeSpan = document.getElementById('result-type');
@@ -980,7 +714,7 @@
       document.getElementById('q3-block').classList.add('hidden');
     }
 
-    // 5. 注意事項手風琴 Toggle
+    // 4. 注意事項手風琴 Toggle
     function toggleFAQ(index) {
       const content = document.getElementById(`faq-content-${index}`);
       const icon = document.getElementById(`faq-icon-${index}`);
@@ -995,574 +729,6 @@
         icon.style.transform = "rotate(0deg)";
       }
     }
-
-    // 6. 真實個案切換 (Mina vs Jason vs Yun vs Ice)
-    function switchCase(caseName) {
-      const panels = {
-        mina: document.getElementById('case-mina-panel'),
-        jason: document.getElementById('case-jason-panel'),
-        yun: document.getElementById('case-yun-panel'),
-        ice: document.getElementById('case-ice-panel')
-      };
-      const btns = {
-        mina: document.getElementById('case-btn-mina'),
-        jason: document.getElementById('case-btn-jason'),
-        yun: document.getElementById('case-btn-yun'),
-        ice: document.getElementById('case-btn-ice')
-      };
-
-      // Reset all
-      for (const key in panels) {
-        panels[key].classList.add('hidden');
-        btns[key].classList.remove('bg-[#FAF6EE]', 'shadow-sm');
-        btns[key].classList.add('text-[#3A4238]');
-      }
-
-      // Activate selected
-      panels[caseName].classList.remove('hidden');
-      btns[caseName].classList.add('bg-[#FAF6EE]', 'shadow-sm');
-
-      if (caseName === 'mina') switchMinaStep('起');
-      if (caseName === 'jason') switchJasonStep('起');
-      if (caseName === 'yun') switchYunStep('起');
-      if (caseName === 'ice') switchIceStep('起');
-    }
-
-    // ==========================================
-    // 7. MINA 故事數據庫 (依據 Mina心靈探險故事.pdf)
-    // ==========================================
-    const minaSteps = {
-      起: {
-        chapter: "CHAPTER 01",
-        tag: "起 ‧ 金色的起點與最初的木屋",
-        title: "無邊無際、閃耀光芒的金黃稻浪",
-        symbol: "金色起點與柴犬小麥",
-        icon: "🌾",
-        pills: ["#潛意識大門", "#金色平靜", "#內在萌寵"],
-        desc: `這是一段關於Mina心靈探險故事，記錄了她如何走進那座象徵內在生命的「元辰宮」，並在微光的引導下，將其修繕成一處充滿力量與豐盛的安居之地。
-
-在那場心靈探險的起點，Mina發現自己站在一條蜿蜒的柏油路上。天空是純粹的湛藍，綴著幾朵如棉絮般的白雲，而道路兩旁是無邊無際、閃耀著光芒的金黃色稻田，正隨著微風輕輕搖曳，散發出泥土與青草的芳香。當時的她，心境如這景色般平靜，卻也隱隱帶著一份期待。
-
-走過狹長的路徑，一座巨大的一樓木屋靜靜地佇立在前方。這座木屋呈現橫向延伸的構造，外圍是一排白色的尖頭木柵欄，守護著這片私人領地。而在柵欄旁，一隻胖嘟嘟、金白相間的柴犬「小麥」正興奮地玩著飛盤，為這座靜謐的宅院增添了幾分生機。`,
-        insights: [
-          "蜿蜒的柏油路象徵生命新旅程的起步與探索心態。",
-          "金黃色稻浪反映出個案底蘊深處原本就具備 of 豐盛基底。",
-          "柴犬「小麥」代表心中忠誠、純真且渴望被關照的溫暖能量。"
-        ],
-        quote: "當走過狹長路徑，才發現靈魂深處早已有一處平靜在等待。"
-      },
-      承: {
-        chapter: "CHAPTER 02",
-        tag: "承 ‧ 探索靈魂的居所",
-        title: "客廳無窗與書臥重疊的防禦顯化",
-        symbol: "空間重疊與防衛機制",
-        icon: "🔑",
-        pills: ["#安全感薄弱", "#空間混亂", "#思緒分流"],
-        desc: `當Mina在管理員（一位穿著粉紅上衣、深綠色長裙，氣質親切的混血女子）的陪伴下進入宅院時，她開始細細端驚這座生命的初貌。雖然整座建築與花園維持得相當乾淨整齊，但仍有些細節反映出個案現狀中的防衛與重疊。
-
-最初，那圈尖銳的柵欄高度僅到肚子，似乎不足以提供足夠的安全感；大門雖然厚實，卻只用了簡單的一根木門栓。進入屋內，客廳雖然明亮，卻沒有窗戶與外界對流，顯得有些封閉。
-
-最讓她在意的是，書房與臥室是疊加重疊在一起的，書桌上雜亂堆滿了國語、數學課本，甚至還有漫畫書，這象徵著學習、休息與娛樂的空間缺乏明確界限，使心靈難以獲得真正的平靜與專注。`,
-        insights: [
-          "低矮且尖銳的柵欄，顯化出個案目前心理疆界的安全感缺失。",
-          "無窗客廳代表潛意識中不自覺地對外界關閉、缺乏情緒流動。",
-          "書臥重疊象徵生活角色界線模糊，大腦在休息時仍處於緊繃狀態。"
-        ],
-        quote: "當休息與奮鬥重疊，靈魂的發動機便失去了靠港的港灣。"
-      },
-      轉: {
-        chapter: "CHAPTER 03",
-        tag: "轉 ‧ 內在頻率與生命藍圖重塑",
-        title: "劃分心理邊界，重建安居之地",
-        symbol: "格局拓展與意識校準",
-        icon: "🛠️",
-        pills: ["#建立界線", "#財庫活化", "#能量聚焦"],
-        desc: `在催眠引導下，Mina展開細緻的潛意識空間重塑，讓整體的生命能量迎來煥然一新的轉變：
-
-首先，她將原本僅到肚子的低矮木柵欄，加高到胸口並加粗，大門改建為雙開的實木雕花大門，並換上厚實的鎖，重新劃分出健康而安全的心理屏障。最關鍵的調整是將「書房」與「臥室」徹底分開，讓臥室回歸溫馨與休息，書房則設在閣樓，打造一處乾淨安穩、充滿包容力的學習與工作心境，讓智慧的能量得以凝聚、開啟。
-
-同時，將原本代表財庫的廚房與水缸彻底打掃乾淨，將漏水的水缸補滿，並在米缸塞滿亮晶晶、飽滿的白米，讓生存價值的能量更加穩固興旺。`,
-        insights: [
-          "加高柵欄與雙開木門：象徵個案在現實中學會溫柔而堅定地說『不』並樹立界限。",
-          "書房與臥室徹底獨立：釋放長期的精神內耗，重建清晰的生活與工作秩序。",
-          "清補水缸與米缸：清理深層的生存與財務焦慮，回歸豐盛。"
-        ],
-        quote: "當主動為生命劃分出神聖秩序，所有的好運便將如期而至。"
-      },
-      合: {
-        chapter: "CHAPTER 04",
-        tag: "合 ‧ 祝福下的新氣象與體悟",
-        title: "開滿無刺玫瑰的花園與天使的指引",
-        symbol: "無刺玫瑰與守護天使",
-        icon: "👼",
-        pills: ["#自我和解", "#守護指引", "#豐盛顯化"],
-        desc: `調整完成後的元辰宮呈現出一派璀璨祥和。後花園裡，那條通往心靈深處的小徑兩旁，開滿了粉紅色的瑰麗玫瑰——每一朵都生機勃勃，而且完全沒有刺，只流淌著純粹的甜美與美麗。
-
-在那裡，Mina遇見了她的守護天使——屬於天使麥克身旁的小天使，他披著白袍，背負著潔白的羽翼並手持真理長劍。
-
-天使溫柔地給予她特別指引：「要照顧好花，這樣運氣就會變好。」這句智慧囈語深深烙印在Mina心中，讓她明白，照顧好自己的內在心靈（花園），外在的生命自然會豐盛綻放。帶領她調整的管理員也在陽光下溫暖地微笑，知曉這座紅屋頂的木屋將永遠在潛意識中引領她前行。`,
-        insights: [
-          "無刺玫瑰代表個案與自我完美和解，不再帶著刺面對世界與自己。",
-          "天使的指引揭示了核心祕密：『照顧好內在花園，外在自然豐盛。』",
-          "紅屋頂木屋錨定在深層潛意識，成為其未來持續進修的堅實底氣。"
-        ],
-        quote: "照顧好你心靈的花園，外在的生命自然會豐盛綻放。"
-      }
-    };
-
-    function switchMinaStep(stepKey) {
-      document.querySelectorAll('.step-btn-m').forEach(btn => {
-        btn.classList.remove('bg-[#A3B899]', 'text-white');
-        btn.classList.add('bg-[#FAF6EE]/80', 'text-[#3A4238]', 'border-[#D9C3B0]');
-      });
-      document.getElementById(`m-step-${stepKey}`).classList.add('bg-[#A3B899]', 'text-white');
-      document.getElementById(`m-step-${stepKey}`).classList.remove('bg-[#FAF6EE]/80', 'text-[#3A4238]', 'border-[#D9C3B0]');
-
-      const data = minaSteps[stepKey];
-      document.getElementById('mina-step-num').textContent = data.chapter;
-      document.getElementById('mina-icon-box').textContent = data.icon;
-      document.getElementById('mina-symbol-title').textContent = data.symbol;
-      
-      const pillsContainer = document.getElementById('mina-pills');
-      pillsContainer.innerHTML = '';
-      data.pills.forEach(pill => {
-        const span = document.createElement('span');
-        span.className = "text-xs font-bold px-3 py-1 bg-[#E6EDF0] text-[#3A4238] rounded-full border border-[#A3B899]/30 shadow-xs";
-        span.textContent = pill;
-        pillsContainer.appendChild(span);
-      });
-
-      const listContainer = document.getElementById('mina-insights-list');
-      listContainer.innerHTML = '';
-      data.insights.forEach(insight => {
-        const li = document.createElement('li');
-        li.className = "flex items-start gap-2.5 text-sm sm:text-base text-[#3A4238] leading-relaxed font-medium";
-        li.innerHTML = `<span class="text-[#A3B899] text-base select-none">✦</span> <span>${insight}</span>`;
-        listContainer.appendChild(li);
-      });
-
-      document.getElementById('mina-right-panel').innerHTML = `
-        <div class="space-y-6">
-          <div class="flex flex-wrap items-center gap-3">
-            <span class="px-3.5 py-1.5 bg-[#A3B899] text-[#FAF6EE] rounded-full text-xs font-bold uppercase tracking-wider shadow-xs">Mina 的個案日記</span>
-            <span class="text-sm sm:text-base font-bold text-[#3A4238] bg-[#E6EDF0] px-4 py-1.5 rounded-lg border border-[#D9C3B0]/30">${data.tag}</span>
-          </div>
-          <h3 class="text-2xl sm:text-3xl font-bold text-[#3A4238] tracking-wide border-b border-[#D9C3B0]/30 pb-4">${data.title}</h3>
-          <p class="text-base sm:text-lg text-[#3A4238] leading-relaxed font-normal whitespace-pre-line text-justify">${data.desc}</p>
-        </div>
-        <div class="bg-[#E6EDF0]/50 p-5 sm:p-6 rounded-[20px] border-l-4 border-[#A3B899] shadow-sm mt-6 border border-[#D9C3B0]/20">
-          <p class="text-xs text-[#A3B899] uppercase font-bold tracking-widest mb-1.5 flex items-center gap-1"><span>🌿</span> 心靈指引金句</p>
-          <p class="text-base sm:text-lg italic font-semibold text-[#3A4238] leading-relaxed">"${data.quote}"</p>
-        </div>
-      `;
-    }
-
-    // ==========================================
-    // 8. JASON 故事數據庫 (依據 Jason心靈探險故事.pdf)
-    // ==========================================
-    const jasonSteps = {
-      起: {
-        chapter: "CHAPTER 01",
-        tag: "起 ‧ 推開塵封的生命之門",
-        title: "內在劇烈拉扯與極窄的心靈步道",
-        symbol: "光影對峙與重層鐵門",
-        icon: "⚖️",
-        pills: ["#劇烈拉扯", "#防衛過度", "#生命窄路"],
-        desc: `這是一段關於Jason 走入內在深處,重新修復生命殿堂的「心靈探險故事」。
-
-在引導聲中，Jason 穿越了現實與潛意識的邊界，來到一條漫長的心靈步道。眼前的風景映照著他內心的拉扯：步道的右側灑滿金色的陽光，左側卻籠罩在陰沈的暗影中，路旁的植物有些已經枯萎。這條路原本有些狹窄，僅容一人通行，彷彿象徵著他過往略顯壓抑的生命格局。
-
-在步道的盡頭，矗立著一座兩層樓的透天厝，外牆貼著咖啡色的小瓷磚，散發著老舊眷村般的氣息。那是一棟充滿防備感的房子，紅色的木門外竟然還加了一道沈重的外門，像是在無聲訴說著主人對外界的不信任，不輕易向他人敞開心扉。`,
-        insights: [
-          "步道右側陽光與左側暗影，具體投射出個案理智與情感的劇烈拉扯。",
-          "僅容一人通行的窄徑，對應現實生活中長期壓抑、受限的生命施展空間。",
-          "紅木門外加重外鐵門，顯化出深層的不信任感與沈重的自我防衛。"
-        ],
-        quote: "重層的鐵門，阻擋了風雨與傷害，卻也把溫柔與奇蹟關在了門外。"
-      },
-      承: {
-        chapter: "CHAPTER 02",
-        tag: "承 ‧ 探索內在的陰影與沈澱",
-        title: "熄滅的爐火與漂泊浮突的生命大樹",
-        symbol: "能量失衡與生活卡點",
-        icon: "🌫️",
-        pills: ["#缺乏依靠", "#生存匱乏", "#精神干擾"],
-        desc: `在「內在管家」老爺爺的陪伴下，Jason 走進屋內，開始巡視這座生命之屋的各個角落：
-
-客廳與神明廳：客廳的光線昏暗，水泥牆面斑駁且顏色不均。一組沈重的黑色大皮沙發壓迫著空間，且後方開了窗，讓坐在那裡的人感到背後無靠，缺乏安全感。三樓的神明廳裡，觀世音菩薩的聖像顯得過於嬌小，卻被一個比例不符、碩大無比且插滿殘香的香爐擋住了靈魂的視線。
-
-書房與臥室：書房裡的桌子僅是簡陋的白色四腳桌，背對著大門且後方是窗戶，象徵在事業上缺乏貴人支持。臥室裡，古董衣櫥擠滿了黑色衣物，床頭僅放著一顆孤單的枕頭，鏡中的倒影有些模糊，映照著一段尚未明朗、令他感到糾結的曖昧關係。
-
-廚房與後花園：廚房的爐火熄滅了，代表財庫的「米缸」竟然被冰在冰箱裡，顯示出生活熱情的流失與對豐盛感的匱乏。來到後花園，那棵象徵健康的「生命之樹」樹根突兀地浮出地表，樹枝間繞著嘈雜的鳥窩與松鼠，象徵著外界的碎語與內在小劇場干擾。`,
-        insights: [
-          "客廳沙發與書桌背對窗戶，精準反射出在工作與感情中孤立無助、缺乏靠山。",
-          "米缸冰在冰箱與爐火熄滅，象徵熱情衰退，深層潛意識對豐盛具強烈匱乏感。",
-          "本命樹根部凸出與雜亂鳥窩，意指思慮過多、內在紛擾之聲正消耗身體機能。"
-        ],
-        quote: "當靈魂的米缸被冰在冰箱，生命的爐火，也需要一次溫柔地重新點燃。"
-      },
-      轉: {
-        chapter: "CHAPTER 03",
-        tag: "轉 ‧ 心靈能量與磁場的全面調頻",
-        title: "扎根生命之樹，迎向黃金向日葵大道",
-        symbol: "信念重整與全面活化",
-        icon: "🌻",
-        pills: ["#向日葵道", "#靠山重塑", "#生存動能"],
-        desc: `「為內在空間帶來轉變吧，」Jason 在心中堅定地下了指令。這不只是視覺的翻新，更是一次心理能量的徹底重整與頻率提升：
-
-拓展人際格局與身心調養：原本陰暗且受限的生命通道，迎來了神聖溫暖的光明照耀，轉化為寬廣、平坦且充滿生機的向日葵大道。他放下了過去緊繃的防備心，以更具現代感的嶄新姿態擁抱世界，外在磁場也隨之轉化為明亮、健康的修復能量。
-
-重塑心理基石與智慧靠山：內心的情感空間變得圓滿、平穩，處處洋溢著溫暖與生氣蓬勃的氛圍。在信仰與精神的核心，守護力量展現出無比的莊嚴與宏大，象徵生命體和諧的光芒在潛意識深處永恆不滅。同時，他重新梳理了學習與事業的能量結構，為自己建立起無後顧之憂的「厚實靠山」，並在深層意識中，成功凝聚了未來事業拓展的豐盛資糧。
-
-興旺生命動能與豐盛財庫：代表生活基石與生存價值的廚房空間被徹底活化。那股溫熱、富足且充滿人情味的生命動能被重新喚醒，財庫的能量從原本的匱乏轉為穩固且源源不絕的圓滿狀態。
-
-扎根生命之樹與內在歸零：象徵健康與生命力的核心樹木，在溫柔的滋養下，將過往浮躁、漂泊的根基深深扎入意識的大地。那些現實生活中紛擾的雜音與消耗能量的瑣事被一一清理、歸零，讓生命之樹得以重新綻放出翠綠、繁茂且充滿韌性的嶄新生機。`,
-        insights: [
-          "窄路轉化為灑滿陽光的向日葵大道：放下防備心，重新對世界敞開。",
-          "書桌重整、米缸歸位與爐火重燃：建立無後顧之憂的事業靠山，凝聚財富根基。",
-          "健康之樹清理鳥巢雜音並重新扎根：平息外界干擾與內耗, 重現生命韌性。"
-        ],
-        quote: "在內在將格局拓寬一寸，現實的生命道路，便會開拓一丈。"
-      },
-      合: {
-        chapter: "CHAPTER 04",
-        tag: "合 ‧ 預見未來的幸福顯化",
-        title: "遇見米白色溫馨新居與土地公現身",
-        symbol: "藍圖顯化與高我叮嚀",
-        icon: "🏡",
-        pills: ["#未來預見", "#放下武裝", "#內外合一"],
-        desc: `調整完成後，元辰宮煥然一新，空氣中流動著清新與平靜的力量。
-
-Jason 翻開了「生命之書」，看見三年後的自己：他住進了一棟米白色的新居，玄關處擺放著女性的高跟鞋與小孩的玩具，那是一幅充滿笑聲與生活感的家庭畫面。這份畫面並非幻想，而是他潛意識中渴望實現的藍圖。
-
-守護神土地公現身叮嚀，要他放下過去在感情中的包裝與顧慮，以最自在、互補的樣貌去迎接正緣。土地公也提醒他，現實生活中要記得去當地的土地公廟祈求房產順利，並多關心父親的氣場與健康狀況。
-
-當 Jason 緩緩睜開眼，他感覺內心變得厚實而明亮。防護與重建，這場探險帶給他的不僅是心靈空間的修繕，更是一個明確的啟示：當你願意在內在為幸福預留位置，現實的顯化便已在路上。`,
-        insights: [
-          "米白色溫馨新居與女性鞋襪：反映潛意識已然解鎖恐婚束縛，為真愛預留位置。",
-          "土地公的現身指引：提點他放下過多的理性武裝，回歸本真與伴侶互補和諧。",
-          "開運的核心秘訣：內在在引導下完成信念重整，現實生活中身體力行、內外合一。"
-        ],
-        quote: "當你願意在內在為幸福預留位置，現實的顯化，便早已在路上。"
-      }
-    };
-
-    function switchJasonStep(stepKey) {
-      document.querySelectorAll('.step-btn-j').forEach(btn => {
-        btn.classList.remove('bg-[#A3B899]', 'text-white');
-        btn.classList.add('bg-[#FAF6EE]/80', 'text-[#3A4238]', 'border-[#D9C3B0]');
-      });
-      document.getElementById(`j-step-${stepKey}`).classList.add('bg-[#A3B899]', 'text-white');
-      document.getElementById(`j-step-${stepKey}`).classList.remove('bg-[#FAF6EE]/80', 'text-[#3A4238]', 'border-[#D9C3B0]');
-
-      const data = jasonSteps[stepKey];
-
-      document.getElementById('jason-step-num').textContent = data.chapter;
-      document.getElementById('jason-icon-box').textContent = data.icon;
-      document.getElementById('jason-symbol-title').textContent = data.symbol;
-      
-      const pillsContainer = document.getElementById('jason-pills');
-      pillsContainer.innerHTML = '';
-      data.pills.forEach(pill => {
-        const span = document.createElement('span');
-        span.className = "text-xs font-bold px-3 py-1 bg-[#E6EDF0] text-[#3A4238] rounded-full border border-[#A3B899]/30 shadow-xs";
-        span.textContent = pill;
-        pillsContainer.appendChild(span);
-      });
-
-      const listContainer = document.getElementById('jason-insights-list');
-      listContainer.innerHTML = '';
-      data.insights.forEach(insight => {
-        const li = document.createElement('li');
-        li.className = "flex items-start gap-2.5 text-sm sm:text-base text-[#3A4238] leading-relaxed font-medium";
-        li.innerHTML = `<span class="text-[#A3B899] text-base select-none">✦</span> <span>${insight}</span>`;
-        listContainer.appendChild(li);
-      });
-
-      document.getElementById('jason-right-panel').innerHTML = `
-        <div class="space-y-6">
-          <div class="flex flex-wrap items-center gap-3">
-            <span class="px-3.5 py-1.5 bg-[#A3B899] text-[#FAF6EE] rounded-full text-xs font-bold uppercase tracking-wider shadow-xs">Jason 的個案日記</span>
-            <span class="text-sm sm:text-base font-bold text-[#3A4238] bg-[#E6EDF0] px-4 py-1.5 rounded-lg border border-[#D9C3B0]/30">${data.tag}</span>
-          </div>
-          <h3 class="text-2xl sm:text-3xl font-bold text-[#3A4238] tracking-wide border-b border-[#D9C3B0]/30 pb-4">${data.title}</h3>
-          <p class="text-base sm:text-lg text-[#3A4238] leading-relaxed font-normal whitespace-pre-line text-justify">${data.desc}</p>
-        </div>
-        <div class="bg-[#E6EDF0]/50 p-5 sm:p-6 rounded-[20px] border-l-4 border-[#A3B899] shadow-sm mt-6 border border-[#D9C3B0]/20">
-          <p class="text-xs text-[#A3B899] uppercase font-bold tracking-widest mb-1.5 flex items-center gap-1"><span>🌻</span> 心靈指引金句</p>
-          <p class="text-base sm:text-lg italic font-semibold text-[#3A4238] leading-relaxed">"${data.quote}"</p>
-        </div>
-      `;
-    }
-
-    // ==========================================
-    // 9. YUN (云) 的故事數據庫 (依據 云心靈探險故事.pdf)
-    // ==========================================
-    const yunSteps = {
-      起: {
-        chapter: "CHAPTER 01",
-        tag: "起 ‧ 穿透迷霧的金色陽光",
-        title: "黑色旋轉漩渦與古代衙門般的圓柱",
-        symbol: "迷霧漩渦與高冷防禦",
-        icon: "🌀",
-        pills: ["#未知的焦慮", "#理性防備", "#高冷距離感"],
-        desc: `這是一趟深邃而溫暖的心靈重塑之旅。隨著她閉上雙眼，在平靜的引導聲中，通往靈魂深處「元辰宮」的大門緩緩開啟。
-
-當她剛踏上這趟旅程時，迎面而來的並非鳥語花香，而是一個盤踞在眼前的黑色旋轉漩渦，彷彿一道無形的屏障，阻擋了前方的視線。這片幽暗的漩渦，正反映著她內心深處對未知的不確定感，以及潛意識中尚未卸下的理性防備。
-
-在管理員與觀世音菩薩的引導下，金色的陽光終於傾注而下，驅散了陰霾。她這才看清，通往元辰宮的路上佈滿了阻礙前行的小碎石，左側的雜草更是長得又高又亂，透著一絲荒涼。路的盡頭，佇立著一棟瓷磚外牆的透天厝，外牆不僅出現裂縫，瓷磚也有些剝落。最讓人感到充滿距離感的，是門口那兩根宛如古代衙門般的圓柱與階梯，無形中散發著一股令人難以親近的高冷氣息，牆外甚至繞著容易招惹小人的荊棘圍牆。`,
-        insights: [
-          "黑色的旋轉漩渦投射出個案強烈的理性防守，與對未知探索的潛在焦慮。",
-          "路面的碎石與高聳雜草，真實對照著個案在現實生活中的疲憊與內耗。",
-          "衙門般的圓柱與荊棘圍牆，顯化出與人相處時不自覺建立的防備心與距離感。"
-        ],
-        quote: "當理性的防衛化作重重迷霧，心靈的覺醒便從直面陰影開始。"
-      },
-      承: {
-        chapter: "CHAPTER 02",
-        tag: "承 ‧ 擺設映照的舊時光與固執",
-        title: "舊式傳統木頭沙發與固執的具象化",
-        symbol: "舊時光與固執意象",
-        icon: "🛋️",
-        pills: ["#保守固執", "#身心疲憊", "#心靈卡點"],
-        desc: `走進屋內，各個空間真實地投射出她現實生活中的現況與疲憊。
-
-在客廳裡，擺放著深色的舊式傳統木頭沙發，彷彿回到阿嬤家一般，這正是她內心某些思想較為保守、固執且堅持己見的具象化表現。這種過於堅硬的內在設定，讓她在面對外界時難以柔軟地變通，無形中累積了許多的壓力。
-
-同時，牆上的明鏡蒙上了一層薄霧，廚房的米缸雖然有米，但水缸的水卻略顯混濁；後花園的生命之樹雖然挺立，但周圍同樣長滿了雜草，這些潛意識的卡點在這裡一覽無遺，等待著後續的淨化與調整。`,
-        insights: [
-          "客廳的舊式傳統木頭沙發，精準反映出個案內心深處保守與固執的一面。",
-          "屋內的空間氛圍，真實地投射並對照出她現實生活中的現況與疲憊感。",
-          "透過對這些老舊物件的覺察，找到了後續釋放壓力與能量調頻的切入點。"
-        ],
-        quote: "看見內在的固執與疲憊，便是靈魂願意走向柔軟與新生的第一步。"
-      },
-      轉: {
-        chapter: "CHAPTER 03",
-        tag: "轉 ‧ 放下固執與空間重塑",
-        title: "拆除冰冷石柱，換上柔軟與光明的格局",
-        symbol: "能量淨化與格局更新",
-        icon: "✨",
-        pills: ["#卸下防備", "#柔軟包容", "#能量轉化"],
-        desc: `在觀世音菩薩與管理員的協助下，云開始了內在空間的全面大掃除與重塑。
-
-她首先用意念移除了門外那兩根宛如古代衙門般散發高冷氣息的圓柱，並清除了牆外容易招惹小人的荊棘圍牆，換上溫暖明亮的木門與矮柵欄，讓心靈重新對外敞開，散發出溫暖的迎客氛圍。
-
-客廳裡那套深色的舊式傳統木頭沙發，被替換成了舒適、柔軟的現代沙發。這個動作，象徵著她願意放下過度保守與固執的舊有思維，以更柔軟、包容的心態去迎接生活中的變化。外牆的裂縫被一一填補，脫落的瓷磚也重新修繕完好，讓身心的防護罩重新恢復健康與完整。`,
-        insights: [
-          "移除衙門圓柱與荊棘：象徵個案在現實中學會卸下防備，真誠且柔軟地與人連結。",
-          "奶油白牆面翻新：代表將生硬冷酷的自我保護，轉化為柔和、健康的自我接界線。",
-          "清除碎石與雜草：徹底掃除現實生活與前進道路上的干擾與內耗。"
-        ],
-        quote: "當您勇敢拂去潛意識的塵埃，冰冷的牆垣也能化作溫暖的避風港。"
-      },
-      合: {
-        chapter: "CHAPTER 04",
-        tag: "合 ‧ 陽光傾注的嶄新生命",
-        title: "深邃而溫暖的心靈重生與祝福",
-        symbol: "金色陽光與心靈平靜",
-        icon: "🌞",
-        pills: ["#心靈新生", "#安定平靜", "#豐盛顯化"],
-        desc: `隨著調整完成，原本充滿迷霧與高冷氣息的元辰宮，已經蛻變為一處充滿陽光與溫度的安居之地。
-
-觀世音菩薩溫柔的祝福能量灑滿了整個空間，徹底洗淨了她潛意識中的不確定感與疲憊。云深吸一口氣，感受到內在從未有過的安定與放鬆。
-
-當她緩緩睜開雙眼結束這次探險，那道阻擋視線的黑色旋轉漩渦已然消失。這趟深邃而溫暖的心靈重塑之旅，讓她找回了內在的彈性與力量，準備好以更開放、溫慢的心，迎接現實生活中的每一份豐盛。`,
-        insights: [
-          "黑色漩渦的消散：象徵個案成功跨越了對未來的不確定感與深層焦慮。",
-          "金色陽光的傾注：代表高我與守護能量的庇護，帶來極大的心靈安定感。",
-          "深邃而溫暖的重塑：幫助個案在現實中以更柔軟、包容的心態面對生活。"
-        ],
-        quote: "卸下防備的靈魂，才能讓金色的陽光毫無保留地照亮前方的道路。"
-      }
-    };
-
-    function switchYunStep(stepKey) {
-      document.querySelectorAll('.step-btn-y').forEach(btn => {
-        btn.classList.remove('bg-[#A3B899]', 'text-white');
-        btn.classList.add('bg-[#FAF6EE]/80', 'text-[#3A4238]', 'border-[#D9C3B0]');
-      });
-      document.getElementById(`y-step-${stepKey}`).classList.add('bg-[#A3B899]', 'text-white');
-      document.getElementById(`y-step-${stepKey}`).classList.remove('bg-[#FAF6EE]/80', 'text-[#3A4238]', 'border-[#D9C3B0]');
-
-      const data = yunSteps[stepKey];
-
-      document.getElementById('yun-step-num').textContent = data.chapter;
-      document.getElementById('yun-icon-box').textContent = data.icon;
-      document.getElementById('yun-symbol-title').textContent = data.symbol;
-      
-      const pillsContainer = document.getElementById('yun-pills');
-      pillsContainer.innerHTML = '';
-      data.pills.forEach(pill => {
-        const span = document.createElement('span');
-        span.className = "text-xs font-bold px-3 py-1 bg-[#E6EDF0] text-[#3A4238] rounded-full border border-[#A3B899]/30 shadow-xs";
-        span.textContent = pill;
-        pillsContainer.appendChild(span);
-      });
-
-      const listContainer = document.getElementById('yun-insights-list');
-      listContainer.innerHTML = '';
-      data.insights.forEach(insight => {
-        const li = document.createElement('li');
-        li.className = "flex items-start gap-2.5 text-sm sm:text-base text-[#3A4238] leading-relaxed font-medium";
-        li.innerHTML = `<span class="text-[#A3B899] text-base select-none">✦</span> <span>${insight}</span>`;
-        listContainer.appendChild(li);
-      });
-
-      document.getElementById('yun-right-panel').innerHTML = `
-        <div class="space-y-6">
-          <div class="flex flex-wrap items-center gap-3">
-            <span class="px-3.5 py-1.5 bg-[#A3B899] text-[#FAF6EE] rounded-full text-xs font-bold uppercase tracking-wider shadow-xs">云 的個案日記</span>
-            <span class="text-sm sm:text-base font-bold text-[#3A4238] bg-[#E6EDF0] px-4 py-1.5 rounded-lg border border-[#D9C3B0]/30">${data.tag}</span>
-          </div>
-          <h3 class="text-2xl sm:text-3xl font-bold text-[#3A4238] tracking-wide border-b border-[#D9C3B0]/30 pb-4">${data.title}</h3>
-          <p class="text-base sm:text-lg text-[#3A4238] leading-relaxed font-normal whitespace-pre-line text-justify">${data.desc}</p>
-        </div>
-        <div class="bg-[#E6EDF0]/50 p-5 sm:p-6 rounded-[20px] border-l-4 border-[#A3B899] shadow-sm mt-6 border border-[#D9C3B0]/20">
-          <p class="text-xs text-[#A3B899] uppercase font-bold tracking-widest mb-1.5 flex items-center gap-1"><span>🌀</span> 心靈指引金句</p>
-          <p class="text-base sm:text-lg italic font-semibold text-[#3A4238] leading-relaxed">"${data.quote}"</p>
-        </div>
-      `;
-    }
-
-    // ==========================================
-    // 10. ICE 的故事數據庫 (依據 Ice心靈探險故事.pdf) - 完美修正最高信仰與重生的體悟
-    // ==========================================
-    const iceSteps = {
-      起: {
-        chapter: "CHAPTER 01",
-        tag: "起 ‧ 迷霧中的乾涸小徑與生命之屋",
-        title: "乾涸坎坷的小路與險峻的山壁阻礙",
-        symbol: "乾涸小徑與黑霧",
-        icon: "🌫️",
-        pills: ["#黑霧阻路", "#右側山壁", "#偏頭痛反射"],
-        desc: `這是一場關於重拾自我、修補靈魂裂痕的心靈探險故事。
-
-Ice 的心境，在出發前如同被一層厚重的雲霧所遮蔽，長期的偏頭痛與工作上的茫然，讓她的世界顯得灰濛濛的。當她閉上雙眼，踏上通往自己「元辰宮」的道路時，映入眼簾的是一條缺乏陽光、佈滿尖銳小石子的乾涸泥土路。道路的右側甚至矗立著一道險峻的山壁，生生擋住了她前方的視野與運勢。在前行的途中，一團黑霧更是擋住了去路，那象徵著她近期因工作接觸空屋而沾染的外界負能量。
-
-幸而，一位模樣宛如廟會Q版太子爺般活潑的「管理員」現身陪伴著她。在最高信仰耶穌基督的光芒照耀下，黑霧散去，Ice 終於來到了她的生命之屋前。那是一棟白色的兩層方形透天建築，覆蓋著紅色的屋簷，然而屋頂右側卻有一道明顯的裂痕，正對應著她現實中長年折磨她的右側偏頭痛。令人訝異的是，這棟房子的外圍沒有保護的圍牆，大門卻是莊嚴的「廟門」造型，這樣的設計讓她失去了與他人相處的健康界限，不僅容易被親近的人予取予求，更使她頻繁吸引外界的負能量，導致身心俱疲。`,
-        insights: [
-          "乾涸的坎坷泥土路代表現實生活中積壓重重的艱辛、磨難與挫折。",
-          "右手邊高聳險峻的山壁，具體顯化出個案目前受阻、受限的未來發展與運勢。",
-          "莊嚴的「廟門」大門造型在缺乏圍牆的狀況下，顯化出個人防護邊界的喪失。"
-        ],
-        quote: "當外在世界的雜音化作重重迷霧，唯有向內走，才能尋回那條平靜的路。"
-      },
-      承: {
-        chapter: "CHAPTER 02",
-        tag: "承 ‧ 幽暗長廊與禁錮的生命之樹",
-        title: "偏頭痛屋簷裂痕與鐵鍊鎖緊的本命樹",
-        symbol: "幽暗長廊與內心匱乏",
-        icon: "🚪",
-        pills: ["#圓桌壓抑", "#爐火熄滅", "#作繭自縛"],
-        desc: `推開沈重的門扉入內，迎接 Ice 的並非溫馨的客廳，而是一條幽暗、深邃且沒有盡頭的長廊，兩側緊閉著一扇扇猶如飯店般的房門。這冰冷的長廊，真實反映了她目前在事業上找不到方向、缺乏核心目標的迷惘現況。
-
-隨著探索的深入，屋內各處的景象更揭露了她內心的匱乏與沈重負擔：
-・書房與廚房：書房中央擺著一張令人感到壓抑的圓形會議桌。來到廚房，瓦斯爐的火是熄滅的，象徵著她對生活熱情的冷卻；水龍頭的水流異常巨大，暗示著開銷過大；而裝米的玻璃罐不僅受陽光直射，裡頭的米也不夠新鮮，反映出她平日忙碌而忽略了健康的飲食。
-・臥室：房間裡沒有一扇透氣的窗戶，雙人床被一層如網般的簾子重重包圍，彷彿作繭自縛的窒息感。最令人心疼的是，衣櫥裡空無一物，梳妝台上也沒有任何保養品，顯示她作為四個孩子的母親，長年為了家庭犧牲，早已忘了要好好愛護與打扮自己。
-・後花園：這裡雜草叢生，一尊花瓶造型的石雕突兀地擋在動線上，象徵著她潛意識中對過往人際關係的歉疚與阻礙。而她的「生命之樹」不備受折磨，不僅凋落乾枯，樹幹甚至被沈重的黑色鐵鍊緊緊纏繞。`,
-        insights: [
-          "右側屋簷的顯眼裂痕，具象呈映出個案在現實中長年偏頭痛的生理反射。",
-          "長廊無光、衣櫥空無、缺乏保養品：象徵個案長年為家庭犧牲、忽略愛護自己。",
-          "本命樹被黑色鐵鍊鎖緊：反映出個案生命能量與創造力被深深禁錮與壓抑。"
-        ],
-        quote: "靈魂的瓦斯爐火熄滅了，生命的花園，也隨之籠罩在沈重的枷鎖中。"
-      },
-      轉: {
-        chapter: "CHAPTER 03",
-        tag: "轉 ‧ 重整空間與斬斷枷鎖",
-        title: "居家木門界線重置與斬斷沈重鐵鍊",
-        symbol: "能量重整與界限修復",
-        icon: "🛠️",
-        pills: ["#居家木門", "#重燃爐火", "#解鎖鐵鍊"],
-        desc: `在催眠引導下，Ice 啟動了強大的內在意志力，決定為自己的生命城堡進行徹底的重建：
-
-首先，她將代表防衛門禁缺失的「廟門」改建為溫馨明亮、帶有溫度的居家木門，並在外部築起一道健康的人際心理邊界（圍牆），保護個人磁場。接著，她在昏暗的長廊頂端點亮了數盞溫暖的吊燈，驅散了冷酷，讓溫暖的光芒重新流淌在通道中。
-
-來到廚房，她重新點燃了熊熊燃燒的瓦斯爐火，將水龍頭調回正常細流，將米罐移開陽光直射並重新裝滿新鮮、飽滿的新米，重新補滿財庫，重拾生活熱情。臥室打開了一扇大窗戶讓空氣流通，拆掉了那層「作繭自縛」包圍雙人床的窒息簾幕，衣櫥放滿合適的衣物，梳妝台擺好保養品。
-
-在後花園，她清除了所有野草，將擋在動線上的花瓶造型石雕移走。最震撼的重整是，她合力用意志力，將緊緊纏繞在本命樹上的黑色重重鐵鍊一根根斬斷、解鎖！清除雜草後，在根部鋪上肥沃的黑土，並澆灌上純淨生命泉水。`,
-        insights: [
-          "廟門改居家木門並築圍牆：在心中成功建構安全的自我界限，保護個人磁場。",
-          "重燃爐火、調節水龍頭與備鮮米：重新迎回生活的動力，填補消耗的財富能量。",
-          "斬斷黑色鐵鍊、清理石雕：徹底瓦解過往的人際歉疚障礙，解放被禁錮的生命力。"
-        ],
-        quote: "當第一根鐵鍊被無畏地斬斷，靈魂的生命之泉便再次汩汩流動。"
-      },
-      合: {
-        chapter: "CHAPTER 04",
-        tag: "合 ‧ 鏡中的願景與重生的體悟",
-        title: "耶穌基督的慈愛之光與鏡中願景",
-        symbol: "基督之光與重生願景",
-        icon: "🕊️",
-        pills: ["#基督之光", "#鏡中願景", "#重獲新生"],
-        desc: `調整完成後，元辰宮呈現出一片溫馨與生機。在最高信仰——耶穌基督的溫暖光芒照耀下，神聖的慈愛籠罩著整個空間，溫柔地撫慰了她長久以來為生活與家庭付出的所有辛勞。
-
-此時，Ice 望向了屋內的明鏡，鏡中不再是迷惘與疲憊，而是清晰地映照出她未來的願景與重生的體悟。她深刻感受到自己是被愛、被接納的，不再需要將所有的重擔與委屈都自己一個人憋著、扛著。
-
-睜開眼睛回歸現實後，Ice 感到前所未有的輕鬆，那折磨她許久、因壓力而起的偏頭痛神奇地減緩了大半，心靈重獲自由。她終於明白，當內在能量調頻圓滿，並沐浴在信仰的光芒中，現實的生命自然會開拓出一條充滿光與愛的康莊大道。`,
-        insights: [
-          "耶穌基督的慈愛光芒籠罩：象徵最高信仰無條件的包容與支持，徹底洗滌了個案的疲憊。",
-          "鏡中的未來願景顯化：幫助個案重新對焦生命的藍圖，找回真實的自我價值與平靜。",
-          "偏頭痛的神奇減緩：證明了潛意識空間的深層釋放，對現實生理與心靈健康的深遠反饋作用。"
-        ],
-        quote: "在最高信仰的光芒中看見重生的願景，靈魂便擁有了無所畏懼的平靜。"
-      }
-    };
-
-    function switchIceStep(stepKey) {
-      document.querySelectorAll('.step-btn-i').forEach(btn => {
-        btn.classList.remove('bg-[#A3B899]', 'text-white');
-        btn.classList.add('bg-[#FAF6EE]/80', 'text-[#3A4238]', 'border-[#D9C3B0]');
-      });
-      document.getElementById(`i-step-${stepKey}`).classList.add('bg-[#A3B899]', 'text-white');
-      document.getElementById(`i-step-${stepKey}`).classList.remove('bg-[#FAF6EE]/80', 'text-[#3A4238]', 'border-[#D9C3B0]');
-
-      const data = iceSteps[stepKey];
-
-      document.getElementById('ice-step-num').textContent = data.chapter;
-      document.getElementById('ice-icon-box').textContent = data.icon;
-      document.getElementById('ice-symbol-title').textContent = data.symbol;
-      
-      const pillsContainer = document.getElementById('ice-pills');
-      pillsContainer.innerHTML = '';
-      data.pills.forEach(pill => {
-        const span = document.createElement('span');
-        span.className = "text-xs font-bold px-3 py-1 bg-[#E6EDF0] text-[#3A4238] rounded-full border border-[#A3B899]/30 shadow-xs";
-        span.textContent = pill;
-        pillsContainer.appendChild(span);
-      });
-
-      const listContainer = document.getElementById('ice-insights-list');
-      listContainer.innerHTML = '';
-      data.insights.forEach(insight => {
-        const li = document.createElement('li');
-        li.className = "flex items-start gap-2.5 text-sm sm:text-base text-[#3A4238] leading-relaxed font-medium";
-        li.innerHTML = `<span class="text-[#A3B899] text-base select-none">✦</span> <span>${insight}</span>`;
-        listContainer.appendChild(li);
-      });
-
-      document.getElementById('ice-right-panel').innerHTML = `
-        <div class="space-y-6">
-          <div class="flex flex-wrap items-center gap-3">
-            <span class="px-3.5 py-1.5 bg-[#A3B899] text-[#FAF6EE] rounded-full text-xs font-bold uppercase tracking-wider shadow-xs">Ice 的個案日記</span>
-            <span class="text-sm sm:text-base font-bold text-[#3A4238] bg-[#E6EDF0] px-4 py-1.5 rounded-lg border border-[#D9C3B0]/30">${data.tag}</span>
-          </div>
-          <h3 class="text-2xl sm:text-3xl font-bold text-[#3A4238] tracking-wide border-b border-[#D9C3B0]/30 pb-4">${data.title}</h3>
-          <p class="text-base sm:text-lg text-[#3A4238] leading-relaxed font-normal whitespace-pre-line text-justify">${data.desc}</p>
-        </div>
-        <div class="bg-[#E6EDF0]/50 p-5 sm:p-6 rounded-[20px] border-l-4 border-[#A3B899] shadow-sm mt-6 border border-[#D9C3B0]/20">
-          <p class="text-xs text-[#A3B899] uppercase font-bold tracking-widest mb-1.5 flex items-center gap-1"><span>🕊️</span> 心靈指引金句</p>
-          <p class="text-base sm:text-lg italic font-semibold text-[#3A4238] leading-relaxed">"${data.quote}"</p>
-        </div>
-      `;
-    }
-
-    // 初始化加載所有面板的第一章
-    switchMinaStep('起');
-    switchJasonStep('起');
-    switchYunStep('起');
-    switchIceStep('起');
   </script>
 </body>
 </html>

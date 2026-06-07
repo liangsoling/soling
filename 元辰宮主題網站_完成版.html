@@ -86,14 +86,13 @@
         </span>
       </a>
       
-      <!-- 桌面端導覽連結 -->
+      <!-- 桌面端導覽連結 (已拿掉自我檢測按鈕) -->
       <div class="hidden md:flex items-center space-x-8 font-medium">
         <a href="index.html" class="text-[#3A4238] hover:text-[#A3B899] transition-colors">首頁</a>		
         <a href="#about" class="text-[#3A4238] hover:text-[#A3B899] transition-colors">核心理念</a>
         <a href="#explorer" class="text-[#3A4238] hover:text-[#A3B899] transition-colors">格局探索</a>
         <a href="#benefits" class="text-[#3A4238] hover:text-[#A3B899] transition-colors">調整好處</a>
         <a href="#precautions" class="text-[#3A4238] hover:text-[#A3B899] transition-colors">自測與須知</a>
-        <a href="#precautions" class="btn-matcha px-5 py-2.5 round-btn text-sm font-semibold">自我檢測</a>
       </div>
 
       <!-- 行動端導覽選單按鈕 -->
@@ -104,7 +103,7 @@
       </button>
     </div>
 
-    <!-- 行動端下拉選單 (點擊「首頁」將平滑滾動回頂部，並自動隱藏下拉選單，不跳轉連結) -->
+    <!-- 行動端下拉選單 (點擊「首頁」將平滑滾動回頂部，並自動隱藏下拉選單，不跳轉連結，已拿掉自我檢測按鈕) -->
     <div id="mobile-menu" class="hidden md:hidden bg-[#FAF6EE] border-b border-[#D9C3B0]/30 transition-all duration-300">
       <div class="px-6 py-4 flex flex-col space-y-4 font-medium">
         <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); document.getElementById('mobile-menu').classList.add('hidden'); event.preventDefault();" class="text-[#3A4238] hover:text-[#A3B899] transition-colors py-1">首頁</a>
@@ -112,7 +111,6 @@
         <a href="#explorer" onclick="document.getElementById('mobile-menu').classList.add('hidden');" class="text-[#3A4238] hover:text-[#A3B899] transition-colors py-1">格局探索</a>
         <a href="#benefits" onclick="document.getElementById('mobile-menu').classList.add('hidden');" class="text-[#3A4238] hover:text-[#A3B899] transition-colors py-1">調整好處</a>
         <a href="#precautions" onclick="document.getElementById('mobile-menu').classList.add('hidden');" class="text-[#3A4238] hover:text-[#A3B899] transition-colors py-1">自測與須知</a>
-        <a href="#precautions" onclick="document.getElementById('mobile-menu').classList.add('hidden');" class="btn-matcha text-center py-2.5 round-btn text-sm font-semibold">自我檢測</a>
       </div>
     </div>
   </nav>
@@ -129,7 +127,7 @@
       </h1>
     </div>
 
-    <!-- 下方內容雙欄區 -->
+    <!-- 下方內容雙欄區 (文案 5 : 寬圖 7) -->
     <div class="max-w-7xl mx-auto px-6 relative z-10 w-full">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         <!-- 左欄：主視覺文案與 CTA -->
@@ -147,7 +145,7 @@
           </div>
         </div>
 
-        <!-- 右欄：首圖大圓角大圖容器（高度固定 400px） -->
+        <!-- 右欄：首圖大圓角大圖容器（高度已調整為400px） -->
         <div class="lg:col-span-7 relative w-full">
           <div class="absolute inset-0 bg-[#A3B899]/10 rounded-[32px] transform translate-x-3 translate-y-3 -z-10"></div>
           <div class="round-large overflow-hidden soft-shadow bg-[#FAF6EE] border border-[#D9C3B0]/30 rounded-[32px]">
@@ -480,7 +478,7 @@
               <span id="faq-icon-3" class="text-[#A3B899] text-xl transition-transform duration-300">＋</span>
             </button>
             <div id="faq-content-3" class="hidden px-5 pb-5 text-sm sm:text-base text-[#3A4238] border-t border-[#D9C3B0]/20 pt-4 leading-relaxed font-medium">
-              這是我非常堅持的根本理念。調整元辰宮是優化您潛意識的顯化狀態（好比為枯乾的花草灌溉、為冷透的爐竈填柴），但如果您調整了卻每天宅在家不與人往來，或是補滿米缸後每天睡懶覺不事生產，好運也無法從天而降。<strong>開運的核心，是內在調頻後，外在身體力行。</strong>
+              這是老師非常堅持的根本理念。調整元辰宮是優化您潛意識的顯化狀態（好比為枯乾的花草灌溉、為冷透的爐竈填柴），但如果您調整了卻每天宅在家不與人往來，或是補滿米缸後每天睡懶覺不事生產，好運也無法從天而降。<strong>開運的核心，是內在調頻後，外在身體力行。</strong>
             </div>
           </div>
 

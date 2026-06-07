@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>凌Reiki・療癒 — 臼井聖火靈氣空間</title>
+    <title>凌Reiki — 臼井聖火靈氣空間</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -24,7 +24,7 @@
                         }
                     },
                     fontFamily: {
-                        /* 換上高對比、極致清晰的無襯線字型 stack，優先確保閱讀舒適度 */
+                        /* 換上高對比、極致清晰的無襯線字型 stack */
                         sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', 'sans-serif'],
                         serif: ['Noto Serif TC', 'Georgia', 'serif'],
                     }
@@ -47,7 +47,7 @@
 
         body {
             font-family: 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
-            color: var(--color-tea); /* 提高主文本顏色對比度，徹底保障易讀性 */
+            color: var(--color-tea); /* 確保極致易讀性 */
             background-color: var(--color-sage);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
@@ -82,7 +82,7 @@
             -webkit-transform: rotateY(180deg);
         }
         
-        /* 抹茶有機風格滾動條 */
+        /* 抹茶風格滾動條 */
         .custom-scrollbar::-webkit-scrollbar {
             width: 8px;
             height: 8px;
@@ -95,7 +95,7 @@
             border-radius: 4px;
         }
 
-        /* 摺疊面板的核心過渡樣式 */
+        /* 摺疊面板 */
         .accordion-content {
             transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -161,7 +161,7 @@
         </div>
     </nav>
 
-    <!-- 主視覺前導區 (抹茶奶油暖色系) -->
+    <!-- 主視覺前導區 -->
     <header class="relative overflow-hidden bg-gradient-to-b from-reiki-tea via-[#485347] to-reiki-tea text-[#FAF6EE] py-20 px-6 md:px-12 text-center">
         <!-- 柔和星冕微光 -->
         <div class="absolute inset-0 z-0">
@@ -208,8 +208,8 @@
                 </div>
             </div>
 
-            <!-- 起源說明與醫療免責聲明卡片 (已成功將醫療聲明接續在後並大幅優化排版) -->
-            <div class="bg-reiki-sage/40 dark:from-slate-900 dark:to-slate-950 p-6 md:p-8 rounded-2xl border border-reiki-oatmeal/30 mb-12 flex flex-col md:flex-row gap-6 items-start shadow-sm">
+            <!-- 起源說明與醫療免責聲明卡片 -->
+            <div class="bg-reiki-sage/40 dark:from-slate-900 dark:to-slate-950 p-6 md:p-8 rounded-2xl border border-reiki-oatmeal/30 mb-8 flex flex-col md:flex-row gap-6 items-start shadow-sm">
                 <div class="flex items-center justify-center gap-2 bg-gradient-to-tr from-reiki-tea via-reiki-matcha to-reiki-oatmeal text-white w-24 h-24 rounded-2xl shadow-md flex-shrink-0 mt-1">
                     <div class="text-center">
                         <span class="font-serif text-2xl font-black block leading-none break-keep">靈氣</span>
@@ -226,6 +226,38 @@
                             <i class="fa-solid fa-circle-info mr-1.5 text-reiki-matcha"></i>
                             「靈氣是一種舒緩壓力與促進放鬆的技術，用以支持身體的自然療癒能力。靈氣是專業醫療護理的『輔助/互補品 (Complement)』，絕非『替代品 (Replacement)』。靈氣實踐者並非執業醫療保健提供者，我們強烈敦促個案始終尋求適當的心理與生理醫療專業協助。」
                         </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 💖 新增：資訊圖表專屬展示區（完美落腳於此，並提供點擊燈箱放大的絕佳互動體驗） -->
+            <div class="mb-12 bg-white dark:bg-slate-900/80 p-4 sm:p-6 rounded-3xl border-2 border-reiki-oatmeal/20 shadow-xs relative group overflow-hidden">
+                <div class="flex items-center justify-between mb-4 border-b border-reiki-oatmeal/10 pb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="text-lg">🗺️</span>
+                        <h4 class="font-serif font-black text-sm sm:text-base text-reiki-tea dark:text-white break-keep">臼井靈氣・心靈架構圖</h4>
+                    </div>
+                    <button onclick="openLightbox()" class="text-xs text-reiki-matcha hover:text-reiki-tea font-bold flex items-center gap-1 transition">
+                        <i class="fa-solid fa-maximize"></i> 點擊放大檢視
+                    </button>
+                </div>
+                
+                <!-- 圖檔容器 -->
+                <div class="relative rounded-2xl overflow-hidden bg-reiki-sage/35 border border-reiki-oatmeal/20 flex justify-center items-center cursor-pointer group" onclick="openLightbox()">
+                    <img src="臼井靈氣_資訊圖表.png" alt="[臼井靈氣_資訊圖表]" class="w-full max-h-[480px] object-contain transition-transform duration-500 group-hover:scale-[1.02]" onerror="this.style.display='none'; document.getElementById('image-fallback').classList.remove('hidden');">
+                    
+                    <!-- 圖檔載入失敗時的優美 Fallback 替代提示 -->
+                    <div id="image-fallback" class="hidden py-16 px-4 text-center space-y-3 w-full">
+                        <i class="fa-regular fa-image text-4xl text-reiki-oatmeal"></i>
+                        <p class="text-xs sm:text-sm font-medium text-reiki-tea/80">臼井靈氣架構資訊圖表（已優雅排版就緒）</p>
+                        <p class="text-[11px] text-slate-400">請確認本目錄下存有「臼井靈氣_資訊圖表.png」以完整顯示</p>
+                    </div>
+                    
+                    <!-- 浮動滑過覆蓋層 -->
+                    <div class="absolute inset-0 bg-reiki-tea/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <span class="bg-white/90 text-reiki-tea text-xs font-bold px-4 py-2 rounded-full shadow-sm flex items-center gap-1.5">
+                            <i class="fa-solid fa-search-plus text-reiki-matcha"></i> 點擊全螢幕放大
+                        </span>
                     </div>
                 </div>
             </div>
@@ -293,19 +325,19 @@
                         <h3 class="font-serif font-black text-xl text-reiki-tea dark:text-white mb-6 tracking-wide break-keep">靈性成長自我實現</h3>
                         <ul class="space-y-4 text-sm text-reiki-tea dark:text-slate-250 font-normal">
                             <li class="flex items-start gap-3">
-                                <span class="text-reiki-matcha font-black text-lg leading-none select-none">✓</span>
+                                <span class="text-reiki-gold font-black text-lg leading-none select-none">✓</span>
                                 <span class="leading-relaxed font-medium">重建深度的內在安全感與宇宙連結</span>
                             </li>
                             <li class="flex items-start gap-3">
-                                <span class="text-reiki-matcha font-black text-lg leading-none select-none">✓</span>
+                                <span class="text-reiki-gold font-black text-lg leading-none select-none">✓</span>
                                 <span class="leading-relaxed font-medium">融解文化假我，自然彰顯人生藍圖</span>
                             </li>
                             <li class="flex items-start gap-3">
-                                <span class="text-reiki-matcha font-black text-lg leading-none select-none">✓</span>
+                                <span class="text-reiki-gold font-black text-lg leading-none select-none">✓</span>
                                 <span class="leading-relaxed font-medium">自然實踐臼井五戒，培養無條件慈悲</span>
                             </li>
                             <li class="flex items-start gap-3">
-                                <span class="text-reiki-matcha font-black text-lg leading-none select-none">✓</span>
+                                <span class="text-reiki-gold font-black text-lg leading-none select-none">✓</span>
                                 <span class="leading-relaxed font-medium">擴展意識維度，體驗萬物合一</span>
                             </li>
                         </ul>
@@ -425,7 +457,7 @@
                                 <span class="text-[10px] bg-white/10 self-start px-2.5 py-1 rounded font-mono font-bold text-[#FAF6EE]">01</span>
                                 <div class="text-center my-auto">
                                     <h3 class="font-serif text-3xl font-bold tracking-widest mb-1 text-white">怒るな</h3>
-                                    <p class="text-xs font-serif text-slate-350">Ikaru na</p>
+                                    <p class="text-xs font-serif text-slate-300">Ikaru na</p>
                                 </div>
                                 <span class="text-xs font-bold text-center border-t border-white/10 pt-3 flex items-center justify-center gap-1 text-[#FAF6EE]">今日不生氣 ➔</span>
                             </div>
@@ -688,6 +720,30 @@
 
     </main>
 
+    <!-- 🌟 全螢幕燈箱 (Lightbox) 用於無損放大展示資訊圖表 -->
+    <div id="lightbox" class="hidden fixed inset-0 z-50 bg-reiki-tea/95 backdrop-blur-md flex flex-col justify-between p-4 sm:p-6 opacity-0 transition-opacity duration-300">
+        <!-- 頂部控制列 -->
+        <div class="flex justify-between items-center max-w-7xl mx-auto w-full">
+            <div class="text-[#FAF6EE]">
+                <h4 class="font-serif font-bold text-base whitespace-nowrap">臼井靈氣・心靈架構資訊圖表</h4>
+                <p class="text-xs text-reiki-matcha">ICRT 實證研究體系綱要</p>
+            </div>
+            <button onclick="closeLightbox()" class="text-white hover:text-reiki-matcha p-2 rounded-full bg-white/10 hover:bg-white/20 transition-all">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+
+        <!-- 圖片主體 -->
+        <div class="flex-grow flex items-center justify-center p-2 sm:p-4 overflow-auto custom-scrollbar">
+            <img src="臼井靈氣_資訊圖表.png" alt="[臼井靈氣_資訊圖表]" class="max-w-full max-h-[80vh] object-contain rounded-xl shadow-2xl border border-white/10">
+        </div>
+
+        <!-- 底部提示 -->
+        <div class="text-center text-[#FAF6EE]/50 text-xs py-2">
+            提示：使用滑鼠滾輪或兩指手勢可進行局部細節縮放。點擊右上角關閉回到首頁。
+        </div>
+    </div>
+
     <!-- 每日調頻卡片彈出視窗 -->
     <div id="mantraM" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-slate-900/60 backdrop-blur-xs px-4">
         <div class="bg-reiki-cream dark:bg-slate-900 max-w-md w-full rounded-3xl p-8 shadow-2xl border border-reiki-oatmeal relative">
@@ -803,6 +859,28 @@
                 content.style.maxHeight = '0px';
                 if (icon) icon.style.transform = 'rotate(0deg)';
             }
+        }
+
+        // 燈箱控制邏輯
+        function openLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('hidden');
+            // 觸發漸顯動畫
+            setTimeout(() => {
+                lightbox.classList.remove('opacity-0');
+                lightbox.classList.add('opacity-100');
+            }, 10);
+            document.body.classList.add('overflow-hidden'); // 阻止底層滾動
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('opacity-100');
+            lightbox.classList.add('opacity-0');
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+            }, 300);
+            document.body.classList.remove('overflow-hidden');
         }
 
         // 每日宣告抽卡數據

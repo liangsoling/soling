@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>從系統輔導顧問到身心靈療癒師，我相信人生沒有單一版本 - 凌Reiki</title>
+  
+  <!-- 載入 Google 字體：優雅的宋體（用於標題）與黑體（用於內文） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS 引入 -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- 設定專屬語法色調主題 -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            sage: '#E6EDF0',     /* 自然淡綠（背景） */
+            matcha: '#A3B899',   /* 溫潤抹茶綠（主調、按鈕） */
+            cream: '#FAF6EE',    /* 溫馨奶油白（卡片） */
+            oatmeal: '#D9C3B0',  /* 燕麥拿鐵色（裝飾、副色） */
+            tea: '#3A4238'       /* 深焙茶綠黑（文字） */
+          },
+          fontFamily: {
+            sans: ['Noto Sans TC', 'sans-serif'],
+            serif: ['Noto Serif TC', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* 柔和脈動與漸變背景效果 */
+    @keyframes pulse-slow {
+      0%, 100% { transform: scale(1); opacity: 0.12; }
+      50% { transform: scale(1.05); opacity: 0.22; }
+    }
+    .animate-pulse-slow {
+      animation: pulse-slow 10s ease-in-out infinite;
+    }
+    
+    /* 自訂平滑載入動畫 */
+    .fade-in-section {
+      opacity: 0;
+      transform: translateY(15px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .fade-in-section.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* 捲動軸美化 */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #E6EDF0;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #A3B899;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #8FA285;
+    }
+  </style>
+</head>
+<body class="bg-sage text-tea font-sans leading-relaxed selection:bg-matcha/30 selection:text-tea">
+
+  <!-- 背景流動能量光暈 -->
+  <div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
+    <div class="absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-matcha/8 blur-[100px] animate-pulse-slow"></div>
+    <div class="absolute top-1/3 -right-40 w-[450px] h-[450px] rounded-full bg-oatmeal/12 blur-[100px] animate-pulse-slow" style="animation-delay: 2s;"></div>
+    <div class="absolute -bottom-40 left-1/4 w-[500px] h-[500px] rounded-full bg-matcha/5 blur-[100px] animate-pulse-slow" style="animation-delay: 4s;"></div>
+  </div>
+
+  <!-- 頂部導覽列 -->
+  <nav class="sticky top-0 z-50 backdrop-blur-md bg-sage/80 border-b border-oatmeal/20 transition-all duration-300">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-2">
+        <!-- 採用 Emoji 風格的 Logo -->
+        <span class="text-xl">🌿</span>
+        <span class="font-serif font-bold text-base tracking-wider text-tea">凌Reiki</span>
+      </div>
+      
+      <!-- 電腦版導覽連結 -->
+      <div class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-widest">
+        <a href="index.html" class="text-tea hover:text-matcha transition-colors py-1">回首頁</a>
+        <a href="#journey" class="text-tea hover:text-matcha transition-colors py-1">靈性起點</a>
+        <a href="#beliefs" class="text-tea hover:text-matcha transition-colors py-1">療癒信念</a>
+        <a href="#certifications" class="text-tea hover:text-matcha transition-colors py-1">專業證照</a>
+      </div>
+
+      <!-- 行動版選單按鈕 -->
+      <button id="menu-btn" class="md:hidden p-1 text-tea focus:outline-none" aria-label="Toggle Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- 行動版選單 -->
+    <div id="mobile-menu" class="hidden md:hidden bg-cream border-b border-oatmeal/30 transition-all duration-300">
+      <div class="px-6 py-4 flex flex-col space-y-4 font-medium tracking-wider text-sm">
+        <a href="index.html" class="text-tea hover:text-matcha transition-colors">回首頁</a>
+        <a href="#journey" class="text-tea hover:text-matcha transition-colors">靈性起點</a>
+        <a href="#beliefs" class="text-tea hover:text-matcha transition-colors">療癒信念</a>
+        <a href="#certifications" class="text-tea hover:text-matcha transition-colors">專業證照</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 視覺核心區 (Hero) -->
+  <header class="relative overflow-hidden flex flex-col items-center justify-center pt-20 pb-12 px-6">
+    <div class="w-full text-center z-10 space-y-6">
+      
+      <!-- 主標題與副標題：優雅的長句排版 -->
+      <h1 class="font-serif text-tea font-bold tracking-wider mx-auto max-w-4xl">
+        <span class="block leading-snug text-xl sm:text-2xl md:text-3xl lg:text-4xl">
+          從系統輔導顧問到身心靈療癒師，<br class="hidden sm:block">我相信人生沒有單一版本。
+        </span>
+        <span class="block mt-4 md:mt-6 text-[15px] sm:text-lg md:text-xl lg:text-2xl text-tea/85 font-medium leading-relaxed">
+          透過覺察與實踐，每個人都能創造更完整、<br class="hidden md:block">更真實的多重人生版本，活出屬於自己的無限可能。
+        </span>
+      </h1>
+      
+      <!-- 經典核心語錄卡片：大幅降低高度，極致扁平化 -->
+      <div class="inline-flex items-center justify-center max-w-full px-4 py-1.5 bg-cream/90 backdrop-blur-sm rounded-full border border-oatmeal/60 shadow-sm mx-auto mt-2">
+        <p class="font-serif text-[11px] sm:text-[13px] md:text-sm text-tea/90 leading-tight italic tracking-wide m-0 whitespace-nowrap">
+          <span class="text-matcha font-bold mr-0.5">“</span>
+          ～丟掉標籤，放下角色，什麼都不是，也因此什麼都能是，因為每一刻都可以重新開始。～
+          <span class="text-matcha font-bold ml-0.5">”</span>
+        </p>
+      </div>
+
+      <!-- 下滑指示 -->
+      <div class="pt-8 flex justify-center">
+        <a href="#journey" aria-label="Scroll Down" class="text-2xl animate-bounce text-matcha hover:opacity-80 transition-opacity">
+          ⬇️
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 靈性起點區 (Journey) -->
+  <section id="journey" class="py-14 px-6 md:px-12 bg-cream border-y border-oatmeal/20 relative">
+    <div class="max-w-4xl mx-auto">
+      
+      <!-- 區塊標題與 Emoji 圖示 -->
+      <div class="text-center mb-10">
+        <div class="flex items-center justify-center gap-2 mb-1.5">
+          <span class="text-base">🌱</span>
+          <span class="text-matcha font-serif text-xs tracking-[0.15em] block uppercase">Spiritual Start</span>
+        </div>
+        <h2 class="font-serif text-lg md:text-2xl text-tea font-bold tracking-wide">
+          靈性起點：  是什麼契機踏上這條路？
+        </h2>
+        <div class="w-6 h-px bg-oatmeal mx-auto mt-3"></div>
+      </div>
+
+      <!-- 核心觸動引言 -->
+      <div class="mb-8 p-5 bg-sage/30 rounded-xl border-l-[3px] border-matcha/70 flex gap-3 items-start">
+        <span class="text-xl shrink-0 mt-0.5">💬</span>
+        <div>
+          <p class="font-serif text-sm md:text-base text-tea/95 italic leading-relaxed">
+            一部劇中的一句話，曾深深觸動著我：<br>
+            「沒有人是不重要的，至少，你對你自己來說很重要。考驗總是會一直來的，但是宇宙，不會給任何扛不住的功課。」
+          </p>
+        </div>
+      </div>
+
+      <!-- 故事主軸：全面使用 Emoji 圖示搭配內容 -->
+      <div class="space-y-6 text-sm md:text-[15px] text-tea/90 leading-loose tracking-wide">
+        
+        <div class="bg-sage/10 p-5 rounded-xl border border-oatmeal/20 space-y-2">
+          <div class="flex items-center gap-2 text-matcha font-semibold text-base">
+            <span class="text-lg">💖</span>
+            <span>是的，我對自己而言，真的很重要。</span>
+          </div>
+          <p>
+            人生，要先把自己照顧好，才能去影響身旁的人；要先學會愛自己，才有餘力去愛別人。我相信，人生不是來受苦的，而是來體驗、學習與進化的。回望生命中的不同階段，曾經感到困惑、悲傷，甚至崩潰，也曾問過自己：「為什麼要活著？」然而，就如同這句話所說，宇宙不會給我們無法承擔的功課，而我們也總是在一次次的挑戰中，慢慢走了過來。
+          </p>
+        </div>
+
+        <div class="p-6 bg-sage/20 border border-oatmeal/30 rounded-xl">
+          <div class="flex items-center space-x-2 mb-3">
+            <span class="text-lg">⏳</span>
+            <span class="font-serif text-[15px] text-matcha font-bold">2011 轉折契機</span>
+          </div>
+          <p class="mb-3">
+            若要談起靈性的起點，或許要回溯到 2011 年。當時，兒子因嚴重的異位性皮膚炎，讓整個家庭經歷了一段漫長的靈魂暗夜。身心俱疲的我，一邊努力工作，一邊照顧孩子，高額的醫療支出也讓我感到沉重，彷彿人生快要被壓垮。
+          </p>
+          <p>
+            也是在那段時間，我因緣際會接觸到身心靈領域，開始認識水晶、脈輪、療癒等靈性知識，也曾接受過療癒。療癒後的幾天，確實能感受到心情的平靜與力量，但很快又回到原本的狀態。後來，透過生命中的貴人，我們接觸了宗教，也因此認識了幫助兒子穩定狀況的中醫師。
+          </p>
+        </div>
+
+        <p class="border-b border-oatmeal/20 pb-4 flex items-start gap-2">
+          <span class="text-base shrink-0 mt-1.5">👣</span>
+          <span>一路走來，我始終覺得，雖然學習了許多，但內心深處似乎仍缺少了什麼。當時的我還不知道什麼叫做「向內看」，只覺得情緒的困擾始終沒有真正被理解與療癒。</span>
+        </p>
+
+        <!-- 生命三問 -->
+        <div class="bg-cream border border-oatmeal/30 p-5 rounded-xl">
+          <p class="text-[15px] font-serif text-tea font-bold mb-3 flex items-center gap-2">
+            <span class="text-lg">💭</span>
+            直到某個人生階段，我開始不斷思考：
+          </p>
+          <div class="grid sm:grid-cols-3 gap-3">
+            <div class="p-3 bg-sage/20 border border-oatmeal/20 rounded-lg text-center">
+              <span class="font-serif italic text-sm text-tea/85">「我是為了什麼來到這個世界？」</span>
+            </div>
+            <div class="p-3 bg-sage/20 border border-oatmeal/20 rounded-lg text-center">
+              <span class="font-serif italic text-sm text-tea/85">「人生的意義是什麼？」</span>
+            </div>
+            <div class="p-3 bg-sage/20 border border-oatmeal/20 rounded-lg text-center">
+              <span class="font-serif italic text-sm text-tea/85">「為什麼要結婚、生子，又為什麼要經歷這些人際與生命的課題？」</span>
+            </div>
+          </div>
+          <p class="mt-4 text-[13px] font-semibold text-matcha flex items-center gap-1.5">
+            <span class="text-sm">✨</span> 現在回頭看，我知道，那是靈魂開始覺醒的訊號。
+          </p>
+        </div>
+
+        <div class="bg-sage/10 p-5 rounded-xl border border-oatmeal/20 italic font-serif flex gap-2">
+          <span class="text-base shrink-0 mt-1">⚖️</span>
+          <p>
+            曾經聽過一句話：「要有物質上的作為，才有靈性上的奇蹟。」對我而言，這句話的意思是：我們仍需要踏實地活在現實中，努力工作、照顧生活，才能支持自己走上探索內在與成長的道路。
+          </p>
+        </div>
+
+        <p class="flex items-start gap-2">
+          <span class="text-base shrink-0 mt-1.5">📖</span>
+          <span>於是，我開始透過閱讀、觀看分享影片、參與課程，更深入地認識身心靈的世界。而在這段探索的旅程中，我第一次接觸到了「靈氣」。</span>
+        </p>
+
+        <p class="flex items-start gap-2">
+          <span class="text-base shrink-0 mt-1.5">✨</span>
+          <span>第一次聽見靈氣時，心中有一種難以言喻的悸動與熟悉感，彷彿靈魂早已認識它。雖然當時並未真正開始學習，但這份連結始終留存在心裡。</span>
+        </p>
+
+        <p class="flex items-start gap-2">
+          <span class="text-base shrink-0 mt-1.5">🌿</span>
+          <span>後來，因緣巧合之下，原本只是想搜尋頌缽課程，卻意外看見了現在老師的網站。看到「靈氣」二字時，過去的悸動再次浮現。我迫不及待地想了解更多，也同時希望正在接受癌症治療的妹妹能夠接觸這份療癒。</span>
+        </p>
+
+        <div class="p-5 bg-sage/20 border border-oatmeal/30 rounded-xl">
+          <div class="flex items-center space-x-2 mb-3">
+            <span class="text-lg">🌟</span>
+            <span class="font-serif text-[15px] text-matcha font-bold">2023 宇宙的安排</span>
+          </div>
+          <p class="mb-3 font-semibold text-tea">
+            最終，我報名了 2023 年最後一期的靈氣課程。回頭看，那一切彷彿都是生命最好的安排。
+          </p>
+          <p class="mb-3">
+            透過靈氣的學習與練習，我療癒了身體，也療癒了情緒，更逐漸觸及靈魂深處。它讓我學會向內探索，而不是過度關注外在的聲音；讓我開始練習聆聽自己的直覺，理解情緒背後真正的訊息。
+          </p>
+          <p class="text-matcha font-medium">
+            靈氣帶給我的，不只是療癒技巧，更是一種生活方式。
+          </p>
+        </div>
+
+        <p class="flex items-start gap-2">
+          <span class="text-base shrink-0 mt-1.5">☀️</span>
+          <span>它教會我活在當下，不沉溺於過去，也不過度擔憂未來；學習放下控制，理解並接納自己的情緒，讓意念停留在更正向、更高頻的狀態中。</span>
+        </p>
+
+        <p class="flex items-start gap-2">
+          <span class="text-base shrink-0 mt-1.5">🌊</span>
+          <span>當自己穩定地活在這樣的狀態裡，我發現，即使什麼都不說，只是單純地存在，也會自然地影響周圍的人。那是一種安定、溫暖且真實的能量流動。</span>
+        </p>
+
+        <p class="flex items-start gap-2">
+          <span class="text-base shrink-0 mt-1.5">🛡️</span>
+          <span>過去，我總是擔心孩子的狀況，心裡充滿各種「如果怎麼辦」的念頭。透過持續的練習，我慢慢學會放下控制、放下焦慮，也驚喜地發現，兒子的狀態越來越穩定；而女兒甚至會主動「點餐」，請我幫她做靈氣療癒。</span>
+        </p>
+
+        <p class="font-medium text-tea flex items-start gap-2">
+          <span class="text-base shrink-0 mt-1.5">🦋</span>
+          <span>我逐漸明白，真正的改變，不是努力要求別人改變，而是覺察自己的情緒與信念，當自己開始轉化，外在的實相也會隨之改變。</span>
+        </p>
+
+        <p class="flex items-start gap-2">
+          <span class="text-base shrink-0 mt-1.5">🎁</span>
+          <span>我相信，人生中遇見的每個人、每段經歷、每位老師，都是靈魂成長路上的禮物。那些曾經以為的痛苦與失去，也許正是靈魂為了學習愛、理解與覺醒，而選擇的人生課題。</span>
+        </p>
+
+        <!-- 老師語錄 -->
+        <div class="p-6 bg-sage/30 border border-oatmeal/40 rounded-xl text-center relative max-w-3xl mx-auto my-8">
+          <p class="font-serif text-sm md:text-base text-tea leading-relaxed italic">
+            正如老師書中所說：<br>
+            「通靈是一種人人皆有的能力，是與內在真實的自己連結，而不是向外追尋答案。當我們懂得創造自己的實相，便能成為自己生命真正的大師。」
+          </p>
+        </div>
+
+        <p class="text-center font-serif text-sm md:text-base text-tea font-semibold border-t border-oatmeal/20 pt-6 max-w-2xl mx-auto">
+          如今，我希望透過自己的經歷與所學，陪伴每一位願意踏上療癒旅程的人。因為我相信，真正的療癒，不是成為另一個人，而是一步步地回到自己，重新看見自己原本就擁有的力量與光。
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 療癒信念與光芒平衡 (Beliefs & Alignment) -->
+  <section id="beliefs" class="py-16 px-6 md:px-12 bg-sage relative overflow-hidden">
+    <div class="max-w-5xl mx-auto relative z-10">
+      
+      <!-- 區塊標題與 Emoji -->
+      <div class="text-center mb-10">
+        <div class="flex items-center justify-center gap-2 mb-1.5">
+          <span class="text-base">🧘‍♀️</span>
+          <span class="text-matcha font-serif text-xs tracking-[0.15em] block uppercase">My Philosophy</span>
+        </div>
+        <h2 class="font-serif text-lg md:text-2xl text-tea font-bold tracking-wide">
+          療癒理念與信念
+        </h2>
+        <div class="w-6 h-px bg-oatmeal mx-auto mt-3"></div>
+      </div>
+
+      <!-- 雙欄排版 -->
+      <div class="grid md:grid-cols-2 gap-6 items-stretch">
+        
+        <!-- 卡片一：我的療癒信念 -->
+        <div class="bg-cream p-6 md:p-8 rounded-xl border border-oatmeal/35 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-8 h-8 bg-sage rounded-full flex items-center justify-center shrink-0">
+              <span class="text-sm">🕊️</span>
+            </div>
+            <h3 class="font-serif text-base md:text-lg text-tea font-bold">我的療癒信念</h3>
+          </div>
+          <div class="text-tea/90 text-sm md:text-[15px] leading-loose space-y-3 flex-grow">
+            <p>
+              我認為，療癒不是逃離現實，而是將覺察帶回生活，真正地活在當下，並好好地落地實踐。
+            </p>
+            <p>
+              透過向內探索，我們得以重新連結本自具足的內在力量，理解外在所經歷的一切，往往是內在狀態的映照與創造。當我們願意覺察、理解並轉化自己，生命的實相也會隨之改變。
+            </p>
+          </div>
+        </div>
+
+        <!-- 卡片二：喚醒內在的光與平衡 -->
+        <div class="bg-cream p-6 md:p-8 rounded-xl border border-oatmeal/35 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-8 h-8 bg-sage rounded-full flex items-center justify-center shrink-0">
+              <span class="text-sm">☀️</span>
+            </div>
+            <h3 class="font-serif text-base md:text-lg text-tea font-bold">喚醒內在的光與平衡</h3>
+          </div>
+          <div class="text-tea/90 text-sm md:text-[15px] leading-relaxed space-y-2 flex-grow">
+            <p>每個人的內在，都蘊藏著自我療癒與轉化的力量。</p>
+            <p>我的角色，不是替你完成療癒，而是陪伴你重新連結內在的智慧，找回生命原有的平衡與光芒。</p>
+            <p>以臼井靈氣為核心，結合催眠療癒與元辰宮探索，我相信真正的療癒來自於身、心、靈的整合。</p>
+            <p>透過能量的清理與平衡、潛意識限制性信念的覺察與釋放，以及對生命課題的深入理解，協助你看見內在的需求，回到真實的自己。</p>
+            <p class="font-medium text-matcha pt-3 border-t border-oatmeal/20 mt-3">
+              療癒，不是成為更完美的人，而是學會接納、理解與愛自己。
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 專業證照 (Certifications) -->
+  <section id="certifications" class="py-16 px-6 md:px-12 bg-cream relative">
+    <div class="max-w-5xl mx-auto">
+      
+      <!-- 區塊標題與 Emoji -->
+      <div class="text-center mb-10">
+        <div class="flex items-center justify-center gap-2 mb-1.5">
+          <span class="text-base">🎓</span>
+          <span class="text-matcha font-serif text-xs tracking-[0.15em] block uppercase">Professional Qualifications</span>
+        </div>
+        <h2 class="font-serif text-lg md:text-2xl text-tea font-bold tracking-wide">
+          療癒師的專業證照
+        </h2>
+        <div class="w-6 h-px bg-oatmeal mx-auto mt-3"></div>
+      </div>
+
+      <!-- 證照清單 (改用專業且豐富的 Emoji 圖示) -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        
+        <div class="flex items-center p-4 bg-sage/20 rounded-xl border border-oatmeal/20 hover:border-matcha/50 transition-colors duration-300 gap-3">
+          <div class="w-10 h-10 flex items-center justify-center shrink-0 bg-cream border border-oatmeal/40 rounded-full shadow-sm text-lg">
+            🏅
+          </div>
+          <span class="text-tea text-sm md:text-[15px] font-medium tracking-wide">中華亞洲國際靈氣發展協會 專業會員</span>
+        </div>
+
+        <div class="flex items-center p-4 bg-sage/20 rounded-xl border border-oatmeal/20 hover:border-matcha/50 transition-colors duration-300 gap-3">
+          <div class="w-10 h-10 flex items-center justify-center shrink-0 bg-cream border border-oatmeal/40 rounded-full shadow-sm text-lg">
+            🔥
+          </div>
+          <span class="text-tea text-sm md:text-[15px] font-medium tracking-wide">聖火III臼井靈氣大師</span>
+        </div>
+
+        <div class="flex items-center p-4 bg-sage/20 rounded-xl border border-oatmeal/20 hover:border-matcha/50 transition-colors duration-300 gap-3">
+          <div class="w-10 h-10 flex items-center justify-center shrink-0 bg-cream border border-oatmeal/40 rounded-full shadow-sm text-lg">
+            🌟
+          </div>
+          <span class="text-tea text-sm md:text-[15px] font-medium tracking-wide">聖火III卡魯那靈氣大師</span>
+        </div>
+
+        <div class="flex items-center p-4 bg-sage/20 rounded-xl border border-oatmeal/20 hover:border-matcha/50 transition-colors duration-300 gap-3">
+          <div class="w-10 h-10 flex items-center justify-center shrink-0 bg-cream border border-oatmeal/40 rounded-full shadow-sm text-lg">
+            🌀
+          </div>
+          <span class="text-tea text-sm md:text-[15px] font-medium tracking-wide">國際NGH協會認證催眠師</span>
+        </div>
+
+        <div class="flex items-center p-4 bg-sage/20 rounded-xl border border-oatmeal/20 hover:border-matcha/50 transition-colors duration-300 gap-3">
+          <div class="w-10 h-10 flex items-center justify-center shrink-0 bg-cream border border-oatmeal/40 rounded-full shadow-sm text-lg">
+            ⛩️
+          </div>
+          <span class="text-tea text-sm md:text-[15px] font-medium tracking-wide">科學觀靈師(元辰宮)</span>
+        </div>
+
+        <div class="flex items-center p-4 bg-sage/20 rounded-xl border border-oatmeal/20 hover:border-matcha/50 transition-colors duration-300 gap-3">
+          <div class="w-10 h-10 flex items-center justify-center shrink-0 bg-cream border border-oatmeal/40 rounded-full shadow-sm text-lg">
+            🔮
+          </div>
+          <span class="text-tea text-sm md:text-[15px] font-medium tracking-wide">水晶靈擺占卜講師</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 貼心提醒與聯繫區 (Disclaimer & Contact) -->
+  <section id="contact" class="py-16 px-6 md:px-12 bg-sage relative overflow-hidden">
+    <div class="max-w-3xl mx-auto">
+      
+      <!-- 溫馨提醒整合卡片 -->
+      <div class="bg-cream/90 backdrop-blur-md rounded-xl p-6 md:p-10 border border-oatmeal/40 shadow-sm text-center space-y-4">
+        
+        <!-- 與參考網站相同的警告 Emoji -->
+        <div class="flex items-center justify-center mx-auto mb-2">
+          <span class="text-3xl">⚠️</span>
+        </div>
+
+        <h3 class="font-serif text-base md:text-lg text-tea font-bold">貼心提醒</h3>
+        
+        <p class="text-tea/90 text-sm leading-relaxed max-w-xl mx-auto">
+          靈性與能量療癒並不能取代正統醫學。當面對生理健康狀況時，請務必先尋求合格的中西醫師診斷與治療。療癒是醫學的輔助，而非替代。
+        </p>
+
+        <div class="w-6 h-px bg-oatmeal mx-auto my-4"></div>
+
+        <p class="font-serif text-[15px] text-tea font-semibold leading-relaxed max-w-xl mx-auto pt-2">
+          如果你感到準備好了，或是對於生命中的某些課題感到困惑，歡迎與我聯繫，讓我們一起啟動你的內在療癒旅程。
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 頁尾 -->
+  <footer class="bg-tea text-sage/75 py-8 px-6 text-center text-xs tracking-widest border-t border-oatmeal/20">
+    <div class="max-w-4xl mx-auto space-y-2">
+      <p class="font-serif text-sage text-[13px] font-semibold">凌Reiki • 靈性與能量療癒</p>
+      <p>© 2026 凌Reiki. All rights reserved. 版權所有，非經授權請勿轉載。</p>
+    </div>
+  </footer>
+
+  <!-- 簡易互動 JavaScript -->
+  <script>
+    // 手機版選單切換
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      if (mobileMenu.classList.contains('hidden')) {
+        menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+      } else {
+        menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+      }
+    });
+
+    // 點擊選單後自動關閉手機選單
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+      });
+    });
+
+    // 平滑載入動畫效果 (Scroll Reveal)
+    const sections = document.querySelectorAll('section, header');
+    const observerOptions = {
+      root: null,
+      threshold: 0.05,
+      rootMargin: "0px"
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(section => {
+      section.classList.add('fade-in-section');
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>

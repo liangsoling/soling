@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <!-- 瀏覽器分頁 Logo -->
-  <link rel="icon" type="image/png" href="Logo_2.png">
+  <link class="round-large" rel="icon" type="image/png" href="Logo_2.png">
   <title>凌Reiki｜臼井靈氣・元辰宮</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght=300;400;500;700;900&display=swap" rel="stylesheet">
   
   <style>
     :root {
@@ -77,7 +77,8 @@
   </header>
 
   <!-- 核心專題雙主軸展示區 -->
-  <main class="max-w-7xl mx-auto px-6 pb-20 w-full">
+  <main class="max-w-7xl mx-auto px-6 pb-20 w-full space-y-12">
+    <!-- 原有雙卡片區：維持原來的 grid-cols-1 lg:grid-cols-2 佈局與位置不變 -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
       
       <!-- 主題一卡片：元辰宮主題網站 -->
@@ -179,6 +180,61 @@
       </div>
 
     </div>
+
+    <!-- 療癒師簡介卡片 (Healer Profile)：全新設計的寬幅橫式卡片，不影響上方卡片位置 -->
+    <div class="hover-card bg-[#FAF6EE] border border-[#D9C3B0]/50 rounded-[32px] overflow-hidden soft-shadow p-8 sm:p-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+        <!-- 療癒師頭像區 -->
+        <div class="lg:col-span-4 flex justify-center">
+          <div class="relative w-48 h-48 sm:w-60 sm:h-60 rounded-full overflow-hidden border-4 border-[#A3B899]/30 soft-shadow">
+            <img 
+              src="soling.png" 
+              alt="療癒師 梁碩凌" 
+              class="w-full h-full object-cover"
+              onerror="handleHeroImgError(this)"
+            >
+          </div>
+        </div>
+        
+        <!-- 療癒師簡介文字區 -->
+        <div class="lg:col-span-8 space-y-5 text-center lg:text-left">
+          <div class="space-y-1.5">
+            <span class="inline-block bg-[#E6EDF0] text-[#A3B899] border border-[#A3B899]/30 px-4 py-1 rounded-full text-xs font-bold tracking-widest">
+              ABOUT THE HEALER
+            </span>
+            <h2 class="text-2xl sm:text-3xl font-black text-[#3A4238]">療癒師 梁碩凌</h2>
+            <p class="text-sm text-[#A3B899] font-bold tracking-wider">
+              聖火靈氣療癒師‧ 科學元辰宮催眠引導師
+            </p>
+          </div>
+          
+          <p class="text-sm sm:text-base text-[#3A4238]/90 leading-relaxed font-medium text-justify">
+            你好，我是 碩凌。我深信每個人都是自己生命殿堂最優秀的創造者與修復者。
+            在身心靈的探索旅程中，我致力於將「純淨高頻的聖火能量」與「溫馨和諧的科學催眠」溫柔結合，協助每位有緣的靈魂排除外界干擾、釋放內在制約印記。
+            在這裡，我們不渲染迷信神蹟，而是用最專業、溫馨、踏實的腳步，陪伴你重構豐盛的身心風水。
+          </p>
+
+          <!-- 專業資歷清單 -->
+          <div class="space-y-2 pt-2">
+            <p class="text-xs font-bold text-[#3A4238]/65 uppercase tracking-widest">專業授證</p>
+            <div class="flex flex-wrap justify-center lg:justify-start gap-2">
+              <span class="text-xs font-semibold bg-[#E6EDF0] text-[#3A4238] px-3.5 py-1.5 rounded-full border border-[#D9C3B0]/40">🌿 聖火III臼井靈氣大師</span>
+              <span class="text-xs font-semibold bg-[#E6EDF0] text-[#3A4238] px-3.5 py-1.5 rounded-full border border-[#D9C3B0]/40">🔥 聖火III卡魯那靈氣大師</span>
+              <span class="text-xs font-semibold bg-[#E6EDF0] text-[#3A4238] px-3.5 py-1.5 rounded-full border border-[#D9C3B0]/40">🔮 國際NGH協會認證催眠師</span>
+              <span class="text-xs font-semibold bg-[#E6EDF0] text-[#3A4238] px-3.5 py-1.5 rounded-full border border-[#D9C3B0]/40">🛋️ 現代科學催眠元辰宮引導師</span>
+            </div>
+          </div>
+
+          <!-- 新增：跳轉療癒師詳細簡介的連結按鈕 -->
+          <div class="pt-4 flex justify-center lg:justify-start">
+            <a href="療癒師簡介.html" class="px-8 py-3.5 bg-[#A3B899] hover:bg-[#8fa585] text-[#FAF6EE] font-bold rounded-2xl transition-all duration-300 transform hover:translate-y-[-2px] shadow-md hover:shadow-lg inline-block text-center whitespace-nowrap">
+              深入了解療癒師 ➔
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
   </main>
 
   <!-- 頁尾 -->
@@ -198,6 +254,14 @@
       </p>
     </div>
   </footer>
+
+  <!-- 修正圖片加載錯誤的處理腳本 -->
+  <script>
+    function handleHeroImgError(img) {
+      img.onerror = null; // 避免無窮迴圈
+      img.src = "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=600";
+    }
+  </script>
 
 </body>
 </html>

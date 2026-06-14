@@ -78,59 +78,10 @@
 
   <!-- 核心專題雙主軸展示區 -->
   <main class="max-w-7xl mx-auto px-6 pb-20 w-full space-y-12">
-    <!-- 原有雙卡片區：維持原來的 grid-cols-1 lg:grid-cols-2 佈局與位置不變 -->
+    <!-- 原有雙卡片區：維持原來的 grid-cols-1 lg:grid-cols-2 佈局與位置不變（左右內容交換） -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
       
-      <!-- 主題一卡片：元辰宮主題網站 -->
-      <div class="hover-card bg-[#FAF6EE] border border-[#D9C3B0]/50 rounded-[32px] overflow-hidden flex flex-col justify-between soft-shadow">
-        <div>
-          <!-- 卡片頂部意境圖 -->
-          <div class="relative h-64 overflow-hidden bg-[#E6EDF0]">
-            <img 
-              src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=1200" 
-              alt="元辰宮的溫馨空間" 
-              class="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.03]"
-              onerror="this.src='https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=1200'"
-            >
-            <div class="absolute inset-0 bg-gradient-to-t from-[#FAF6EE] via-transparent to-transparent"></div>
-            <span class="absolute top-4 left-4 bg-[#A3B899] text-[#FAF6EE] text-xs font-bold px-3 py-1 rounded-full shadow-sm">
-              潛意識顯化與重整
-            </span>
-          </div>
-          
-          <!-- 卡片文字內容 -->
-          <div class="p-8 sm:p-10 space-y-6">
-            <div class="flex items-center space-x-2.5">
-              <span class="text-3xl">🛋️</span>
-              <h2 class="text-2xl font-black text-[#3A4238]">元辰心靈居所 (元辰宮)</h2>
-            </div>
-            
-            <p class="text-sm sm:text-base text-[#3A4238]/90 leading-relaxed font-medium text-justify">
-              元辰宮是每個人潛意識在深層心靈深處顯化而成的一棟屋宇。它誠實地反映著您當下的身心狀態、財富流動、情感姻緣、事業瓶頸及內在阻礙。
-            </p>
-
-            <p class="text-sm text-[#3A4238]/80 leading-relaxed font-medium bg-[#E6EDF0]/50 p-4 rounded-2xl border-l-4 border-[#A3B899]">
-              <strong>科學催眠導引：</strong>去著了傳統迷信與法會儀式，堅持以安全、溫和的現代催眠引導技術，協助您親自進入潛意識大掃除，重塑屬於您的生命風水。
-            </p>
-
-            <!-- 專題特色標籤 -->
-            <div class="flex flex-wrap gap-2 pt-2">
-              <span class="text-xs font-bold bg-[#E6EDF0] text-[#3A4238] px-3 py-1 rounded-full border border-[#D9C3B0]/40">#科學觀靈術</span>
-              <span class="text-xs font-bold bg-[#E6EDF0] text-[#3A4238] px-3 py-1 rounded-full border border-[#D9C3B0]/40">#心靈格局修補</span>
-              <span class="text-xs font-bold bg-[#E6EDF0] text-[#3A4238] px-3 py-1 rounded-full border border-[#D9C3B0]/40">#個案探險日記</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 卡片跳轉連結按鈕 -->
-        <div class="p-8 sm:p-10 pt-0">
-          <a href="元辰宮主題網站_完成版.html" class="block w-full text-center py-4 bg-[#A3B899] hover:bg-[#8fa585] text-[#FAF6EE] font-bold rounded-2xl transition-all duration-300 transform hover:translate-y-[-2px] shadow-md hover:shadow-lg">
-            開啟心靈探索 ➔
-          </a>
-        </div>
-      </div>
-
-      <!-- 主題二卡片：臼井聖火靈氣 -->
+      <!-- 主題一卡片：臼井聖火靈氣 (原在右，現調至左) -->
       <div class="hover-card bg-[#FAF6EE] border border-[#D9C3B0]/50 rounded-[32px] overflow-hidden flex flex-col justify-between soft-shadow">
         <div>
           <!-- 卡片頂部意境圖 -->
@@ -179,6 +130,221 @@
         </div>
       </div>
 
+      <!-- 主題二卡片：元辰宮主題網站 (原在左，現調至右) -->
+      <div class="hover-card bg-[#FAF6EE] border border-[#D9C3B0]/50 rounded-[32px] overflow-hidden flex flex-col justify-between soft-shadow">
+        <div>
+          <!-- 卡片頂部意境圖 -->
+          <div class="relative h-64 overflow-hidden bg-[#E6EDF0]">
+            <img 
+              src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=1200" 
+              alt="元辰宮的溫馨空間" 
+              class="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.03]"
+              onerror="this.src='https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=1200'"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-[#FAF6EE] via-transparent to-transparent"></div>
+            <span class="absolute top-4 left-4 bg-[#A3B899] text-[#FAF6EE] text-xs font-bold px-3 py-1 rounded-full shadow-sm">
+              潛意識顯化與重整
+            </span>
+          </div>
+          
+          <!-- 卡片文字內容 -->
+          <div class="p-8 sm:p-10 space-y-6">
+            <div class="flex items-center space-x-2.5">
+              <span class="text-3xl">🛋️</span>
+              <h2 class="text-2xl font-black text-[#3A4238]">元辰心靈居所 (元辰宮)</h2>
+            </div>
+            
+            <p class="text-sm sm:text-base text-[#3A4238]/90 leading-relaxed font-medium text-justify">
+              元辰宮是每個人潛意識在深層心靈深處顯化而成的一棟屋宇。它誠實地反映著您當下的身心狀態、財富流動、情感姻緣、事業瓶頸及內在阻礙。
+            </p>
+
+            <p class="text-sm text-[#3A4238]/80 leading-relaxed font-medium bg-[#E6EDF0]/50 p-4 rounded-2xl border-l-4 border-[#A3B899]">
+              <strong>科學催眠導引：</strong>去著了傳統迷信與法會儀式，堅持以安全、溫和的現代催眠引導技術，協助您親自進入潛意識大掃除，重塑屬於您的生命風水。
+            </p>
+
+            <!-- 專題特色標籤 -->
+            <div class="flex flex-wrap gap-2 pt-2">
+              <span class="text-xs font-bold bg-[#E6EDF0] text-[#3A4238] px-3 py-1 rounded-full border border-[#D9C3B0]/40">#科學觀靈術</span>
+              <span class="text-xs font-bold bg-[#E6EDF0] text-[#3A4238] px-3 py-1 rounded-full border border-[#D9C3B0]/40">#心靈格局修補</span>
+              <span class="text-xs font-bold bg-[#E6EDF0] text-[#3A4238] px-3 py-1 rounded-full border border-[#D9C3B0]/40">#個案探險日記</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 卡片跳轉連結按鈕 -->
+        <div class="p-8 sm:p-10 pt-0">
+          <a href="元辰宮主題網站_完成版.html" class="block w-full text-center py-4 bg-[#A3B899] hover:bg-[#8fa585] text-[#FAF6EE] font-bold rounded-2xl transition-all duration-300 transform hover:translate-y-[-2px] shadow-md hover:shadow-lg">
+            開啟心靈探索 ➔
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 中間新增：療癒流程與個案須知卡片 (Service Guidelines) -->
+    <div class="hover-card bg-[#FAF6EE] border border-[#D9C3B0]/50 rounded-[32px] overflow-hidden soft-shadow p-8 sm:p-12 space-y-10">
+      <div class="text-center max-w-2xl mx-auto space-y-2">
+        <span class="inline-block bg-[#E6EDF0] text-[#A3B899] border border-[#A3B899]/30 px-5 py-1.5 rounded-full text-xs font-bold tracking-widest">
+          SERVICES & GUIDELINES
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-black text-[#3A4238] tracking-tight">療癒流程與個案須知</h2>
+        <p class="text-xs sm:text-sm text-[#3A4238]/70">請於預約前仔細閱讀以下說明，幫助我們共同營造最契合的高頻能量場。</p>
+      </div>
+
+      <!-- 雙欄架構：左右交換 -> 左欄科學元辰宮、右欄靈氣療癒 -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start divide-y lg:divide-y-0 lg:divide-x divide-[#D9C3B0]/40">
+        
+        <!-- 左半部：科學元辰宮：探索潛意識，重塑生命花園 (原在右，現調至左) -->
+        <div class="space-y-8 lg:pr-12 pt-8 lg:pt-0">
+          <div class="space-y-3">
+            <div class="flex items-center space-x-3">
+              <span class="text-2xl bg-[#E6EDF0] p-2 rounded-xl">🔮</span>
+              <h3 class="text-xl sm:text-2xl font-bold text-[#3A4238]">科學元辰宮：探索潛意識，重塑生命花園</h3>
+            </div>
+            <p class="text-sm text-[#3A4238]/90 leading-relaxed font-medium">
+              元辰宮（西方稱之為「生命花園」）不分宗教派別。透過科學觀靈術與催眠引導，我們能進入這座象徵您潛意識狀態的「心靈之屋」。藉由調整屋內格局與擺設，改善您的能量狀態，進而達到開運的效益。
+            </p>
+          </div>
+
+          <!-- 🌿 核心理念：內外兼修的轉化 -->
+          <div class="space-y-3 bg-[#E6EDF0]/40 p-5 rounded-2xl border border-[#D9C3B0]/30">
+            <h4 class="font-bold text-[#3A4238] flex items-center gap-1.5 text-base">
+              <span>🌿</span> 核心理念：內外兼修的轉化
+            </h4>
+            <p class="text-sm text-[#3A4238]/90 leading-relaxed font-medium">
+              開運不只是外在的調整，更需要您的配合。<strong>唯有調整內在觀念、優化生活態度，並建立正向、積極且「言行一致」的思考模式</strong>，才能讓調整的效果達到最佳化。
+            </p>
+          </div>
+
+          <!-- 💎 為何選擇「科學元辰宮」？ -->
+          <div class="space-y-3">
+            <h4 class="font-bold text-[#3A4238] flex items-center gap-1.5 text-base">
+              <span>💎</span> 為何選擇「科學元辰宮」？
+            </h4>
+            <ul class="space-y-3 text-sm text-[#3A4238]/80 font-medium">
+              <li class="flex items-start gap-2">
+                <span class="text-[#A3B899] font-black">✦</span>
+                <span><strong>自我覺察：</strong>協助您進行內在觀照，擺脫繁瑣的儀式，無需參與法會或燒金紙。</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[#A3B899] font-black">✦</span>
+                <span><strong>信念重塑：</strong>透過改變舊有的信念與習慣，從根源達成開運。</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[#A3B899] font-black">✦</span>
+                <span><strong>全面調理：</strong>我們採取全面性調整，而非局部修補，確保生命能量的整體和諧。</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-[#A3B899] font-black">✦</span>
+                <span><strong>導師角色：</strong>我將協助您撥開迷霧，將您引導回屬於您的正確生命道途。</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- 🔒 諮詢環境與守則 -->
+          <div class="space-y-3 bg-white/60 p-5 rounded-2xl border border-[#D9C3B0]/20">
+            <h4 class="font-bold text-[#3A4238] flex items-center gap-1.5 text-base">
+              <span>🔒</span> 諮詢環境與守則
+            </h4>
+            <p class="text-sm text-[#3A4238]/90 leading-relaxed font-medium">
+              為了確保隱私與療癒品質，全程採取 <strong>一對一深度催眠</strong>，不受他人干擾。
+            </p>
+            <ul class="space-y-2 text-sm text-[#3A4238]/80 font-medium pt-1 border-t border-[#D9C3B0]/20">
+              <li class="flex items-center gap-1.5">
+                <span class="text-[#D9C3B0]">•</span>
+                <span><strong>調整頻率：</strong>效果通常可維持 3 至 6 個月，甚至更久（視個人生活落實度而定）。</span>
+              </li>
+              <li class="flex items-center gap-1.5">
+                <span class="text-[#D9C3B0]">•</span>
+                <span><strong>專注體驗：</strong>不接受旁聽（未成年個案除外）。</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 右半部：靈氣療癒：現場與遠距服務 (原在左，現調至右) -->
+        <div class="space-y-8 lg:pl-12 pt-8 lg:pt-0">
+          <div class="space-y-3">
+            <div class="flex items-center space-x-3">
+              <span class="text-2xl bg-[#E6EDF0] p-2 rounded-xl">✨</span>
+              <h3 class="text-xl sm:text-2xl font-bold text-[#3A4238]">靈氣療癒：現場與遠距服務</h3>
+            </div>
+            <p class="text-sm text-[#3A4238]/90 leading-relaxed font-medium">
+              靈氣不僅是一種自然能量療法，更是您照顧身心的溫暖陪伴。透過宇宙能量的傳遞，協助您達到身心靈的和諧與平衡。
+            </p>
+          </div>
+
+          <!-- 💡 靈氣能為您帶來什麼？ -->
+          <div class="space-y-3 bg-[#E6EDF0]/40 p-5 rounded-2xl border border-[#D9C3B0]/30">
+            <h4 class="font-bold text-[#3A4238] flex items-center gap-1.5 text-base">
+              <span>💡</span> 靈氣能為您帶來什麼？
+            </h4>
+            <ul class="space-y-2 text-sm text-[#3A4238]/90 font-medium">
+              <li class="flex items-start gap-1.5">
+                <span class="text-[#A3B899]">✦</span>
+                <span><strong>生理層面：</strong>舒緩壓力、改善失眠、消除長期疲勞。</span>
+              </li>
+              <li class="flex items-start gap-1.5">
+                <span class="text-[#A3B899]">✦</span>
+                <span><strong>心理層面：</strong>療癒情緒壓抑，緩解憂鬱、恐慌或驚嚇不安。</span>
+              </li>
+              <li class="flex items-start gap-1.5">
+                <span class="text-[#A3B899]">✦</span>
+                <span><strong>靈性層面：</strong>提升能量振動頻率、鞏固自身能場，並防止負面干擾，重拾內在喜悅。</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- 🗓️ 療程規劃與建議 -->
+          <div class="space-y-3">
+            <h4 class="font-bold text-[#3A4238] flex items-center gap-1.5 text-base">
+              <span>🗓️</span> 療程規劃與建議
+            </h4>
+            <ul class="space-y-2.5 text-sm text-[#3A4238]/80 font-medium">
+              <li class="flex items-start gap-1.5">
+                <span class="text-[#D9C3B0] font-black">•</span>
+                <span><strong>專業陪伴：</strong>輕症通常能快速緩解，若為積累多年的深層問題，則需耐心與時間。我們將以溫暖的專業陪伴，陪您一步步調理。</span>
+              </li>
+              <li class="flex items-start gap-1.5">
+                <span class="text-[#D9C3B0] font-black">•</span>
+                <span><strong>建議頻率：</strong>建議每 3 - 7 天進行一次。</span>
+              </li>
+              <li class="flex items-start gap-1.5">
+                <span class="text-[#D9C3B0] font-black">•</span>
+                <span><strong>完整週期：</strong>每套療程建議為 5 - 12 次，週期約 1 - 2 個月，效果更顯著。</span>
+              </li>
+              <li class="flex items-start gap-1.5">
+                <span class="text-[#D9C3B0] font-black">•</span>
+                <span><strong>療癒細節：</strong>正式療癒前，我們會先針對能量阻塞部位進行「靈性手術」清理。建議您事先將想改善的身體部位告知您的靈氣療癒師。</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- 🌟 施作方式說明 -->
+          <div class="space-y-4">
+            <h4 class="font-bold text-[#3A4238] flex items-center gap-1.5 text-base">
+              <span>🌟</span> 施作方式說明
+            </h4>
+            <div class="space-y-3 text-sm text-[#3A4238]/80 font-medium">
+              <div class="bg-white/60 p-4 rounded-xl border border-[#D9C3B0]/20">
+                <span class="text-xs font-bold text-[#FAF6EE] bg-[#3A4238] px-2.5 py-1 rounded-md inline-block mb-2">現場施作</span>
+                <p class="leading-relaxed">全程採非侵入式，透過雙手隔空作用於您的脈輪與氣場，不觸碰身體。您只需靜心平躺、閉目放鬆，舒適地接收宇宙能量。</p>
+              </div>
+              <div class="bg-white/60 p-4 rounded-xl border border-[#D9C3B0]/20">
+                <span class="text-xs font-bold text-[#FAF6EE] bg-[#A3B899] px-2.5 py-1 rounded-md inline-block mb-2">遠距靈氣</span>
+                <span class="text-xs text-[#3A4238]/60 ml-2 font-semibold">透過水晶陣傳送能量</span>
+                <ul class="space-y-1.5 mt-2">
+                  <li><strong>準備資料：</strong>請提供一張近期的半身照片（請勿修圖）。</li>
+                  <li><strong>療癒過程：</strong>您在接收期間可自由進行日常活動。</li>
+                  <li><strong>溫馨提醒：</strong>部分個案在接收能量時會感到深層放鬆而產生睡意，請確保當時處於休息狀態，切勿操作危險機具或駕駛車輛。</li>
+                  <li><strong>回饋機制：</strong>療癒完成後，療癒師會與您核對能量狀況。</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
 
     <!-- 療癒師簡介卡片 (Healer Profile)：全新設計的寬幅橫式卡片，不影響上方卡片位置 -->

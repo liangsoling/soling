@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>凌Reiki・元辰宮</title>
+  <title>開運元辰宮</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Google Fonts: Noto Sans TC -->
@@ -80,13 +80,13 @@
   <!-- 導覽列 -->
   <nav class="sticky top-0 z-50 bg-[#E6EDF0]/90 backdrop-blur-md border-b border-[#D9C3B0]/30 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); event.preventDefault();" class="flex items-center space-x-2">
+      <a href="index.html" class="flex items-center space-x-2">
         <span class="text-2xl font-bold tracking-wider text-[#3A4238] flex items-center gap-1">
           <span class="text-[#A3B899] text-3xl">🌿</span> 凌Reiki・元辰宮
         </span>
       </a>
       
-      <!-- 桌面端導覽連結 (已拿掉自我檢測按鈕) -->
+      <!-- 桌面端導覽連結 -->
       <div class="hidden md:flex items-center space-x-8 font-medium">
         <a href="index.html" class="text-[#3A4238] hover:text-[#A3B899] transition-colors">首頁</a>		
         <a href="#about" class="text-[#3A4238] hover:text-[#A3B899] transition-colors">核心理念</a>
@@ -103,10 +103,10 @@
       </button>
     </div>
 
-    <!-- 行動端下拉選單 (點擊「首頁」將平滑滾動回頂部，並自動隱藏下拉選單，不跳轉連結，已拿掉自我檢測按鈕) -->
+    <!-- 行動端下拉選單 (點擊「首頁」將導向 index.html，並在跳轉前自動隱藏下拉選單，完全解決回不到首頁的問題) -->
     <div id="mobile-menu" class="hidden md:hidden bg-[#FAF6EE] border-b border-[#D9C3B0]/30 transition-all duration-300">
       <div class="px-6 py-4 flex flex-col space-y-4 font-medium">
-        <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); document.getElementById('mobile-menu').classList.add('hidden'); event.preventDefault();" class="text-[#3A4238] hover:text-[#A3B899] transition-colors py-1">首頁</a>
+        <a href="index.html" onclick="document.getElementById('mobile-menu').classList.add('hidden');" class="text-[#3A4238] hover:text-[#A3B899] transition-colors py-1">首頁</a>
         <a href="#about" onclick="document.getElementById('mobile-menu').classList.add('hidden');" class="text-[#3A4238] hover:text-[#A3B899] transition-colors py-1">核心理念</a>
         <a href="#explorer" onclick="document.getElementById('mobile-menu').classList.add('hidden');" class="text-[#3A4238] hover:text-[#A3B899] transition-colors py-1">格局探索</a>
         <a href="#benefits" onclick="document.getElementById('mobile-menu').classList.add('hidden');" class="text-[#3A4238] hover:text-[#A3B899] transition-colors py-1">調整好處</a>
@@ -420,7 +420,7 @@
             </div>
 
             <div id="q3-block" class="space-y-3 hidden">
-              <p class="text-sm font-semibold text-[#3A4238]">Q3. 走進一間全新、溫馨的咖啡廳時，首先讓您留下深刻印象的是？</p>
+              <p class="text-sm font-semibold text-[#3A4238]">Q3. 走進一間全新、溫馨的咖啡廳時，首先讓你留下深刻印象的是？</p>
               <div class="grid grid-cols-1 gap-2.5">
                 <button onclick="answerQuestion(3, 'visual')" class="q-btn w-full text-left p-3.5 rounded-[16px] border border-[#D9C3B0]/50 text-sm hover:bg-[#E6EDF0] hover:border-[#A3B899] transition-all duration-200 text-[#3A4238] font-medium">
                   A. 暖黃別緻的吊燈、沈穩的木桌椅，以及牆上極具品格的掛畫。
@@ -478,7 +478,7 @@
               <span id="faq-icon-3" class="text-[#A3B899] text-xl transition-transform duration-300">＋</span>
             </button>
             <div id="faq-content-3" class="hidden px-5 pb-5 text-sm sm:text-base text-[#3A4238] border-t border-[#D9C3B0]/20 pt-4 leading-relaxed font-medium">
-              這是老師非常堅持的根本理念。調整元辰宮是優化您潛意識的顯化狀態（好比為枯乾的花草灌溉、為冷透的爐竈填柴），但如果您調整了卻每天宅在家不與人往來，或是補滿米缸後每天睡懶覺不事生產，好運也無法從天而降。<strong>開運的核心，是內在調頻後，外在身體力行。</strong>
+              調整元辰宮是優化您潛意識的顯化狀態（好比為枯乾的花草灌溉、為冷透的爐竈填柴），但如果您調整了卻每天宅在家不與人往來，或是補滿米缸後每天睡懶覺不事生產，好運也無法從天而降。<strong>開運的核心，是內在調頻後，外在身體力行。</strong>
             </div>
           </div>
 
@@ -489,7 +489,7 @@
               <span id="faq-icon-4" class="text-[#A3B899] text-xl transition-transform duration-300">＋</span>
             </button>
             <div id="faq-content-4" class="hidden px-5 pb-5 text-sm sm:text-base text-[#3A4238] border-t border-[#D9C3B0]/20 pt-4 leading-relaxed font-medium">
-              我們所有的服務與調整過程<strong>絕無任何隱藏性額外收費</strong>。網頁內所提供的帶領方式，均建立在自由意志與個案的自我觀照之上，絕不強推產品、不藉口改運而恐嚇收費。請個案安心前來，共同攜手踏上健康的內在尋根之旅。
+              進度引導過程中<strong>絕無任何隱藏性額外收費</strong>。網頁內所提供的帶領方式，均建立在自由意志與個案的自我觀照之上，絕不強推產品、不藉口改運而恐嚇收費。請個案安心前來，共同攜手踏上健康的內在尋根之旅。
             </div>
           </div>
         </div>
@@ -606,7 +606,7 @@
           </p>
           <div class='grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4'>
             <div class='bg-[#E6EDF0]/80 p-4 rounded-[16px] border border-[#D9C3B0] text-sm text-[#3A4238] font-semibold'>
-              🛌 <strong>枕頭、棉被與床位：</strong>枕頭的數量與擺放形式能看出感情狀態（role 如單身、成雙成對或互相排斥）；被褥的整齊度反映感情的和諧程度與溝通品質。
+              🛌 <strong>枕頭、棉被與床位：</strong>枕頭的數量與擺放形式能看出感情狀態（如單身、成雙成對或互相排斥）；被褥的整齊度反映感情的和諧程度與溝通品質。
             </div>
             <div class='bg-[#E6EDF0]/80 p-4 rounded-[16px] border border-[#D9C3B0] text-sm text-[#3A4238] font-semibold'>
               🪟 <strong>窗戶外緣與鞋子方向：</strong>臥室窗戶的開合狀態折射出您對外在感情關係是敞開還是設防封禦；鞋尖朝內或朝外，投射出您內在情感的歸屬焦點。

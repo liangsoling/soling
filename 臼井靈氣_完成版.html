@@ -123,7 +123,7 @@
             <div class="flex items-center justify-between h-16">
                 
                 <!-- 標題區域：點擊平滑滾動回頂部 -->
-                <div onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="flex items-center gap-2.5 cursor-pointer group" title="回到頂端">
+                <div onclick="window.scrollTo({top: 0, behavior: 'smooth'}); closeMobileMenu();" class="flex items-center gap-2.5 cursor-pointer group" title="回到頂端">
                     <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-reiki-tea via-reiki-matcha to-reiki-oatmeal flex items-center justify-center text-white shadow-lg shadow-emerald-500/10 group-hover:scale-105 transition-transform duration-300">
                         <svg class="w-5 h-5 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.286L13 21l-2.286-6.857L5 12l5.714-2.286L13 3z" />
@@ -131,11 +131,10 @@
                     </div>
                     <div>
                         <span class="font-serif font-black text-base tracking-widest text-reiki-tea dark:text-reiki-cream group-hover:text-reiki-matcha transition-colors whitespace-nowrap">凌Reiki・臼井靈氣</span>
-                        <span class="hidden sm:inline text-[9px] font-bold text-reiki-matcha block -mt-1 tracking-widest uppercase whitespace-nowrap">Healing Portal</span>
                     </div>
                 </div>
                 
-                <!-- 桌面端導航項目 -->
+                <!-- 桌面端導航項目 (螢幕寬度大於 lg 時顯示) -->
                 <div class="hidden lg:flex items-center space-x-1 font-sans text-xs md:text-sm font-medium tracking-wider">
                     <a href="index.html" class="px-3 py-2 rounded-lg text-reiki-matcha hover:bg-reiki-matcha/10 transition whitespace-nowrap flex items-center gap-1">
                         <span>🏠</span> 回首頁
@@ -147,12 +146,28 @@
                     <button onclick="scrollToSection('myth')" class="px-3 py-2 rounded-lg text-reiki-tea dark:text-amber-450 hover:bg-reiki-cream font-bold transition whitespace-nowrap">🔍 迷思破解</button>
                 </div>
                 
-                <!-- 每日調頻功能按鈕 (已成功將月亮切換按鈕移除，專注於抹茶系療癒功能) -->
+                <!-- 每日調頻功能按鈕 & 手機版漢堡按鈕 -->
                 <div class="flex items-center gap-2">
-                    <button onclick="openMantraWidget()" class="bg-reiki-matcha hover:bg-reiki-tea text-white text-xs px-4 py-2.5 rounded-full font-bold shadow-md transition-all duration-300 whitespace-nowrap" title="點擊抽取心靈肯定語">
+                    <button onclick="openMantraWidget()" class="bg-reiki-matcha hover:bg-reiki-tea text-white text-xs px-3 sm:px-4 py-2 sm:py-2.5 rounded-full font-bold shadow-md transition-all duration-300 whitespace-nowrap" title="點擊抽取心靈肯定語">
                         每日調頻
                     </button>
+                    <!-- 手機與平板專屬的漢堡選單按鈕 (lg:hidden) -->
+                    <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="lg:hidden p-2 rounded-lg text-reiki-tea hover:bg-reiki-matcha/10 transition" aria-label="切換導覽選單">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
                 </div>
+            </div>
+            
+            <!-- 手機平板專屬下拉選單區塊 (lg:hidden) -->
+            <div id="mobileMenu" class="hidden lg:hidden border-t border-reiki-oatmeal/20 bg-reiki-cream px-4 py-4 space-y-2 shadow-inner transition-all duration-300">
+                <a href="index.html" onclick="closeMobileMenu()" class="block px-4 py-2.5 rounded-xl text-reiki-matcha hover:bg-reiki-matcha/10 font-bold flex items-center gap-2">
+                    <span>🏠</span> 回首頁
+                </a>
+                <button onclick="scrollToMobileSection('about')" class="w-full text-left block px-4 py-2.5 rounded-xl text-reiki-tea hover:bg-reiki-matcha/10 font-medium transition">關於靈氣</button>
+                <button onclick="scrollToMobileSection('origin')" class="w-full text-left block px-4 py-2.5 rounded-xl text-reiki-tea hover:bg-reiki-matcha/10 font-medium transition">歷史源流</button>
+                <button onclick="scrollToMobileSection('values')" class="w-full text-left block px-4 py-2.5 rounded-xl text-reiki-tea hover:bg-reiki-matcha/10 font-medium transition">核心五戒</button>
+                <button onclick="scrollToMobileSection('daily')" class="w-full text-left block px-4 py-2.5 rounded-xl text-reiki-tea hover:bg-reiki-matcha/10 font-medium transition">日常情境</button>
+                <button onclick="scrollToMobileSection('myth')" class="w-full text-left block px-4 py-2.5 rounded-xl text-reiki-tea hover:bg-reiki-matcha/10 font-medium transition">🔍 迷思破解</button>
             </div>
         </div>
     </nav>
@@ -213,9 +228,25 @@
                     </div>
                 </div>
                 <div class="flex-grow space-y-4">
+                    <!-- 原始起源段落 -->
                     <p class="text-sm sm:text-base text-reiki-tea dark:text-slate-200 leading-relaxed font-normal text-justify">
                         靈氣起源於日本<strong>臼井甕男（Mikao Usui）</strong>大師。<strong>「Rei (靈)」</strong>代表宇宙神聖智慧，而<strong>「Ki (氣)」</strong>指代生命之能。在 <strong>國際靈氣訓練中心（ICRT）</strong> 的學術定義中，靈氣指代<strong>「宇宙本源智慧引導的高頻生命能量」</strong>。它不附屬於任何宗教與門派，而是人人都可對接並共振的自然療癒能量，用以溫和地調幅身心，回歸完美和諧。
                     </p>
+                    
+                    <!-- 🌿 接續在起源說明段落後的全新長篇內容，保持與起源段落相同的字體與設計質感 -->
+                    <p class="text-sm sm:text-base text-reiki-tea dark:text-slate-200 leading-relaxed font-normal text-justify">
+                        靈氣是一種運用雙手進行能量傳遞與平衡的療癒技術。It藉由宇宙高頻能量，協助人類補充匱乏、疏通淤塞或平衡過剩的能量，是一種能加速人體自癒能力的自然療法。
+                    </p>
+                    <p class="text-sm sm:text-base text-reiki-tea dark:text-slate-200 leading-relaxed font-normal text-justify">
+                        目前，靈氣療法已在全球廣泛普及。歐美許多大型醫療機構不僅將靈氣視為國家認可的輔助療法，並實際應用於臨床，讓靈氣成為現代少數受主流肯定的能量療法之一。在歐美，靈氣不僅在醫療體系中盛行，部分醫院已將其納入醫療服務，甚至有保險給付制度，更有護理學院將靈氣列入專業課程中。
+                    </p>
+                    <p class="text-sm sm:text-base text-reiki-tea dark:text-slate-200 leading-relaxed font-normal text-justify">
+                        靈氣能有效減輕醫療過程產生的副作用，緩解身心不適。在手術前，靈氣能幫助病患放鬆、消除緊張，以寧靜的心境迎接手術；術後，則能減輕病痛、縮短療程，進而加速癒合。在調整過程中，靈氣的波動會引導個案進入深層放鬆，優化身體自癒系統的運作。處於深度放鬆狀態時，自主神經系統會自然調節，進而降低血壓、平穩心跳，並釋放深層的緊張與焦慮；同時，這種狀態也能提升免疫系統功能，增強身體抵抗力。整個調整過程採取非侵入式，透過雙手隔空作用於個案的脈輪與氣場，不直接觸碰身體；個案僅需靜心平躺、閉目放鬆，即可接收宇宙能量。
+                    </p>
+                    <p class="text-sm sm:text-base text-reiki-tea dark:text-slate-200 leading-relaxed font-normal text-justify">
+                        從量子物理學的角度來看，靈氣的調整過程促進了細胞對宇宙生命能量的吸收，並同時釋放沉重、滯礙的能量。在這種「接收與釋放」的動態循環中，身體不僅展現了宇宙生命的流動，更進一步達成整體能量體系的平衡與和諧。
+                    </p>
+
                     <!-- 專業醫療輔助/互補品聲明區塊 -->
                     <div class="p-4 rounded-xl border border-reiki-matcha/40 bg-white/75 dark:bg-slate-900/50 text-xs sm:text-sm text-reiki-tea dark:text-slate-300 leading-relaxed shadow-inner">
                         <p class="font-normal text-justify">
@@ -270,7 +301,7 @@
                         <ul class="space-y-4 text-sm text-reiki-tea dark:text-slate-250 font-normal">
                             <li class="flex items-start gap-3">
                                 <span class="text-reiki-matcha font-black text-lg leading-none select-none">✓</span>
-                                <span class="leading-relaxed font-medium">協助身體放鬆，舒緩日常緊繃感<br><span class="text-xs text-reiki-matcha dark:text-slate-400 font-bold">(透過靜心與能量練習,進入放鬆的狀態。)</span></span>
+                                <span class="leading-relaxed font-medium">協助身體放鬆，舒緩日常緊繃感<br><span class="text-xs text-reiki-matcha dark:text-slate-400 font-bold">(透過靜心與能量練習，進入放鬆的狀態。)</span></span>
                             </li>
                             <li class="flex items-start gap-3">
                                 <span class="text-reiki-matcha font-black text-lg leading-none select-none">✓</span>
@@ -304,7 +335,7 @@
                             </li>
                             <li class="flex items-start gap-3">
                                 <span class="text-reiki-matcha font-black text-lg leading-none select-none">✓</span>
-                                <span class="leading-relaxed font-medium">協助鬆動舊有思維模式與信念框架<br><span class="text-xs text-reiki-matcha dark:text-slate-400 font-bold">(如:我不夠好)<br>陪伴釋放不再適用的內在信念</br></span></span>
+                                <span class="leading-relaxed font-medium">協助鬆動舊有思維模式與信念框架<br><span class="text-xs text-reiki-matcha dark:text-slate-400 font-bold">(如：我不夠好)<br>陪伴釋放不再適用的內在信念</br></span></span>
                             </li>
                             <li class="flex items-start gap-3">
                                 <span class="text-reiki-matcha font-black text-lg leading-none select-none">✓</span>
@@ -439,7 +470,7 @@
             <!-- 五戒引導卡片 -->
             <div class="max-w-4xl mx-auto space-y-8">
                 <div class="text-center">
-                    <p class="font-serif text-lg text-reiki-tea dark:text-slate-200 italic mb-1">「招福之秘法，萬病之靈藥」</p>
+                    <p class="font-serif text-lg text-reiki-tea dark:text-slate-300 italic mb-1">「招福之秘法，萬病之靈藥」</p>
                     <p class="text-xs text-reiki-matcha dark:text-slate-400 tracking-widest">晨昏合掌，誠心默念。點擊卡片，查看五戒在現代生活中的心理調頻意涵：</p>
                 </div>
 
@@ -478,7 +509,7 @@
                                 <span class="text-[10px] bg-white/10 self-start px-2.5 py-1 rounded font-mono font-bold text-[#FAF6EE]">02</span>
                                 <div class="text-center my-auto">
                                     <h3 class="font-serif text-3xl font-bold tracking-widest mb-1 text-white">心配すな</h3>
-                                    <p class="text-xs font-serif text-slate-350">Shinpai suna</p>
+                                    <p class="text-xs font-serif text-slate-355">Shinpai suna</p>
                                 </div>
                                 <span class="text-xs font-bold text-center border-t border-white/10 pt-3 flex items-center justify-center gap-1 text-[#FAF6EE]">今日不憂慮 ➔</span>
                             </div>
@@ -498,7 +529,7 @@
                     <!-- 卡片 3 -->
                     <div class="w-full h-72 cursor-pointer" onclick="flipCard(this)">
                         <div class="card-inner relative w-full h-full transform-style-3d">
-                            <!-- 正ed -->
+                            <!-- 正面 -->
                             <div class="absolute inset-0 bg-gradient-to-br from-reiki-tea via-reiki-matcha to-slate-900 text-[#FAF6EE] rounded-2xl p-5 flex flex-col justify-between backface-hidden shadow-md border border-white/5">
                                 <span class="text-[10px] bg-white/10 self-start px-2.5 py-1 rounded font-mono font-bold text-[#FAF6EE]">03</span>
                                 <div class="text-center my-auto">
@@ -711,6 +742,23 @@
                     </div>
                 </div>
 
+                <!-- Q4 (全新加入之醫療/心理諮商平衡定位 FAQ) -->
+                <div class="border border-reiki-oatmeal/30 rounded-2xl overflow-hidden bg-white dark:bg-slate-900/50">
+                    <button onclick="toggleAccordion('myth4')" class="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-reiki-sage/40 transition duration-300 focus:outline-none">
+                        <div class="flex items-center gap-3">
+                            <span class="w-2 h-2 rounded-full bg-reiki-matcha flex-shrink-0"></span>
+                            <span class="font-serif font-black text-sm md:text-base text-reiki-tea dark:text-slate-100 leading-relaxed text-left">Q4. 靈氣可以取代醫療或心理治療嗎？</span>
+                        </div>
+                        <span id="myth4-icon" class="text-reiki-matcha transform transition-transform duration-300 text-sm">▼</span>
+                    </button>
+                    <div id="myth4" class="accordion-content bg-white dark:bg-slate-900" style="max-height: 0px; overflow: hidden;">
+                        <div class="p-6 text-xs md:text-sm text-reiki-tea dark:text-slate-200 leading-relaxed border-t border-reiki-oatmeal/20 font-normal text-justify">
+                            <strong class="text-reiki-matcha dark:text-purple-300 block mb-2 font-bold text-sm">A：</strong>
+                            「靈氣是一項協助身心平衡的輔助性實踐，旨在補充能量層面的需求，並非醫療、心理諮商或其他專業服務的替代方案。我們恪守專業分工之原則，誠摯提醒，若有相關需求，請務必尋求專業醫療或心理服務的協助。」
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -775,7 +823,7 @@
             </div>
             <p class="text-xs text-reiki-oatmeal max-w-xl mx-auto leading-relaxed font-normal text-justify sm:text-center">
                 本架構報告與資訊圖表，基於傳統日式臼井靈氣、ICRT 聖火III與世界和平靈氣文獻整理彙編。<BR>
-				本網站內容僅供教育、個人成長、身心靈探索及經驗分享參考。<BR>
+                本網站內容僅供教育、個人成長、身心靈探索及經驗分享參考。<BR>
                 靈氣並非醫療行為，亦無意診斷、治療、預防或治癒任何疾病。<BR>
                 所提及之感受與體驗因個人狀況而異，不保證任何特定結果。<BR>
                 如有身心健康相關問題，請諮詢合格醫師、心理師或其他專業醫療人員。
@@ -788,6 +836,7 @@
     <!-- JavaScript 邏輯 -->
     <script>
         // 平滑滾動
+        // 改善滾動定位防遮擋
         function scrollToSection(id) {
             const section = document.getElementById(id);
             if (section) {
@@ -798,6 +847,40 @@
                     top: offsetPosition,
                     behavior: 'smooth'
                 });
+            }
+        }
+
+        // 手機版專屬跳轉：跳轉後自動關閉手機下拉選單，防止遮擋視線
+        function scrollToMobileSection(id) {
+            closeMobileMenu();
+            scrollToSection(id);
+        }
+
+        // 展開 / 收合手機選單邏輯
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const btnIcon = document.querySelector('#mobileMenuBtn i');
+            if (menu) {
+                if (menu.classList.contains('hidden')) {
+                    menu.classList.remove('hidden');
+                    btnIcon.classList.remove('fa-bars');
+                    btnIcon.classList.add('fa-xmark');
+                } else {
+                    menu.classList.add('hidden');
+                    btnIcon.classList.remove('fa-xmark');
+                    btnIcon.classList.add('fa-bars');
+                }
+            }
+        }
+
+        // 強制關閉手機選單並恢復三條線 icon
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const btnIcon = document.querySelector('#mobileMenuBtn i');
+            if (menu && !menu.classList.contains('hidden')) {
+                menu.classList.add('hidden');
+                btnIcon.classList.remove('fa-xmark');
+                btnIcon.classList.add('fa-bars');
             }
         }
 

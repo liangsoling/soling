@@ -45,16 +45,32 @@
 <body class="min-h-screen flex flex-col justify-between selection:bg-[#A3B899] selection:text-white">
 
   <!-- 頂部導覽列 -->
-  <nav class="sticky top-0 z-50 bg-[#E6EDF0]/90 backdrop-blur-md border-b border-[#D9C3B0]/30 py-4 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+  <nav class="sticky top-0 z-50 bg-[#E6EDF0]/90 backdrop-blur-md border-b border-[#D9C3B0]/30 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
       <a href="#" class="flex items-center space-x-2">
         <span class="text-2xl font-bold tracking-wider text-[#3A4238] flex items-center gap-1">		   
           <span class="text-[#A3B899] text-3xl">🌿</span> 凌Reiki
         </span>
       </a>
-      <span class="hidden md:inline-block text-xs font-semibold text-[#3A4238]/60 uppercase tracking-widest bg-[#FAF6EE] px-4 py-1.5 rounded-full border border-[#D9C3B0]/40">
-        ✨ 專屬心靈避風港 ‧ 整合式能量調節
-      </span>
+      
+      <div class="hidden md:flex items-center space-x-8 font-medium">
+        <a href="#guidelines" class="text-[#3A4238] hover:text-[#A3B899] transition-colors font-bold tracking-wide">療癒流程與個案須知</a>
+        <a href="#healer" class="text-[#3A4238] hover:text-[#A3B899] transition-colors font-bold tracking-wide">關於療癒師</a>
+      </div>
+
+      <!-- 行動端導覽選單按鈕 -->
+      <button id="menu-btn" class="md:hidden text-[#3A4238] focus:outline-none" aria-label="Toggle Menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-[#FAF6EE] border-b border-[#D9C3B0]/30 transition-all duration-300">
+      <div class="px-6 py-4 flex flex-col space-y-4 font-medium text-center">
+        <a href="#guidelines" class="mobile-link text-[#3A4238] hover:text-[#A3B899] transition-colors py-2 font-bold tracking-wide border-b border-[#D9C3B0]/30">療癒流程與個案須知</a>
+        <a href="#healer" class="mobile-link text-[#3A4238] hover:text-[#A3B899] transition-colors py-2 font-bold tracking-wide">關於療癒師</a>
+      </div>
     </div>
   </nav>
 
@@ -78,10 +94,10 @@
 
   <!-- 核心專題雙主軸展示區 -->
   <main class="max-w-7xl mx-auto px-6 pb-20 w-full space-y-12">
-    <!-- 原有雙卡片區：維持原來的 grid-cols-1 lg:grid-cols-2 佈局與位置不變（左右內容交換） -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch">
+    <!-- 原有雙卡片區：維持原來的 grid-cols-1 lg:grid-cols-2 佈局與位置不變 -->
+    <div id="about" class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch scroll-mt-24">
       
-      <!-- 主題一卡片：臼井聖火靈氣 (原在右，現調至左) -->
+      <!-- 主題一卡片：臼井聖火靈氣 -->
       <div class="hover-card bg-[#FAF6EE] border border-[#D9C3B0]/50 rounded-[32px] overflow-hidden flex flex-col justify-between soft-shadow">
         <div>
           <!-- 卡片頂部意境圖 -->
@@ -130,7 +146,7 @@
         </div>
       </div>
 
-      <!-- 主題二卡片：元辰宮主題網站 (原在左，現調至右) -->
+      <!-- 主題二卡片：元辰宮主題網站 -->
       <div class="hover-card bg-[#FAF6EE] border border-[#D9C3B0]/50 rounded-[32px] overflow-hidden flex flex-col justify-between soft-shadow">
         <div>
           <!-- 卡片頂部意境圖 -->
@@ -182,7 +198,7 @@
     </div>
 
     <!-- 中間新增：療癒流程與個案須知卡片 (Service Guidelines) -->
-    <div class="hover-card bg-[#FAF6EE] border border-[#D9C3B0]/50 rounded-[32px] overflow-hidden soft-shadow p-8 sm:p-12 space-y-10">
+    <div id="guidelines" class="hover-card bg-[#FAF6EE] border border-[#D9C3B0]/50 rounded-[32px] overflow-hidden soft-shadow p-8 sm:p-12 space-y-10 scroll-mt-24">
       <div class="text-center max-w-2xl mx-auto space-y-2">
         <span class="inline-block bg-[#E6EDF0] text-[#A3B899] border border-[#A3B899]/30 px-5 py-1.5 rounded-full text-xs font-bold tracking-widest">
           SERVICES & GUIDELINES
@@ -191,7 +207,7 @@
         <p class="text-xs sm:text-sm text-[#3A4238]/70">請於預約前仔細閱讀以下說明，幫助我們共同營造最契合的高頻能量場。</p>
       </div>
 
-      <!-- 雙欄架構：對調為左欄「靈氣療癒」、右欄「科學元辰宮」 -->
+      <!-- 雙欄架構：左欄靈氣、右欄科學元辰宮 -->
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start divide-y lg:divide-y-0 lg:divide-x divide-[#D9C3B0]/40">
         
         <!-- 左半部：靈氣療癒：現場與遠距服務 -->
@@ -348,7 +364,7 @@
     </div>
 
     <!-- 療癒師簡介卡片 (Healer Profile)：全新設計的寬幅橫式卡片，不影響上方卡片位置 -->
-    <div class="hover-card bg-[#FAF6EE] border border-[#D9C3B0]/50 rounded-[32px] overflow-hidden soft-shadow p-8 sm:p-10">
+    <div id="healer" class="hover-card bg-[#FAF6EE] border border-[#D9C3B0]/50 rounded-[32px] overflow-hidden soft-shadow p-8 sm:p-10 scroll-mt-24">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
         <!-- 療癒師頭像區 -->
         <div class="lg:col-span-4 flex justify-center">
@@ -419,12 +435,38 @@
     </div>
   </footer>
 
-  <!-- 修正圖片加載錯誤的處理腳本 -->
+  <!-- 導覽列與圖片載入錯誤處理腳本 -->
   <script>
+    // 圖片錯誤處理
     function handleHeroImgError(img) {
       img.onerror = null; // 避免無窮迴圈
       img.src = "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=600";
     }
+
+    // 手機版選單控制
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    if(menuBtn) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        if (mobileMenu.classList.contains('hidden')) {
+          menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+        } else {
+          menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+        }
+      });
+    }
+
+    // 點擊手機版連結後自動收合選單
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+      });
+    });
   </script>
 
 </body>

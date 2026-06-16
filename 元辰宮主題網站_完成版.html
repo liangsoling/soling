@@ -80,7 +80,8 @@
   <!-- 導覽列 -->
   <nav class="sticky top-0 z-50 bg-[#E6EDF0]/90 backdrop-blur-md border-b border-[#D9C3B0]/30 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="index.html" class="flex items-center space-x-2">
+      <!-- 點擊最左側的品牌名稱：平滑滾動回網頁最頂端，不再跳轉 -->
+      <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); event.preventDefault();" class="flex items-center space-x-2">
         <span class="text-2xl font-bold tracking-wider text-[#3A4238] flex items-center gap-1">
           <span class="text-[#A3B899] text-3xl">🌿</span> 凌Reiki・元辰宮
         </span>
@@ -88,7 +89,9 @@
       
       <!-- 桌面端導覽連結 -->
       <div class="hidden md:flex items-center space-x-8 font-medium">
-        <a href="index.html" class="text-[#3A4238] hover:text-[#A3B899] transition-colors">首頁</a>		
+        <a href="index.html" class="text-[#3A4238] hover:text-[#A3B899] transition-colors flex items-center gap-1">
+          <span>🏠</span> 回首頁
+        </a>		
         <a href="#about" class="text-[#3A4238] hover:text-[#A3B899] transition-colors">核心理念</a>
         <a href="#explorer" class="text-[#3A4238] hover:text-[#A3B899] transition-colors">格局探索</a>
         <a href="#benefits" class="text-[#3A4238] hover:text-[#A3B899] transition-colors">調整好處</a>
@@ -103,10 +106,12 @@
       </button>
     </div>
 
-    <!-- 行動端下拉選單 (點擊「首頁」將導向 index.html，並在跳轉前自動隱藏下拉選單，完全解決回不到首頁的問題) -->
+    <!-- 行動端下拉選單 -->
     <div id="mobile-menu" class="hidden md:hidden bg-[#FAF6EE] border-b border-[#D9C3B0]/30 transition-all duration-300">
       <div class="px-6 py-4 flex flex-col space-y-4 font-medium">
-        <a href="index.html" onclick="document.getElementById('mobile-menu').classList.add('hidden');" class="text-[#3A4238] hover:text-[#A3B899] transition-colors py-1">首頁</a>
+        <a href="index.html" onclick="document.getElementById('mobile-menu').classList.add('hidden');" class="text-[#3A4238] hover:text-[#A3B899] transition-colors py-1 flex items-center gap-1">
+          <span>🏠</span> 回首頁
+        </a>
         <a href="#about" onclick="document.getElementById('mobile-menu').classList.add('hidden');" class="text-[#3A4238] hover:text-[#A3B899] transition-colors py-1">核心理念</a>
         <a href="#explorer" onclick="document.getElementById('mobile-menu').classList.add('hidden');" class="text-[#3A4238] hover:text-[#A3B899] transition-colors py-1">格局探索</a>
         <a href="#benefits" onclick="document.getElementById('mobile-menu').classList.add('hidden');" class="text-[#3A4238] hover:text-[#A3B899] transition-colors py-1">調整好處</a>
@@ -629,7 +634,7 @@
             </div>
             <div class='bg-[#E6EDF0]/80 p-3 rounded-[16px] border border-[#D9C3B0] text-xs text-[#3A4238] font-bold text-center'>
               🍂 <strong>枝葉枯萎與蟲害：</strong>
-              <p class='mt-1 font-semibold text-[#3A4238]'>枯黃的落葉與莫名的蟲蟻蠶食，投射出個案近期繁雜的思緒干擾與能量消耗、身心內耗。</p>
+              <p class='mt-1 font-semibold text-[#3A4238]'>枯黃 of 落葉與莫名的蟲蟻蠶食，投射出個案近期繁雜的思緒干擾與能量消耗、身心內耗。</p>
             </div>
             <div class='bg-[#E6EDF0]/80 p-3 rounded-[16px] border border-[#D9C3B0] text-xs text-[#3A4238] font-bold text-center'>
               🪨 <strong>雜草與碎石阻礙：</strong>
